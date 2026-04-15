@@ -3,14 +3,13 @@
 :root {
   --base-clr: #f5f6f8;
   --line-clr: #dce3ea;
-  --hover-clr: #ff0000;
+  --hover-clr: #BFBFBF;
   --text-clr: #000000;
   --accent-clr: #5e63ff;
   --secondary-text-clr: #000000;
 }
 
 main {
-  width: 100%;
   overflow-x: hidden;
 }
 
@@ -58,11 +57,20 @@ ul {
 }
 
 #sidebar ul li.active a {
-  color: var(--accent-clr);
+  color: white;
+  background: linear-gradient(90deg, #1fb6d5, #8b3dff);
+
 
   svg {
     fill: var(--accent-clr);
   }
+}
+
+.logo {
+  font-weight: bold;
+  background: linear-gradient(90deg, #1fb6d5, #8b3dff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #sidebar a,
@@ -143,6 +151,35 @@ main p {
   p {
     margin-top: 1em
   }
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar-left h1 {
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.topbar-left p {
+  color: #000000;
+  font-size: 14px;
+}
+
+.topbar-right {
+  text-align: right;
+  font-size: 13px;
+  color: #000000;
+}
+
+.topbar-right strong {
+  display: block;
+  color: rgb(0, 0, 0);
+  font-size: 14px;
+  margin-top: 4px;
 }
 
 @media(max-width: 800px) {

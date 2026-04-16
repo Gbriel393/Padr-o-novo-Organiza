@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin</title>
     <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/adm.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -14,7 +17,7 @@
 
 <body>
     <nav id="sidebar">
-        <ul>
+        <ul class="p-0">
             <span class="logo">Organiza</span>
 
             <li>
@@ -73,100 +76,343 @@
         </ul>
     </nav>
     <main>
-        <div class="container">
-            <h2>Hello World</h2>
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis porro iure quaerat aliquam! Optio
-                dolorum
-                in eum provident, facilis error repellendus excepturi enim dolor deleniti adipisci consectetur
-                doloremque, unde
-                maiores odit sapiente. Atque ab necessitatibus laboriosam consequatur eius similique, ex dolorum eum
-                eaque sequi
-                id veritatis voluptates perspiciatis, cupiditate pariatur.</p>
+        <header class="header mb-4">
+
+            <div class="container d-flex justify-content-between mt-3">
+
+                <div class="d-flex align-items-center">
+                    <svg class="escudo" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                        <path
+                            d="M320 64C324.6 64 329.2 65 333.4 66.9L521.8 146.8C543.8 156.1 560.2 177.8 560.1 204C559.6 303.2 518.8 484.7 346.5 567.2C329.8 575.2 310.4 575.2 293.7 567.2C121.3 484.7 80.6 303.2 80.1 204C80 177.8 96.4 156.1 118.4 146.8L306.7 66.9C310.9 65 315.4 64 320 64zM320 130.8L320 508.9C458 442.1 495.1 294.1 496 205.5L320 130.9L320 130.9z" />
+                    </svg>
+                    <div class="d-flex flex-column ms-3">
+                        <h2 style="color: rgb(0, 0, 0);" class="m-0">Painel Administrativo</h2>
+                        <h6 style="color: rgb(0, 0, 0);">Gerencie usuários, sistema e configurações</h6>
+                    </div>
+
+
+                </div>
+                <span class="acessoadm">Acesso Admin</span>
+
+            </div>
+
+        </header>
+
+        <div class="container main-content d-flex flex-column gap-3">
+
+            <div class="cards">
+
+                <div class="total_usu d-flex p-4">
+
+                    <div>
+                        <svg class="user" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"><!--!Font Awesome Pro v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2026 Fonticons, Inc.-->
+                            <path
+                                d="M96 192C96 130.1 146.1 80 208 80C269.9 80 320 130.1 320 192C320 253.9 269.9 304 208 304C146.1 304 96 253.9 96 192zM32 528C32 430.8 110.8 352 208 352C305.2 352 384 430.8 384 528L384 534C384 557.2 365.2 576 342 576L74 576C50.8 576 32 557.2 32 534L32 528zM464 128C517 128 560 171 560 224C560 277 517 320 464 320C411 320 368 277 368 224C368 171 411 128 464 128zM464 368C543.5 368 608 432.5 608 512L608 534.4C608 557.4 589.4 576 566.4 576L421.6 576C428.2 563.5 432 549.2 432 534L432 528C432 476.5 414.6 429.1 385.5 391.3C408.1 376.6 435.1 368 464 368z" />
+                        </svg>
+                        <h6 class="mt-4" style="color: rgb(0, 0, 0);">Total de Usuários</h6>
+                        <h2 style="color: rgb(0, 0, 0);" class="m-0">1,234</h2>
+                    </div>
+                    <h6 class="m-0" style="color: green; font-weight: bold; display: inline;">+12.5%</h6>
+
+                </div>
+
+                <div class="transacoes d-flex p-4">
+
+                    <div>
+                        <svg class="chart" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                            <path
+                                d="M128 128C128 110.3 113.7 96 96 96C78.3 96 64 110.3 64 128L64 464C64 508.2 99.8 544 144 544L544 544C561.7 544 576 529.7 576 512C576 494.3 561.7 480 544 480L144 480C135.2 480 128 472.8 128 464L128 128zM534.6 214.6C547.1 202.1 547.1 181.8 534.6 169.3C522.1 156.8 501.8 156.8 489.3 169.3L384 274.7L326.6 217.4C314.1 204.9 293.8 204.9 281.3 217.4L185.3 313.4C172.8 325.9 172.8 346.2 185.3 358.7C197.8 371.2 218.1 371.2 230.6 358.7L304 285.3L361.4 342.7C373.9 355.2 394.2 355.2 406.7 342.7L534.7 214.7z" />
+                        </svg>
+                        <h6 class="mt-4" style="color: rgb(0, 0, 0);">Transações Hoje</h6>
+                        <h2 style="color: rgb(0, 0, 0);" class="m-0">456</h2>
+                    </div>
+                    <h6 class="m-0" style="color: green; font-weight: bold; display: inline;">+8.2%</h6>
+
+                </div>
+
+                <div class="vlm_total d-flex p-4">
+
+                    <div>
+                        <svg class="arrow" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                            <path
+                                d="M416 224C398.3 224 384 209.7 384 192C384 174.3 398.3 160 416 160L576 160C593.7 160 608 174.3 608 192L608 352C608 369.7 593.7 384 576 384C558.3 384 544 369.7 544 352L544 269.3L374.6 438.7C362.1 451.2 341.8 451.2 329.3 438.7L224 333.3L86.6 470.6C74.1 483.1 53.8 483.1 41.3 470.6C28.8 458.1 28.8 437.8 41.3 425.3L201.3 265.3C213.8 252.8 234.1 252.8 246.6 265.3L352 370.7L498.7 224L416 224z" />
+                        </svg>
+                        <h6 class="mt-4" style="color: rgb(0, 0, 0);">Volume Total</h6>
+                        <h2 style="color: rgb(0, 0, 0);" class="m-0">R$ 2.4M</h2>
+                    </div>
+                    <h6 class="m-0" style="color: green; font-weight: bold; display: inline;">+15.3%</h6>
+
+                </div>
+
+                <div class="alertas d-flex p-4">
+
+                    <div>
+                        <svg class="icon-alertas" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                            <path
+                                d="M320 64C334.7 64 348.2 72.1 355.2 85L571.2 485C577.9 497.4 577.6 512.4 570.4 524.5C563.2 536.6 550.1 544 536 544L104 544C89.9 544 76.8 536.6 69.6 524.5C62.4 512.4 62.1 497.4 68.8 485L284.8 85C291.8 72.1 305.3 64 320 64zM320 416C302.3 416 288 430.3 288 448C288 465.7 302.3 480 320 480C337.7 480 352 465.7 352 448C352 430.3 337.7 416 320 416zM320 224C301.8 224 287.3 239.5 288.6 257.7L296 361.7C296.9 374.2 307.4 384 319.9 384C332.5 384 342.9 374.3 343.8 361.7L351.2 257.7C352.5 239.5 338.1 224 319.8 224z" />
+                        </svg>
+                        <h6 class="mt-4" style="color: rgb(0, 0, 0);">Alertas Ativos</h6>
+                        <h2 style="color: rgb(0, 0, 0);" class="m-0">23</h2>
+                    </div>
+                    <h6 class="m-0" style="color: red; font-weight: bold; display: inline;">-5.1%</h6>
+
+                </div>
+            </div>
+
+
+
+            <div class="tabs">
+                <button class="tab active" data-tab="visao">Visão Geral</button>
+                <button class="tab" data-tab="usuarios">Usuários</button>
+                <button class="tab" data-tab="sistema">Sistema</button>
+                <button class="tab" data-tab="logs">Logs</button>
+            </div>
+
+            <div class="tab-content active p-3" id="visao">
+
+                <div class="d-flex gap-2 pb-2">
+                    <i class="fa-solid fa-chart-line pt-1" style="color: rgb(99, 188, 230);"></i>
+                    <h5 style="color: rgb(0, 0, 0);">Atividade Recente</h5>
+                </div>
+
+                <div class="atv p-3">
+                    <div class="d-flex gap-2">
+                        <i class="dot fa-solid fa-circle pt-2" style="color: rgb(99, 188, 230);"></i>
+                        <h6>Criou um novo usuário</h6>
+                    </div>
+                    <p class="sub">Admin &#x2022; 5min atrás</p>
+                </div>
+
+                <div class="atv p-3 mt-3">
+                    <div class="d-flex gap-2">
+                        <i class="dot fa-solid fa-circle pt-2" style="color: rgb(99, 230, 167);"></i>
+                        <h6>Backup automático completo</h6>
+                    </div>
+                    <p class="sub">Sistema &#x2022; 1h atrás</p>
+                </div>
+
+                <div class="atv p-3 mt-3">
+                    <div class="d-flex gap-2">
+                        <i class="dot fa-solid fa-circle pt-2" style="color: rgb(223, 230, 99);"></i>
+                        <h6>Alterou configurações de segurança</h6>
+                    </div>
+                    <p class="sub">Admin &#x2022; 2h atrás</p>
+                </div>
+
+                <div class="atv p-3 mt-3">
+                    <div class="d-flex gap-2">
+                        <i class="dot fa-solid fa-circle pt-2" style="color: rgb(173, 99, 230);"></i>
+                        <h6>Atualização de dados concluída</h6>
+                    </div>
+                    <p class="sub">Sistema &#x2022; 3h atrás</p>
+                </div>
+
+
+
+
+
+            </div>
+
+            <div class="tab-content p-3" id="usuarios">
+
+                <div class="d-flex justify-content-between">
+                    <h5 class="m-0" style="color: rgb(0, 0, 0); font-weight: bold;">Usuários Recentes</h5>
+                    <button type="button" class="btn btn-primary">Adicionar Usuário</button>
+                </div>
+
+
+
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nome</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Cadastro</th>
+                            <th scope="col">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">Gabriel Rodrigues</th>
+                            <td>gabriel@gmail.com</td>
+                            <td><button type="button" class="btn btn-outline-success">Ativo</button></td>
+                            <td>30/11/2025</td>
+                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Sarah Beatriz</th>
+                            <td>sarah@gmail.com</td>
+                            <td><button type="button" class="btn btn-outline-success">Ativo</button></td>
+                            <td>04/12/2025</td>
+                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Rhaquel Santos</th>
+                            <td>rahquel@gmail.com</td>
+                            <td><button type="button" class="btn btn-outline-success">Ativo</button></td>
+                            <td>09/12/2025</td>
+                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Andrei</th>
+                            <td>andrei@gmail.com</td>
+                            <td><button type="button" class="btn btn-outline-success">Ativo</button></td>
+                            <td>30/11/2025</td>
+                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
+
+                        </tr>
+                        <tr>
+                            <th scope="row">Wandinho</th>
+                            <td>wanderson@gmail.com</td>
+                            <td><button type="button" class="btn btn-outline-warning">Pendente</button></td>
+                            <td>04/12/2025</td>
+                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
+
+                        </tr>
+
+                        <tr>
+                            <th scope="row">Wanderson</th>
+                            <td>wandinhoprofessor@gmail.com</td>
+                            <td><button type="button" class="btn btn-outline-danger">Suspenso</button></td>
+                            <td>04/12/2025</td>
+                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
+
+                        </tr>
+
+                    </tbody>
+                </table>
+
+
+            </div>
+
+            <div class="tab-content" id="sistema">
+
+                <div class="banco_de_dados p-3">
+
+                    <div style="color: rgb(0, 0, 0);" class="d-flex gap-2">
+                        <i class="fa-solid fa-database pt-1" style="color: rgb(99, 188, 230);"></i>
+                        <h5>Banco de Dados</h5>
+                    </div>
+
+                    <div class="cartoes p-3">
+
+                        <h6>Fazer Backup</h6>
+                        <p class="sub_a">
+                            último backup: 24/03/2026
+                            <br>
+                            02:00
+                        </p>
+                    </div>
+
+                    <div class="cartoes p-3 mt-3">
+
+                        <h6>Otimizar Tabelas</h6>
+                        <p class="sub_a">
+                            Melhorar performace do banco
+                        </p>
+                    </div>
+
+                    <div class="cartoes p-3 mt-3">
+                        <h6>Limpar Cache</h6>
+                        <p class="sub_a">
+                            Liberar memória cache </p>
+                    </div>
+
+                </div>
+
+                <div class="configuracao p-3">
+
+                    <div style="color: rgb(0, 0, 0);" class="d-flex gap-2 ">
+                        <i class="fa-solid fa-gear" style="color: rgb(99, 188, 230);"></i>
+                        <h5>Configurações</h5>
+
+                    </div>
+
+                    <div class="cartoes p-3 mt-3">
+                        <h6>Notificação por Email</h6>
+                    </div>
+
+
+                </div>
+
+            </div>
+
+            <div class="tab-content" id="logs">
+
+
+                <div class="log_sis p-3">
+
+                    <h5 style="color: rgb(0, 0, 0); font-weight: bold;">Logs do Sistema</h5>
+
+                    <div class="atv p-3 mt-3">
+                        <h6 style="color: green;">[2026-03-24 14:32:15] INFO: Sistema iniciado com sucesso</h6>
+                    </div>
+
+                    <div class="atv p-3 mt-3">
+                        <h6 style="color: rgb(0, 195, 255);">[2026-03-24 14:30:22] DEBUG: Conexão com banco estabelecida
+                        </h6>
+                    </div>
+
+                    <div class="atv p-3 mt-3">
+                        <h6 style="color: rgb(255, 187, 0);">[2026-03-24 14:28:45] WARN: Cache quase cheio (85%)
+                        </h6>
+                    </div>
+
+                    <div class="atv p-3 mt-3">
+                        <h6 style="color: green;">[2026-03-24 14:10:05] INFO: Nova transação processada #1234
+                        </h6>
+                    </div>
+
+                    <div class="atv p-3 mt-3">
+                        <h6 style="color: rgb(0, 195, 255);">[2026-03-24 14:25:10] INFO: Backup automático completado
+                        </h6>
+                    </div>
+
+                    <div class="atv p-3 mt-3">
+                        <h6 style="color: rgb(225, 57, 57);">[2026-03-24 14:15:18] ERROR: Falha na conexão com API
+                            externa -
+                            Tentando novamente...
+                        </h6>
+                    </div>
+
+                    <div class="atv p-3 mt-3">
+                        <h6 style="color: green;">[2026-03-24 14:10:05] INFO: Nova transação processada #1234
+                        </h6>
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
         </div>
-        <div class="container">
-            <h2>Example Heading</h2>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic aliquid corrupti, tenetur fuga magnam
-                necessitatibus blanditiis quod sint excepturi laborum esse alias labore molestias adipisci, nostrum
-                corporis ex
-                maiores quis dolore quidem asperiores odio ad fugit eos! Delectus modi quas ipsa deleniti consequuntur
-                nihil,
-                hic in ipsum exercitationem blanditiis natus, ex, expedita eos. Excepturi quidem harum hic nam magnam
-                deserunt
-                illum quis dolorum eos ipsum ut natus sapiente sit, officia obcaecati assumenda tempore molestias? In
-                fugiat
-                iure laboriosam quasi, eum suscipit, harum autem saepe ut, soluta aspernatur ducimus eos magnam quidem
-                officiis.
-                Laboriosam nemo explicabo delectus, et quos vero cum?</p>
-        </div>
-        <div class="container">
-            <h2>Lorem Ipsum</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore repudiandae labore veniam
-                reprehenderit
-                voluptatum, laboriosam perferendis fuga, dolore quam quas nostrum totam sunt esse expedita. Vero
-                distinctio
-                omnis accusantium. Quisquam ullam saepe cupiditate magni numquam totam perspiciatis error velit, debitis
-                veniam
-                labore possimus aut sunt, reiciendis natus. Impedit provident voluptatum nulla fuga error a magnam,
-                corporis
-                natus aperiam fugit quod perferendis quos quaerat, numquam sequi doloribus tenetur dolorem voluptate
-                deleniti,
-                odio minus. Deserunt eius quasi odit voluptas unde voluptatum dicta cumque exercitationem soluta beatae
-                porro
-                distinctio, delectus officiis, nobis officia ullam necessitatibus, rem natus corrupti nam! Est, nihil
-                molestias
-                fugiat sed quae enim commodi expedita soluta tempore molestiae fuga adipisci rem esse voluptates quos,
-                ut quasi
-                sunt ad a perspiciatis ducimus maxime animi. Adipisci officia doloribus magni alias maiores ab quo, eos
-                mollitia
-                sint esse. Labore odio, architecto nihil quaerat soluta blanditiis impedit laudantium esse officiis
-                dolorum
-                dolore libero, id sequi minima incidunt eum facilis itaque distinctio. Voluptas doloremque minus
-                reiciendis ex
-                beatae laudantium cum sequi repellat blanditiis molestiae. Cumque, libero nulla! Sit, quisquam magni
-                dolore
-                consectetur odio impedit adipisci voluptas ab, laboriosam autem nihil nam est ipsa excepturi obcaecati
-                eos
-                neque! Omnis similique qui veritatis. Repellat magni dolorem, facilis eaque, harum molestias, delectus
-                est
-                adipisci laudantium velit optio blanditiis debitis? Tenetur totam maiores animi officiis eligendi
-                expedita nemo
-                corrupti distinctio. Cum libero soluta beatae doloribus sit, repellendus nobis vel obcaecati velit
-                dolorem
-                voluptate magnam inventore quas pariatur quam reprehenderit molestiae hic sunt dicta illo amet quis
-                magni
-                accusamus sequi? Vel quis, dolores iusto suscipit excepturi laboriosam repellat consectetur! Maiores
-                deserunt,
-                pariatur nesciunt consequuntur recusandae minima assumenda consequatur inventore natus debitis illo
-                velit
-                voluptatum necessitatibus qui aspernatur illum impedit magni dignissimos ea, molestias tempora corporis,
-                asperiores iusto possimus. Libero expedita aspernatur officia totam dolorum culpa, minus, alias adipisci
-                eligendi suscipit voluptates, magnam laudantium? Inventore cupiditate perspiciatis mollitia excepturi,
-                voluptatibus ducimus expedita provident. Dicta, odit. Odio, qui repudiandae! Maiores dignissimos, magnam
-                deleniti reprehenderit ex cum ea eveniet placeat quae, ad at perspiciatis nobis corporis doloribus
-                voluptatem
-                nulla aliquam sunt accusamus facere quaerat necessitatibus ipsa! Nam quisquam dicta minima commodi
-                nostrum.
-                Exercitationem necessitatibus optio cumque voluptate modi amet consequuntur similique ex inventore
-                explicabo
-                doloremque esse sed sequi nemo rem, nostrum ullam. Totam repellat ut ipsa quisquam rem, nulla, suscipit
-                debitis
-                atque earum quis voluptates quaerat exercitationem architecto repellendus placeat, tenetur incidunt
-                distinctio
-                consectetur reiciendis minima officiis aliquam? Ipsum sequi hic officia iste a. Blanditiis, dicta!
-                Eveniet
-                molestias ut natus odio fugiat cum necessitatibus, architecto, quo a quisquam autem porro explicabo
-                ipsam,
-                nostrum deserunt possimus expedita eum est corporis quibusdam cupiditate! Fugiat, quaerat saepe. Harum
-                modi
-                eligendi beatae alias fugiat. Nostrum cum nisi saepe dicta iste cupiditate, deserunt omnis, doloremque a
-                distinctio eum rem adipisci ab? Sapiente, dicta ipsam blanditiis earum omnis necessitatibus temporibus,
-                excepturi accusantium delectus quo quod iusto ad aliquam nemo ducimus ab nobis inventore sequi
-                veritatis? Nulla,
-                dolorem. Voluptas, obcaecati non facilis repellendus ratione officiis veritatis, modi culpa rerum
-                placeat
-                voluptatum quia ex? Officia quos dolorum repellat deserunt voluptas praesentium.</p>
-        </div>
-    </main>
+
+
+
+
+
+
+
+
+
+
+
+        <script src="./js/script-paineladm.js" defer></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+
 </body>
 
 </html>

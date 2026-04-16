@@ -1,48 +1,118 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>organiza</title>
   <link rel="stylesheet" href="./css/novo.css">
+  <link rel="stylesheet" href="./CSS/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
 
-  <div class="container">
+  <nav id="sidebar">
+    <ul>
+      <span class="logo">Organiza</span>
 
-    <!-- Conteúdo -->
-    <main class="content">
-      <div class="card">
-        <h1>Novo Registro</h1>
-        <p>Adicione uma nova transação</p>
+      <li>
+        <a href="index.html">
+          <i class="fa-regular fa-house"></i>
+          <span>Início</span>
+        </a>
+      </li>
 
-        <!-- Tipo -->
-        <div class="tipo">
-  <button type="button" class="btn tipo-btn active">Entrada</button>
-  <button type="button" class="btn tipo-btn">Saída</button>
-</div>
+      <li class="active">
+        <a href="./novo.html">
+          <i class="fa-solid fa-plus" style="color: rgb(0, 0, 0);"></i>
+          <span>Cadastro</span>
+        </a>
+      </li>
 
-        <!-- Form -->
-        <form id="form">
-          <input type="number" placeholder="Valor" required />
+      <li>
+        <a href="./listagem.html">
+          <i class="fa-solid fa-list-ul" style="color: rgb(0, 0, 0);"></i>
+          <span>Listagem</span>
+        </a>
+      </li>
 
-          <select required>
-            <option value="">Selecione uma categoria</option>
-            <option>Alimentação</option>
-            <option>Transporte</option>
-            <option>Lazer</option>
-          </select>
+      <li>
+        <a href="./operacoes.html">
+          <i class="fa-solid fa-left-right" style="color: rgb(0, 0, 0);"></i>
+          <span>Operações</span>
+        </a>
+      </li>
 
-          <input type="date" required />
+      <li>
+        <a href="./banco.html">
+          <i class="fa-solid fa-landmark" style="color: rgb(0, 0, 0);"></i>
+          <span>Banco</span>
+        </a>
+      </li>
 
-          <textarea placeholder="Descrição (opcional)"></textarea>
+      <li>
+        <a href="./perfil.html">
+          <i class="fa-regular fa-user"></i>
+          <span>Perfil</span>
+        </a>
+      </li>
 
-          <button type="submit" class="salvar">Salvar Transação</button>
-        </form>
-      </div>
-    </main>
+      <li>
+        <a href="./adm.html">
+          <i class="fa-solid fa-users-gear" style="color: rgb(0, 0, 0);"></i>
+          <span>Admin</span>
+        </a>
+      </li>
 
-  </div>
-<script src="./js/script.js"></script>
+    </ul>
+
+
+
+  </nav>
+
+  <main>
+    <div class="container">
+
+      <!-- Conteúdo -->
+      <main class="content">
+        <div class="card">
+          <h1>Novo Registro</h1>
+          <p>Adicione uma nova transação</p>
+
+          <!-- Tipo -->
+          <div class="tipo">
+            <button type="button" class="btn tipo-btn active">Entrada</button>
+            <button type="button" class="btn tipo-btn">Saída</button>
+          </div>
+
+          <!-- Form -->
+          <form id="form">
+            <input type="number" placeholder="Valor" required />
+
+            <select required>
+              <option value="">Selecione uma categoria</option>
+              <option>Alimentação</option>
+              <option>Transporte</option>
+              <option>Lazer</option>
+            </select>
+
+            <input type="date" required />
+
+            <textarea placeholder="Descrição (opcional)"></textarea>
+
+            <button type="submit" class="salvar">Salvar Transação</button>
+          </form>
+        </div>
+      </main>
+
+    </div>
+  </main>
+
+
+  <script src="./js/script.js"></script>
 </body>
+
 </html>

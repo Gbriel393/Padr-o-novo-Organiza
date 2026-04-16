@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>organiza</title>
+  <link rel="stylesheet" href="./css/novo.css">
+</head>
+<body>
+
+  <div class="container">
+
+    <!-- Conteúdo -->
+    <main class="content">
+      <div class="card">
+        <h1>Novo Registro</h1>
+        <p>Adicione uma nova transação</p>
+
+        <!-- Tipo -->
+        <div class="tipo">
+  <button type="button" class="btn tipo-btn active">Entrada</button>
+  <button type="button" class="btn tipo-btn">Saída</button>
+</div>
+
+        <!-- Form -->
+        <form id="form">
+          <input type="number" placeholder="Valor" required />
+
+          <select required>
+            <option value="">Selecione uma categoria</option>
+            <option>Alimentação</option>
+            <option>Transporte</option>
+            <option>Lazer</option>
+          </select>
+
+          <input type="date" required />
+
+          <textarea placeholder="Descrição (opcional)"></textarea>
+
+          <button type="submit" class="salvar">Salvar Transação</button>
+        </form>
+      </div>
+    </main>
+
+  </div>
+<script src="./js/script.js"></script>
+</body>
+</html>

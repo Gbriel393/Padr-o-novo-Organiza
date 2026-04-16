@@ -1,0 +1,83 @@
+body {
+  background-color: #f5f6f8;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.perfil-card {
+  border-radius: 16px;
+  max-width: 800px;
+  border: none;
+}
+
+
+.avatar {
+  width: 60px;
+  height: 60px;
+  background: linear-gradient(135deg, #4facfe, #a64bf4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 24px;
+}
+
+.form-control {
+  border-radius: 12px;
+  padding: 10px;
+}
+
+
+.notif-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f1f2f4;
+  padding: 12px 15px;
+  border-radius: 12px;
+  margin-top: 10px;
+}
+
+
+.btn-gradient {
+  border: none;
+  border-radius: 12px;
+  padding: 12px;
+  color: white;
+  font-weight: 500;
+  background: linear-gradient(90deg, #00c6ff, #a64bf4);
+}
+
+.btn-outline-secondary {
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.btn-logout {
+  border-radius: 10px;
+  font-size: 14px;
+  padding: 6px 12px;
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.btn-logout:hover {
+  background: #dc3545;
+  color: #fff;
+}
+
+
+@media (max-width: 768px) {
+  .perfil-card {
+    margin: 0 10px;
+  }
+
+  .avatar {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}

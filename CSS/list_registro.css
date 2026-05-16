@@ -1,0 +1,278 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.t {
+    justify-content: space-between;
+}
+
+.botao_rendas,
+.botao_despesas,
+.botao_saldo {
+    flex: 1;
+}
+
+.botao_rendas {
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    min-height: 115px;
+    padding: 10px;
+    border: 1px solid #0ff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.botao_despesas {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    min-height: 115px;
+    padding: 10px;
+    color: white;
+    border: 1px solid rgb(255, 0, 89);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.botao_saldo {
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    min-height: 115px;
+    padding: 10px;
+    color: white;
+    border: 1px solid rgb(0, 255, 0);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.barra_pesquisa {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.botao_rendas p,
+.botao_despesas p,
+.botao_saldo p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.valor {
+    color: black;
+}
+
+.valor_d {
+    color: black;
+
+}
+
+.valor_s {
+    color: black;
+
+}
+
+.porcentagem {
+    font-size: 10px !important;
+    color: rgb(159, 159, 159);
+}
+
+#lupa_icone {
+    position: relative;
+    left: 25px;
+    top: 8px;
+}
+
+.pesquisa {
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(77, 77, 77);
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
+    width: 100%;
+    padding-left: 2rem;
+}
+
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active,
+.show>.btn-secondary.dropdown-toggle {
+    background-color: transparent !important;
+    border-color: #6c757d !important;
+    color: #6c757d !important;
+    box-shadow: none !important;
+}
+
+.btn {
+    background-color: transparent;
+}
+
+.lupa {
+    width: 30%;
+}
+
+.estrato {
+    overflow-x: auto;
+    overflow-y: auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 10px;
+    width: 100%;
+    max-height: 400px;
+
+    scrollbar-width: none;
+}
+
+
+.table {
+    background-color: #f5f5f5;
+}
+
+th {
+    background-color: #ffffff !important;
+    color: #333 !important;
+}
+
+td {
+    background-color: #ffffff !important;
+    color: #333 !important;
+}
+
+
+.estrato table th,
+.estrato table td {
+    padding: 15px 20px;
+}
+
+.estrato table th:last-child,
+.estrato table td:last-child {
+    text-align: right;
+}
+
+.estrato::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Edge, Safari */
+}
+
+.td_valor {
+    color: rgb(36, 211, 255) !important;
+}
+
+.td_valor_gasto {
+    color: #dc3545 !important;
+}
+
+.btn-outline-primary:hover {
+    color: #ffffff !important;
+    box-shadow: none !important;
+    cursor: default;
+}
+
+.btn-outline-danger:hover{
+    color: #ffffff !important;
+    /* cor original do outline-danger */
+    border-color: #dc3545 !important;
+    box-shadow: none !important;
+    cursor: default;
+}
+
+.btn-outline-secondary:hover{
+    color: #ffffff !important;
+    box-shadow: none !important;
+    cursor: default;
+}
+
+.btn-outline-success:hover{
+    color: #ffffff !important;
+    box-shadow: none !important;
+    cursor: default;
+}
+
+.estrato .btn-status {
+    width: 10px;
+    /* largura fixa, consistente */
+    height: 8px;
+    /* altura fixa */
+    font-size: 12px;
+    /* texto proporcional */
+    padding: 0;
+    /* remove padding extra */
+    display: block;
+    /* ocupa o container */
+    margin: 0 auto;
+    /* centraliza na célula */
+}
+
+.estrato .btn-status:hover,
+.estrato .btn-status:focus,
+.estrato .btn-status:active {
+    background-color: transparent !important;
+    color: inherit !important;
+    border-color: inherit !important;
+    box-shadow: none !important;
+}
+
+.container {
+    border: none;
+}
+
+td i {
+    margin-left: 1rem
+}
+
+@media (max-width: 768px) {
+
+    .fx_1 {
+        flex-direction: column;
+    }
+
+    .botao_rendas,
+    .botao_despesas,
+    .botao_saldo {
+        max-width: 100%;
+    }
+
+    .barra_pesquisa {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .lupa {
+        width: 100%;
+    }
+
+    .container {
+        padding: 10px;
+    }
+
+
+
+}
+
+@media (max-width: 1000px) {
+
+
+
+    .lupa {
+        width: 100%;
+    }
+
+    .dropdown {
+        width: 48%;
+    }
+
+    .fx_1 {
+        flex-direction: column;
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+}

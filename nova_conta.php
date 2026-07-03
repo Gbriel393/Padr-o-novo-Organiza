@@ -7,9 +7,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = $_POST["senha"];
 
     $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email=?");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
 
+    $resultado = $stmt->get_result();
 
-
+    if ($resultado->num_rows > 0){
+        echo "Este email já está cadastrado.";
+    } else {
+        //cadastrar usuário
+    }
 
 }
 
@@ -56,9 +63,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span class="toggle-password" onclick="togglePassword()"><i class=" bi bi-eye"></i></span>
                     </div>
 
-                    <a type="submit" class="btn btn-gradient w-100">
+                    <button type="submit" class="btn btn-gradient w-100">
                         Criar
-                    </a>
+                    </button>
 
                 </form>
 

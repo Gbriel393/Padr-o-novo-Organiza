@@ -1,10 +1,10 @@
 <?php
 include("conn.php");
 
-if($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    $email = $_POST["email"];
-    $senha = $_POST["senha"];
+    $email = trim($_POST["email"]);
+    $senha = trim($_POST["senha"]);
 
     $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email=?");
     $stmt->bind_param("s", $email);
@@ -12,12 +12,21 @@ if($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $resultado = $stmt->get_result();
 
-    if ($resultado->num_rows > 0){
+    if ($resultado->num_rows > 0) {
         echo "Este email já está cadastrado.";
     } else {
-        //cadastrar usuário
-    }
+        $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
+        $stmt = $conn->prepare("INSERT INTO usuarios (email, senha, dt_criacao) VALUES (?, ?, NOW())");
+        $stmt->bind_param("ss", $email, $senha_hash);
+
+        if($stmt->execute()){
+            header("location:login.php");
+            exit();
+        } else {
+            echo "Erro ao criar a conta.";
+        }
+    }
 }
 
 

@@ -20,7 +20,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $stmt = $conn->prepare("INSERT INTO usuarios (email, senha, dt_criacao) VALUES (?, ?, NOW())");
         $stmt->bind_param("ss", $email, $senha_hash);
 
-        if($stmt->execute()){
+        if ($stmt->execute()) {
             header("location:login.php");
             exit();
         } else {
@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <!-- CSS -->
     <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="css/esqueciasenha_style.css" />
 </head>
 
 <body>
@@ -75,6 +76,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <button type="submit" class="btn btn-gradient w-100">
                         Criar
                     </button>
+
+                    <div class="back">
+                        <a href="./login.php">Voltar para login</a>
+                    </div>
 
                 </form>
 

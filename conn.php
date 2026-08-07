@@ -1,3 +1,3 @@
 <?php
-    $conn = new mysqli("localhost","root","","db_organiza");
+    $conn = new mysqli("localhost","root","","organiza_banco");
 ?>

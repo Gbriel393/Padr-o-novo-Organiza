@@ -1,10 +1,14 @@
+<?php
+include("conn.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>organiza</title>
+  <title>Novo Registro</title>
   <link rel="stylesheet" href="./CSS/novo.css">
   <link rel="stylesheet" href="./CSS/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
@@ -14,64 +18,7 @@
 
 <body>
 
-  <nav id="sidebar">
-    <ul>
-      <span class="logo">Organiza</span>
-
-      <li>
-        <a href="index.html">
-          <i class="fa-regular fa-house"></i>
-          <span>Início</span>
-        </a>
-      </li>
-
-      <li class="active">
-        <a href="./novo.html">
-          <i class="fa-solid fa-plus" style="color: rgb(0, 0, 0);"></i>
-          <span>Cadastro</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./listagem.html">
-          <i class="fa-solid fa-list-ul" style="color: rgb(0, 0, 0);"></i>
-          <span>Listagem</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./operacoes.html">
-          <i class="fa-solid fa-left-right" style="color: rgb(0, 0, 0);"></i>
-          <span>Operações</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./banco.html">
-          <i class="fa-solid fa-landmark" style="color: rgb(0, 0, 0);"></i>
-          <span>Banco</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./perfil.html">
-          <i class="fa-regular fa-user"></i>
-          <span>Perfil</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./adm.html">
-          <i class="fa-solid fa-users-gear" style="color: rgb(0, 0, 0);"></i>
-          <span>Admin</span>
-        </a>
-      </li>
-
-    </ul>
-
-
-
-  </nav>
+<?php include("./estrutura/sidebar_novo.php") ?>
 
   <main>
     <div class="container">

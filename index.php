@@ -1,3 +1,7 @@
+<?php
+include("conn.php");
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -13,68 +17,10 @@
 </head>
 
 <body>
-  <nav id="sidebar">
-    <ul>
-      <span class="logo">Organiza</span>
-
-      <li class="active">
-        <a href="index.html">
-          <i class="fa-regular fa-house"></i>
-          <span>Início</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./novo.html">
-          <i class="fa-solid fa-plus" style="color: rgb(0, 0, 0);"></i>
-          <span>Cadastro</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./listagem.html">
-          <i class="fa-solid fa-list-ul" style="color: rgb(0, 0, 0);"></i>
-          <span>Listagem</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./operacoes.html">
-          <i class="fa-solid fa-left-right" style="color: rgb(0, 0, 0);"></i>
-          <span>Operações</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./banco.html">
-          <i class="fa-solid fa-landmark" style="color: rgb(0, 0, 0);"></i>
-          <span>Banco</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./perfil.html">
-          <i class="fa-regular fa-user"></i>
-          <span>Perfil</span>
-        </a>
-      </li>
-
-      <li>
-        <a href="./adm.html">
-          <i class="fa-solid fa-users-gear" style="color: rgb(0, 0, 0);"></i>
-          <span>Admin</span>
-        </a>
-      </li>
-
-    </ul>
-
-
-
-  </nav>
+  <?php include("./estrutura/sidebar_index.php") ?>
 
 
   <main>
-
     <div class="topbar">
       <div class="topbar-left">
         <h1>Dashboard</h1>

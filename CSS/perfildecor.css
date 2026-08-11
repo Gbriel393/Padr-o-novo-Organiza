@@ -1,6 +1,10 @@
 body {
   background-color: #f5f6f8;
-  font-family: 'Segoe UI', sans-serif;
+}
+
+html {
+  font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5rem;
 }
 
 

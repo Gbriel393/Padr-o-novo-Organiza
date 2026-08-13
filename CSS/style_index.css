@@ -5,6 +5,8 @@
 }
 
 body {
+    display: grid;
+    grid-template-columns: auto 1fr;
     font-family: Arial, Helvetica, sans-serif;
     background: #f8f9fa;
     color: #07152b;
@@ -37,7 +39,7 @@ body {
    CONTAINER
 ========================= */
 
-.container {
+.dashboard-container {
     padding: 14px 24px 20px;
     max-width: 1450px;
     margin: auto;
@@ -241,18 +243,42 @@ body {
     overflow: visible;
 }
 
+
+/* linha */
+
 .line-chart path {
     fill: none;
+
     stroke: #e63c88;
+
     stroke-width: 2;
 }
 
-.line-chart circle {
+
+/* pontos */
+
+.chart-circle {
     fill: white;
+
     stroke: #e63c88;
+
     stroke-width: 2;
+
+    cursor: pointer;
+
+    transition:
+        r 0.15s ease,
+        stroke-width 0.15s ease;
 }
 
+
+/* ponto quando passa o mouse */
+
+.chart-circle:hover {
+    r: 6;
+
+    stroke-width: 2;
+}
 
 /* =========================
    MESES
@@ -295,13 +321,21 @@ body {
 
 .bar-item {
     height: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
-
     width: 50px;
+
+    position: relative;
+}
+
+.bar-item>span {
+    position: absolute;
+    bottom: -19px;
+
+    font-size: 12px;
+    color: #64748b;
 }
 
 .bar {
@@ -310,6 +344,8 @@ body {
     background: #7652e9;
 
     border-radius: 7px 7px 0 0;
+
+    transition: filter 0.15s ease;
 }
 
 .bar-item span {
@@ -399,6 +435,158 @@ body {
     color: #316ee8;
 }
 
+/* =========================
+   TOOLTIP DO GRÁFICO
+========================= */
+
+.tooltip {
+    position: absolute;
+
+    width: 118px;
+
+    background: white;
+
+    border: 1px solid #d9dfe5;
+
+    padding: 12px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform: translateY(4px);
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+
+    pointer-events: none;
+
+    z-index: 100;
+}
+
+
+.tooltip.active {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateY(0);
+}
+
+
+.tooltip strong {
+    font-size: 13px;
+
+    color: #334155;
+
+    font-weight: 500;
+}
+
+
+.tooltip span {
+    font-size: 13px;
+}
+
+
+.receita-text {
+    color: #42c9a5;
+}
+
+
+.despesa-text {
+    color: #e86b9e;
+}
+
+/* =================================
+   TOOLTIP DAS BARRAS
+================================= */
+
+.bar-container {
+    position: relative;
+
+    height: 190px;
+
+    display: flex;
+    align-items: flex-end;
+}
+
+
+/* tooltip */
+
+.bar-tooltip {
+    position: absolute;
+
+    left: 50%;
+    bottom: calc(100% + 10px);
+
+    transform: translateX(-50%) translateY(5px);
+
+    width: 110px;
+
+    background: white;
+
+    border: 1px solid #d9dfe5;
+
+    padding: 12px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.15s ease,
+        transform 0.15s ease;
+
+    pointer-events: none;
+
+    z-index: 100;
+}
+
+
+.bar-tooltip strong {
+    font-size: 13px;
+
+    color: #334155;
+
+    font-weight: 500;
+}
+
+
+.bar-tooltip span {
+    font-size: 13px;
+}
+
+
+/* hover */
+
+.bar-container:hover .bar-tooltip {
+    opacity: 1;
+
+    visibility: visible;
+
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* efeito na barra */
+
+.bar-container:hover .bar {
+    filter: brightness(1.08);
+}
 
 /* =========================
    RESPONSIVIDADE

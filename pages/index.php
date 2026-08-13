@@ -19,231 +19,276 @@ include("../conn.php");
 </head>
 
 <body>
+
   <?php include("../estrutura/sidebar_index.php") ?>
 
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main class="container dashboard-container">
 
-  <main>
-    <div class="topbar">
-      <div class="topbar-left">
-        <h1>Dashboard</h1>
-        <p>Bem-vindo de volta! Aqui está seu resumo financeiro</p>
+    <!-- TÍTULO -->
+    <section class="page-title">
+      <h1>Dashboard</h1>
+      <p>Visão geral das suas finanças</p>
+    </section>
+
+
+    <!-- CARDS -->
+    <section class="cards">
+
+      <div class="card saldo">
+        <div>
+          <span>Saldo Total</span>
+          <strong>R$ 15.420,50</strong>
+        </div>
+
+        <div class="card-icon">$</div>
       </div>
 
-      <div class="topbar-right">
-        <span>Última atualização</span>
-        <strong>24 de Março, 2026 - 14:32</strong>
+
+      <div class="card receitas">
+        <div>
+          <span>Receitas</span>
+          <strong>R$ 8.500,00</strong>
+        </div>
+
+        <div class="card-icon">↗</div>
       </div>
-    </div>
-
-    <body>
-
-      <!-- TOPO -->
-      <header class="topbar">
-        <div class="moon">☾</div>
-      </header>
 
 
-      <!-- CONTEÚDO PRINCIPAL -->
-      <main class="container">
+      <div class="card despesas">
+        <div>
+          <span>Despesas</span>
+          <strong>R$ 6.920,30</strong>
+        </div>
 
-        <!-- TÍTULO -->
-        <section class="page-title">
-          <h1>Dashboard</h1>
-          <p>Visão geral das suas finanças</p>
-        </section>
+        <div class="card-icon">⌁</div>
+      </div>
+
+    </section>
 
 
-        <!-- CARDS -->
-        <section class="cards">
+    <!-- GRÁFICOS -->
+    <section class="charts">
 
-          <div class="card saldo">
-            <div>
-              <span>Saldo Total</span>
-              <strong>R$ 15.420,50</strong>
-            </div>
+      <!-- GRÁFICO 1 -->
+      <div class="chart-box">
 
-            <div class="card-icon">$</div>
+        <h2>Receitas vs Despesas</h2>
+
+        <div class="chart">
+
+          <div class="y-axis">
+            <span>6000</span>
+            <span>4500</span>
+            <span>3000</span>
+            <span>1500</span>
+            <span>0</span>
           </div>
 
+          <div class="graph">
 
-          <div class="card receitas">
-            <div>
-              <span>Receitas</span>
-              <strong>R$ 8.500,00</strong>
-            </div>
+            <div class="horizontal-line line1"></div>
+            <div class="horizontal-line line2"></div>
+            <div class="horizontal-line line3"></div>
+            <div class="horizontal-line line4"></div>
+            <div class="horizontal-line line5"></div>
 
-            <div class="card-icon">↗</div>
-          </div>
+            <svg
+              id="lineChart"
+              class="line-chart"
+              viewBox="0 0 600 220"
+              preserveAspectRatio="none">
+            </svg>
 
+            <div id="lineTooltip" class="tooltip"></div>
 
-          <div class="card despesas">
-            <div>
-              <span>Despesas</span>
-              <strong>R$ 6.920,30</strong>
-            </div>
-
-            <div class="card-icon">⌁</div>
-          </div>
-
-        </section>
-
-
-        <!-- GRÁFICOS -->
-        <section class="charts">
-
-          <!-- GRÁFICO 1 -->
-          <div class="chart-box">
-
-            <h2>Receitas vs Despesas</h2>
-
-            <div class="chart">
-
-              <div class="y-axis">
-                <span>6000</span>
-                <span>4500</span>
-                <span>3000</span>
-                <span>1500</span>
-                <span>0</span>
-              </div>
-
-              <div class="graph">
-
-                <div class="horizontal-line line1"></div>
-                <div class="horizontal-line line2"></div>
-                <div class="horizontal-line line3"></div>
-                <div class="horizontal-line line4"></div>
-                <div class="horizontal-line line5"></div>
-
-                <svg
-                  class="line-chart"
-                  viewBox="0 0 600 250"
-                  preserveAspectRatio="none">
-
-                  <path
-                    d="
-                                M 0 70
-                                C 80 90, 100 105, 150 110
-                                C 200 115, 230 150, 270 145
-                                C 320 140, 340 105, 390 120
-                                C 450 140, 470 160, 510 150
-                                C 550 140, 570 130, 600 135
-                                " />
-
-                  <circle cx="0" cy="70" r="3"></circle>
-                  <circle cx="120" cy="105" r="3"></circle>
-                  <circle cx="270" cy="145" r="3"></circle>
-                  <circle cx="390" cy="120" r="3"></circle>
-                  <circle cx="510" cy="150" r="3"></circle>
-                  <circle cx="600" cy="135" r="3"></circle>
-
-                </svg>
-
-                <div class="months">
-                  <span>Jan</span>
-                  <span>Fev</span>
-                  <span>Mar</span>
-                  <span>Abr</span>
-                  <span>Mai</span>
-                  <span>Jun</span>
-                </div>
-
-              </div>
-
+            <div class="months">
+              <span>Jan</span>
+              <span>Fev</span>
+              <span>Mar</span>
+              <span>Abr</span>
+              <span>Mai</span>
+              <span>Jun</span>
             </div>
 
           </div>
 
+        </div>
 
-          <!-- GRÁFICO 2 -->
-          <div class="chart-box">
-
-            <h2>Comparativo Mensal</h2>
-
-            <div class="chart">
-
-              <div class="y-axis">
-                <span>6000</span>
-                <span>4500</span>
-                <span>3000</span>
-                <span>1500</span>
-                <span>0</span>
-              </div>
-
-              <div class="graph bar-graph">
-
-                <div class="horizontal-line line1"></div>
-                <div class="horizontal-line line2"></div>
-                <div class="horizontal-line line3"></div>
-                <div class="horizontal-line line4"></div>
-                <div class="horizontal-line line5"></div>
+      </div>
 
 
-                <div class="bars">
+      <!-- GRÁFICO 2 -->
+      <div class="chart-box">
 
-                  <div class="bar-item">
-                    <div class="bar" style="height: 145px;"></div>
-                    <span>Jan</span>
-                  </div>
+        <h2>Comparativo Mensal</h2>
 
-                  <div class="bar-item">
-                    <div class="bar" style="height: 110px;"></div>
-                    <span>Fev</span>
-                  </div>
+        <div class="chart">
 
-                  <div class="bar-item">
-                    <div class="bar" style="height: 73px;"></div>
-                    <span>Mar</span>
-                  </div>
+          <div class="y-axis">
+            <span>6000</span>
+            <span>4500</span>
+            <span>3000</span>
+            <span>1500</span>
+            <span>0</span>
+          </div>
 
-                  <div class="bar-item">
-                    <div class="bar" style="height: 101px;"></div>
-                    <span>Abr</span>
-                  </div>
+          <div class="graph bar-graph">
 
-                  <div class="bar-item">
-                    <div class="bar" style="height: 68px;"></div>
-                    <span>Mai</span>
-                  </div>
+            <div class="horizontal-line line1"></div>
+            <div class="horizontal-line line2"></div>
+            <div class="horizontal-line line3"></div>
+            <div class="horizontal-line line4"></div>
+            <div class="horizontal-line line5"></div>
 
-                  <div class="bar-item">
-                    <div class="bar" style="height: 85px;"></div>
-                    <span>Jun</span>
+
+            <div class="bars">
+
+              <div class="bar-item">
+
+                <div class="bar-container">
+
+                  <div class="bar" style="height: 145px;"></div>
+
+                  <div class="bar-tooltip">
+                    <strong>Jan</strong>
+                    <span class="receita-text">receitas : 4200</span>
+                    <span class="despesa-text">despesas : 1800</span>
                   </div>
 
                 </div>
 
+                <span>Jan</span>
+
+              </div>
+
+
+              <div class="bar-item">
+
+                <div class="bar-container">
+
+                  <div class="bar" style="height: 110px;"></div>
+
+                  <div class="bar-tooltip">
+                    <strong>Fev</strong>
+                    <span class="receita-text">receitas : 3000</span>
+                    <span class="despesa-text">despesas : 1398</span>
+                  </div>
+
+                </div>
+
+                <span>Fev</span>
+
+              </div>
+
+
+              <div class="bar-item">
+
+                <div class="bar-container">
+
+                  <div class="bar" style="height: 73px;"></div>
+
+                  <div class="bar-tooltip">
+                    <strong>Mar</strong>
+                    <span class="receita-text">receitas : 2000</span>
+                    <span class="despesa-text">despesas : 1500</span>
+                  </div>
+
+                </div>
+
+                <span>Mar</span>
+
+              </div>
+
+
+              <div class="bar-item">
+
+                <div class="bar-container">
+
+                  <div class="bar" style="height: 101px;"></div>
+
+                  <div class="bar-tooltip">
+                    <strong>Abr</strong>
+                    <span class="receita-text">receitas : 2780</span>
+                    <span class="despesa-text">despesas : 2100</span>
+                  </div>
+
+                </div>
+
+                <span>Abr</span>
+
+              </div>
+
+
+              <div class="bar-item">
+
+                <div class="bar-container">
+
+                  <div class="bar" style="height: 68px;"></div>
+
+                  <div class="bar-tooltip">
+                    <strong>Mai</strong>
+                    <span class="receita-text">receitas : 1900</span>
+                    <span class="despesa-text">despesas : 1400</span>
+                  </div>
+
+                </div>
+
+                <span>Mai</span>
+
+              </div>
+
+
+              <div class="bar-item">
+
+                <div class="bar-container">
+
+                  <div class="bar" style="height: 85px;"></div>
+
+                  <div class="bar-tooltip">
+                    <strong>Jun</strong>
+                    <span class="receita-text">receitas : 2400</span>
+                    <span class="despesa-text">despesas : 1800</span>
+                  </div>
+
+                </div>
+
+                <span>Jun</span>
+
               </div>
 
             </div>
 
           </div>
 
-        </section>
+        </div>
+
+      </div>
+
+    </section>
 
 
-        <!-- ALERTAS -->
-        <section class="alerts">
+    <!-- ALERTAS -->
+    <section class="alerts">
 
-          <h2>Alertas Financeiros</h2>
+      <h2>Alertas Financeiros</h2>
 
-          <div class="alert alert-warning">
-            <span class="alert-icon">!</span>
-            <span>Limite de gastos atingido em Alimentação</span>
-          </div>
+      <div class="alert alert-warning">
+        <span class="alert-icon">!</span>
+        <span>Limite de gastos atingido em Alimentação</span>
+      </div>
 
-          <div class="alert alert-info">
-            <span class="alert-icon">!</span>
-            <span>Fatura do cartão vence em 3 dias</span>
-          </div>
+      <div class="alert alert-info">
+        <span class="alert-icon">!</span>
+        <span>Fatura do cartão vence em 3 dias</span>
+      </div>
 
-        </section>
+    </section>
 
-      </main>
+  </main>
 
-    </body>
+</body>
 
 </html>
-</main>
-</body>
 
 </html>

@@ -13,6 +13,7 @@ include("../conn.php");
 
     <link rel="stylesheet" href="../CSS/navbar/navbar_index.css">
     <link rel="stylesheet" href="../CSS/novo.css">
+      <link rel="stylesheet" href="../CSS/style.css">
 
     <link
         rel="stylesheet"

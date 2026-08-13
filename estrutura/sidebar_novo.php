@@ -10,7 +10,7 @@
       </li>
 
       <li class="active">
-        <a href="./novo.php">
+        <a href="./novo_registro.php">
           <i class="fa-solid fa-plus" style="color: rgb(0, 0, 0);"></i>
           <span>Cadastro</span>
         </a>

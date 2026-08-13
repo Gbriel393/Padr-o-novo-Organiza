@@ -11,6 +11,7 @@ include("../conn.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/perfildecor.css">
+    <link rel="stylesheet" href="../CSS/navbar/navbar_index.css">
 
     <script src="app.js" defer></script>
 </head>

@@ -11,6 +11,7 @@ include("../conn.php");
     <title>Operações</title>
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/operacoes_style.css">
+    <link rel="stylesheet" href="../CSS/navbar/navbar_index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -20,8 +21,8 @@ include("../conn.php");
 
 <body>
 
-    <?php include("./estrutura/sidebar_operacoes.php") ?>
-    
+    <?php include("../estrutura/sidebar_operacoes.php") ?>
+
     <main>
         <h1>Operações</h1>
         <p class="subtitle">Ações rápidas e alertas financeiros</p>

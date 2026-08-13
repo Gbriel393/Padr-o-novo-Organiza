@@ -1,5 +1,5 @@
   <nav id="sidebar">
-    <ul class="p-0 m-0">
+    <ul>
       <span class="logo">Organiza</span>
 
       <li>
@@ -10,15 +10,15 @@
       </li>
 
       <li>
-        <a href="./novo.php">
-          <i class="fa-solid fa-plus"></i>
+        <a href="./novo_registro.php">
+          <i class="fa-solid fa-plus" style="color: rgb(0, 0, 0);"></i>
           <span>Cadastro</span>
         </a>
       </li>
 
       <li class="active">
         <a href="./listagem.php">
-          <i class="fa-solid fa-list-ul"></i>
+          <i class="fa-solid fa-list-ul" style="color: rgb(0, 0, 0);"></i>
           <span>Listagem</span>
         </a>
       </li>
@@ -50,6 +50,5 @@
           <span>Admin</span>
         </a>
       </li>
-
     </ul>
   </nav>

@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <body>
         <div class="container d-flex justify-content-center align-items-center min-vh-100">
             <div class="login-box text-center">
-                <img src="img/logo.png" alt="Logo.png" class="logo">
+                <img src="/img/logo.png" alt="Logo.png" class="logo">
 
                 <h3 class="title text-center">Organiza</h3>
                 <p class="subtitle text-center">Entre na sua conta</p>
@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a>
 
                     <div class="text-center mt-3">
-                        <a href="./esqueciasenha_index.html" class="forgot">Esqueceu a senha?</a>
+                        <a href="../pages/esqueciasenha_index.php" class="forgot">Esqueceu a senha?</a>
                     </div>
 
                     <div class="text-center mt-3">

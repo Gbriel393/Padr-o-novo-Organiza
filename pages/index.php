@@ -11,6 +11,7 @@ include("../conn.php");
   <title>Início</title>
   <link rel="stylesheet" href="../CSS/style.css">
   <link rel="stylesheet" href="../CSS/navbar/navbar_index.css">
+  <link rel="stylesheet" href="../CSS/style_index.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -34,63 +35,215 @@ include("../conn.php");
       </div>
     </div>
 
-    <div class="container">
-      <h2>Hello World</h2>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veritatis porro iure quaerat aliquam! Optio dolorum
-        in eum provident, facilis error repellendus excepturi enim dolor deleniti adipisci consectetur doloremque, unde
-        maiores odit sapiente. Atque ab necessitatibus laboriosam consequatur eius similique, ex dolorum eum eaque sequi
-        id veritatis voluptates perspiciatis, cupiditate pariatur.</p>
-    </div>
-    <div class="container">
-      <h2>Example Heading</h2>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic aliquid corrupti, tenetur fuga magnam
-        necessitatibus blanditiis quod sint excepturi laborum esse alias labore molestias adipisci, nostrum corporis ex
-        maiores quis dolore quidem asperiores odio ad fugit eos! Delectus modi quas ipsa deleniti consequuntur nihil,
-        hic in ipsum exercitationem blanditiis natus, ex, expedita eos. Excepturi quidem harum hic nam magnam deserunt
-        illum quis dolorum eos ipsum ut natus sapiente sit, officia obcaecati assumenda tempore molestias? In fugiat
-        iure laboriosam quasi, eum suscipit, harum autem saepe ut, soluta aspernatur ducimus eos magnam quidem officiis.
-        Laboriosam nemo explicabo delectus, et quos vero cum?</p>
-    </div>
-    <div class="container">
-      <h2>Lorem Ipsum</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore repudiandae labore veniam reprehenderit
-        voluptatum, laboriosam perferendis fuga, dolore quam quas nostrum totam sunt esse expedita. Vero distinctio
-        omnis accusantium. Quisquam ullam saepe cupiditate magni numquam totam perspiciatis error velit, debitis veniam
-        labore possimus aut sunt, reiciendis natus. Impedit provident voluptatum nulla fuga error a magnam, corporis
-        natus aperiam fugit quod perferendis quos quaerat, numquam sequi doloribus tenetur dolorem voluptate deleniti,
-        odio minus. Deserunt eius quasi odit voluptas unde voluptatum dicta cumque exercitationem soluta beatae porro
-        distinctio, delectus officiis, nobis officia ullam necessitatibus, rem natus corrupti nam! Est, nihil molestias
-        fugiat sed quae enim commodi expedita soluta tempore molestiae fuga adipisci rem esse voluptates quos, ut quasi
-        sunt ad a perspiciatis ducimus maxime animi. Adipisci officia doloribus magni alias maiores ab quo, eos mollitia
-        sint esse. Labore odio, architecto nihil quaerat soluta blanditiis impedit laudantium esse officiis dolorum
-        dolore libero, id sequi minima incidunt eum facilis itaque distinctio. Voluptas doloremque minus reiciendis ex
-        beatae laudantium cum sequi repellat blanditiis molestiae. Cumque, libero nulla! Sit, quisquam magni dolore
-        consectetur odio impedit adipisci voluptas ab, laboriosam autem nihil nam est ipsa excepturi obcaecati eos
-        neque! Omnis similique qui veritatis. Repellat magni dolorem, facilis eaque, harum molestias, delectus est
-        adipisci laudantium velit optio blanditiis debitis? Tenetur totam maiores animi officiis eligendi expedita nemo
-        corrupti distinctio. Cum libero soluta beatae doloribus sit, repellendus nobis vel obcaecati velit dolorem
-        voluptate magnam inventore quas pariatur quam reprehenderit molestiae hic sunt dicta illo amet quis magni
-        accusamus sequi? Vel quis, dolores iusto suscipit excepturi laboriosam repellat consectetur! Maiores deserunt,
-        pariatur nesciunt consequuntur recusandae minima assumenda consequatur inventore natus debitis illo velit
-        voluptatum necessitatibus qui aspernatur illum impedit magni dignissimos ea, molestias tempora corporis,
-        asperiores iusto possimus. Libero expedita aspernatur officia totam dolorum culpa, minus, alias adipisci
-        eligendi suscipit voluptates, magnam laudantium? Inventore cupiditate perspiciatis mollitia excepturi,
-        voluptatibus ducimus expedita provident. Dicta, odit. Odio, qui repudiandae! Maiores dignissimos, magnam
-        deleniti reprehenderit ex cum ea eveniet placeat quae, ad at perspiciatis nobis corporis doloribus voluptatem
-        nulla aliquam sunt accusamus facere quaerat necessitatibus ipsa! Nam quisquam dicta minima commodi nostrum.
-        Exercitationem necessitatibus optio cumque voluptate modi amet consequuntur similique ex inventore explicabo
-        doloremque esse sed sequi nemo rem, nostrum ullam. Totam repellat ut ipsa quisquam rem, nulla, suscipit debitis
-        atque earum quis voluptates quaerat exercitationem architecto repellendus placeat, tenetur incidunt distinctio
-        consectetur reiciendis minima officiis aliquam? Ipsum sequi hic officia iste a. Blanditiis, dicta! Eveniet
-        molestias ut natus odio fugiat cum necessitatibus, architecto, quo a quisquam autem porro explicabo ipsam,
-        nostrum deserunt possimus expedita eum est corporis quibusdam cupiditate! Fugiat, quaerat saepe. Harum modi
-        eligendi beatae alias fugiat. Nostrum cum nisi saepe dicta iste cupiditate, deserunt omnis, doloremque a
-        distinctio eum rem adipisci ab? Sapiente, dicta ipsam blanditiis earum omnis necessitatibus temporibus,
-        excepturi accusantium delectus quo quod iusto ad aliquam nemo ducimus ab nobis inventore sequi veritatis? Nulla,
-        dolorem. Voluptas, obcaecati non facilis repellendus ratione officiis veritatis, modi culpa rerum placeat
-        voluptatum quia ex? Officia quos dolorum repellat deserunt voluptas praesentium.</p>
-    </div>
-  </main>
+    <body>
+
+      <!-- TOPO -->
+      <header class="topbar">
+        <div class="moon">☾</div>
+      </header>
+
+
+      <!-- CONTEÚDO PRINCIPAL -->
+      <main class="container">
+
+        <!-- TÍTULO -->
+        <section class="page-title">
+          <h1>Dashboard</h1>
+          <p>Visão geral das suas finanças</p>
+        </section>
+
+
+        <!-- CARDS -->
+        <section class="cards">
+
+          <div class="card saldo">
+            <div>
+              <span>Saldo Total</span>
+              <strong>R$ 15.420,50</strong>
+            </div>
+
+            <div class="card-icon">$</div>
+          </div>
+
+
+          <div class="card receitas">
+            <div>
+              <span>Receitas</span>
+              <strong>R$ 8.500,00</strong>
+            </div>
+
+            <div class="card-icon">↗</div>
+          </div>
+
+
+          <div class="card despesas">
+            <div>
+              <span>Despesas</span>
+              <strong>R$ 6.920,30</strong>
+            </div>
+
+            <div class="card-icon">⌁</div>
+          </div>
+
+        </section>
+
+
+        <!-- GRÁFICOS -->
+        <section class="charts">
+
+          <!-- GRÁFICO 1 -->
+          <div class="chart-box">
+
+            <h2>Receitas vs Despesas</h2>
+
+            <div class="chart">
+
+              <div class="y-axis">
+                <span>6000</span>
+                <span>4500</span>
+                <span>3000</span>
+                <span>1500</span>
+                <span>0</span>
+              </div>
+
+              <div class="graph">
+
+                <div class="horizontal-line line1"></div>
+                <div class="horizontal-line line2"></div>
+                <div class="horizontal-line line3"></div>
+                <div class="horizontal-line line4"></div>
+                <div class="horizontal-line line5"></div>
+
+                <svg
+                  class="line-chart"
+                  viewBox="0 0 600 250"
+                  preserveAspectRatio="none">
+
+                  <path
+                    d="
+                                M 0 70
+                                C 80 90, 100 105, 150 110
+                                C 200 115, 230 150, 270 145
+                                C 320 140, 340 105, 390 120
+                                C 450 140, 470 160, 510 150
+                                C 550 140, 570 130, 600 135
+                                " />
+
+                  <circle cx="0" cy="70" r="3"></circle>
+                  <circle cx="120" cy="105" r="3"></circle>
+                  <circle cx="270" cy="145" r="3"></circle>
+                  <circle cx="390" cy="120" r="3"></circle>
+                  <circle cx="510" cy="150" r="3"></circle>
+                  <circle cx="600" cy="135" r="3"></circle>
+
+                </svg>
+
+                <div class="months">
+                  <span>Jan</span>
+                  <span>Fev</span>
+                  <span>Mar</span>
+                  <span>Abr</span>
+                  <span>Mai</span>
+                  <span>Jun</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- GRÁFICO 2 -->
+          <div class="chart-box">
+
+            <h2>Comparativo Mensal</h2>
+
+            <div class="chart">
+
+              <div class="y-axis">
+                <span>6000</span>
+                <span>4500</span>
+                <span>3000</span>
+                <span>1500</span>
+                <span>0</span>
+              </div>
+
+              <div class="graph bar-graph">
+
+                <div class="horizontal-line line1"></div>
+                <div class="horizontal-line line2"></div>
+                <div class="horizontal-line line3"></div>
+                <div class="horizontal-line line4"></div>
+                <div class="horizontal-line line5"></div>
+
+
+                <div class="bars">
+
+                  <div class="bar-item">
+                    <div class="bar" style="height: 145px;"></div>
+                    <span>Jan</span>
+                  </div>
+
+                  <div class="bar-item">
+                    <div class="bar" style="height: 110px;"></div>
+                    <span>Fev</span>
+                  </div>
+
+                  <div class="bar-item">
+                    <div class="bar" style="height: 73px;"></div>
+                    <span>Mar</span>
+                  </div>
+
+                  <div class="bar-item">
+                    <div class="bar" style="height: 101px;"></div>
+                    <span>Abr</span>
+                  </div>
+
+                  <div class="bar-item">
+                    <div class="bar" style="height: 68px;"></div>
+                    <span>Mai</span>
+                  </div>
+
+                  <div class="bar-item">
+                    <div class="bar" style="height: 85px;"></div>
+                    <span>Jun</span>
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </section>
+
+
+        <!-- ALERTAS -->
+        <section class="alerts">
+
+          <h2>Alertas Financeiros</h2>
+
+          <div class="alert alert-warning">
+            <span class="alert-icon">!</span>
+            <span>Limite de gastos atingido em Alimentação</span>
+          </div>
+
+          <div class="alert alert-info">
+            <span class="alert-icon">!</span>
+            <span>Fatura do cartão vence em 3 dias</span>
+          </div>
+
+        </section>
+
+      </main>
+
+    </body>
+
+</html>
+</main>
 </body>
 
 </html>

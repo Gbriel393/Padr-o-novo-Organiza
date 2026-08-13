@@ -11,25 +11,28 @@ include("../conn.php");
     <title>Admin</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    
+
     <link rel="stylesheet" href="../CSS/style.css">
-    
+
     <link rel="stylesheet" href="../CSS/adm.css">
-    
+
     <link rel="stylesheet" href="../CSS/navbar/navbar_index.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
+
     <script type="text/javascript" src="app.js" defer></script>
 </head>
 
 <body>
 
     <?php include("../estrutura/sidebar_painel_adm.php") ?>
-    <main>
-        <header class="header mb-4">
 
-            <div class="container d-flex justify-content-between mt-3">
+    <main>
+
+        <div class="container py-4">
+
+            <header class="header mb-4">
+
 
                 <div class="d-flex align-items-center">
                     <svg class="escudo" xmlns="http://www.w3.org/2000/svg"
@@ -46,11 +49,9 @@ include("../conn.php");
                 </div>
                 <span class="acessoadm">Acesso Admin</span>
 
-            </div>
 
-        </header>
+            </header>
 
-        <div class="container main-content d-flex flex-column gap-3">
 
             <div class="cards">
 
@@ -346,16 +347,8 @@ include("../conn.php");
             </div>
 
 
+
         </div>
-
-
-
-
-
-
-
-
-
 
 
         <script src="../js/script-paineladm.js" defer></script>

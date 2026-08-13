@@ -13,15 +13,14 @@ include("../conn.php");
 
     <link rel="stylesheet" href="../CSS/navbar/navbar_index.css">
     <link rel="stylesheet" href="../CSS/novo.css">
-      <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/style.css">
 
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-    >
+        referrerpolicy="no-referrer">
 </head>
 
 <body>
@@ -30,48 +29,52 @@ include("../conn.php");
 
     <main class="content">
 
-        <div class="card">
+        <div class="container py-4">
 
-            <h1>Novo Registro</h1>
+            <div class="card">
 
-            <p>Adicione uma nova transação</p>
+                <h1>Novo Registro</h1>
 
-            <div class="tipo">
-                <button type="button" class="btn tipo-btn active">
-                    Entrada
-                </button>
+                <p>Adicione uma nova transação</p>
 
-                <button type="button" class="btn tipo-btn">
-                    Saída
-                </button>
+                <div class="tipo">
+                    <button type="button" class="btn tipo-btn active">
+                        Entrada
+                    </button>
+
+                    <button type="button" class="btn tipo-btn">
+                        Saída
+                    </button>
+                </div>
+
+                <form id="form">
+
+                    <input
+                        type="number"
+                        placeholder="Valor"
+                        required>
+
+                    <select required>
+                        <option value="">Selecione uma categoria</option>
+                        <option>Alimentação</option>
+                        <option>Transporte</option>
+                        <option>Lazer</option>
+                    </select>
+
+                    <input type="date" required>
+
+                    <textarea placeholder="Descrição (opcional)"></textarea>
+
+                    <button type="submit" class="salvar">
+                        Salvar Transação
+                    </button>
+
+                </form>
+
             </div>
 
-            <form id="form">
-
-                <input
-                    type="number"
-                    placeholder="Valor"
-                    required
-                >
-
-                <select required>
-                    <option value="">Selecione uma categoria</option>
-                    <option>Alimentação</option>
-                    <option>Transporte</option>
-                    <option>Lazer</option>
-                </select>
-
-                <input type="date" required>
-
-                <textarea placeholder="Descrição (opcional)"></textarea>
-
-                <button type="submit" class="salvar">
-                    Salvar Transação
-                </button>
-
-            </form>
-
         </div>
+
 
     </main>
 

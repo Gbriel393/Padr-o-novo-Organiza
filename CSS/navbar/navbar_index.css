@@ -132,58 +132,107 @@
 
 @media (max-width: 800px) {
 
+    .container {
+        border: none;
+    }
+
     #sidebar {
         position: fixed;
 
+        left: 0;
+        right: 0;
         bottom: 0;
-        top: unset;
+        top: auto;
 
         width: 100%;
-        height: 65px;
+        height: 70px;
 
         z-index: 1000;
+
+        padding: 0;
+
+        border-radius: 0;
     }
 
-    /* Esconde logo no mobile */
+    /* Esconde o logo */
     #sidebar>ul>li:first-child {
         display: none;
     }
 
-    /* Navbar horizontal */
+    /* Barra horizontal */
     #sidebar ul {
-        list-style: none;
-
         display: flex;
-        justify-content: space-between;
-        align-items: center;
 
+        flex-direction: row;
+
+        justify-content: flex-start;
+        align-items: stretch;
+
+        width: 100%;
+        height: 100%;
+
+        margin: 0;
+        padding: 0;
+
+        gap: 0;
+
+        overflow-x: auto;
+        overflow-y: hidden;
+
+        scrollbar-width: none;
+    }
+
+    /* Chrome / Edge / Safari */
+    #sidebar ul::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Cada item */
+    #sidebar li {
+        flex: 0 0 90px;
         height: 100%;
     }
 
-    #sidebar li {
-        flex: 1;
-    }
+    /* Links */
+    #sidebar a,
+    #sidebar .dropdown-btn {
 
-    /* Links no mobile */
-    #sidebar a {
         display: flex;
+
         flex-direction: column;
 
         align-items: center;
         justify-content: center;
 
+        width: 100%;
+        height: 100%;
+
+        padding: 5px;
+
         gap: 4px;
 
+        border-radius: 0;
+
         font-size: 11px;
-        height: 100%;
+
+        white-space: nowrap;
     }
 
-    #sidebar a span {
+    /* Texto */
+    #sidebar a span,
+    #sidebar .dropdown-btn span {
+        flex-grow: 0;
+
         font-size: 10px;
+
+        white-space: nowrap;
     }
 
+    /* Ícones */
     #sidebar svg,
     #sidebar i {
         font-size: 18px;
+
+        flex-shrink: 0;
     }
 }

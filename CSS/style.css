@@ -82,8 +82,6 @@ main p {
 .container {
     border: 1px solid var(--line-clr);
     border-radius: 1em;
-
-    margin-bottom: 20px;
     padding: min(3em, 15%);
 }
 

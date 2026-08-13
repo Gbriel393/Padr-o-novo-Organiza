@@ -229,7 +229,13 @@ td {
     box-shadow: none !important;
 }
 
-.container {
+.container {}
+
+.fx_1 {
+    border: none;
+}
+
+.container_pg {
     border: none;
 }
 

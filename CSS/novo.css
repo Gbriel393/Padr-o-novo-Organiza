@@ -13,13 +13,20 @@ html {
     line-height: 1.5rem;
 }
 
-.content {
+/* .content {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-start;
 
     padding: 40px 20px;
+    
+} */
+
+.container {
+    display: flex;
+    justify-content: center;
+    margin: 0 !important;
 }
 
 

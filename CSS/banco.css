@@ -90,3 +90,15 @@ ul {
     gap: 5px;
   }
 }
+
+html,
+body {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+.sidebar,
+.sidebar *,
+.container,
+.container * {
+  font-family: 'Poppins', sans-serif !important;
+}

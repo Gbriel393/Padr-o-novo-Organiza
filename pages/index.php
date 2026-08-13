@@ -23,7 +23,7 @@ include("../conn.php");
   <?php include("../estrutura/sidebar_index.php") ?>
 
   <!-- CONTEÚDO PRINCIPAL -->
-  <main class="container dashboard-container">
+  <main class="dashboard-container">
 
     <!-- TÍTULO -->
     <section class="page-title">

@@ -7,7 +7,6 @@
 body {
     display: grid;
     grid-template-columns: auto 1fr;
-    font-family: Arial, Helvetica, sans-serif;
     background: #f8f9fa;
     color: #07152b;
 }
@@ -41,8 +40,9 @@ body {
 
 .dashboard-container {
     padding: 14px 24px 20px;
-    max-width: 1450px;
-    margin: auto;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0;
 }
 
 

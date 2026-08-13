@@ -7,6 +7,7 @@
     height: 100vh;
     width: 250px;
     padding: 5px 1em;
+    font-size: 16px;
 
     background-color: var(--base-clr);
     border-right: 1px solid var(--line-clr);
@@ -25,7 +26,7 @@
 }
 
 /* Primeiro item - logo */
-#sidebar > ul > li:first-child {
+#sidebar>ul>li:first-child {
     display: flex;
     list-style: none;
 }
@@ -56,6 +57,7 @@
 #sidebar .logo {
     border-radius: 0.5em;
     padding: 0.85em;
+    font-size: 16px;
 
     text-decoration: none;
     color: var(--text-clr);
@@ -102,7 +104,7 @@
     transition: 300ms ease-in-out;
 }
 
-#sidebar .sub-menu > div {
+#sidebar .sub-menu>div {
     overflow: hidden;
 }
 
@@ -141,7 +143,7 @@
     }
 
     /* Esconde logo no mobile */
-    #sidebar > ul > li:first-child {
+    #sidebar>ul>li:first-child {
         display: none;
     }
 

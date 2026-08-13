@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span class="toggle-password" onclick="togglePassword()"><i class=" bi bi-eye"></i></span>
                     </div>
 
-                    <a href="./index.html" class="btn btn-gradient w-100">
+                    <a href="./index.php" class="btn btn-gradient w-100">
                         Entrar
                     </a>
 

@@ -1,0 +1,165 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="./CSS/style.css">
+    <link rel="stylesheet" href="./CSS/perfildecor.css">
+
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+    <nav id="sidebar">
+        <ul>
+            <span class="logo">Organiza</span>
+
+            <li>
+                <a href="index.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px"
+                        fill="#e8eaed">
+                        <path
+                            d="M240-200h120v-200q0-17 11.5-28.5T400-440h160q17 0 28.5 11.5T600-400v200h120v-360L480-740 240-560v360Zm-80 0v-360q0-19 8.5-36t23.5-28l240-180q21-16 48-16t48 16l240 180q15 11 23.5 28t8.5 36v360q0 33-23.5 56.5T720-120H560q-17 0-28.5-11.5T520-160v-200h-80v200q0 17-11.5 28.5T400-120H240q-33 0-56.5-23.5T160-200Zm320-270Z" />
+                    </svg>
+                    <span>Início</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="./novo.html">
+                    <i class="fa-solid fa-plus" style="color: rgb(0, 0, 0);"></i>
+                    <span>Cadastro</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="./listagem.html">
+                    <i class="fa-solid fa-list-ul" style="color: rgb(0, 0, 0);"></i>
+                    <span>Listagem</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="./operacoes.html">
+                    <i class="fa-solid fa-left-right"></i>
+                    <span>Operações</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="./banco.html">
+                    <i class="fa-solid fa-landmark"></i>
+                    <span>Banco</span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="./perfil.html">
+                    <i class="fa-regular fa-user"></i>
+                    <span>Perfil</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="./adm.html">
+                    <i class="fa-solid fa-users-gear" style="color: rgb(0, 0, 0);"></i>
+                    <span>Admin</span>
+                </a>
+            </li>
+
+        </ul>
+    </nav>
+
+    <main>
+        <div class="container py-5">
+
+
+            <div class="card perfil-card mx-auto shadow-sm">
+                <div class="card-body">
+
+                    <h5 class="fw-bold">Perfil do Usuário</h5>
+                    <p class="text-muted small">Gerencie suas informações pessoais</p>
+
+
+                    <div class="d-flex align-items-center mb-4">
+                        <div class="avatar">
+                            <i class="bi bi-person"></i>
+                        </div>
+                        <div class="ms-3">
+                            <h6 class="mb-0">Usuário Demo</h6>
+                            <small class="text-muted">s@gmail.com</small>
+                        </div>
+                    </div>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label class="form-label">Nome completo</label>
+                            <input type="text" class="form-control" value="Usuário Demo">
+                        </div>
+
+                        <div class="col-md-6">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" value="s@gmail.com">
+                        </div>
+                    </div>
+
+
+                    <div class="mt-4">
+                        <h6 class="fw-semibold">
+                            <i class="bi bi-bell me-2"></i> Preferências de Notificação
+                        </h6>
+
+                        <div class="notif-item">
+                            <span>Notificações push</span>
+                            <input class="form-check-input" type="checkbox" checked>
+                        </div>
+
+                        <div class="notif-item">
+                            <span>Alertas por email</span>
+                            <input class="form-check-input" type="checkbox">
+                        </div>
+                    </div>
+
+                    <div class="mt-4">
+                        <button class="btn btn-gradient w-100">Salvar Alterações</button>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="card perfil-card mx-auto shadow-sm mt-4 mb-4">
+                <div class="card-body">
+                    <h6 class="fw-semibold mb-3">
+                        <i class="bi bi-lock me-2"></i> Segurança
+                    </h6>
+
+                    <button class="btn btn-outline-secondary w-100 mb-3">
+                        Alterar Senha
+                    </button>
+
+                    <button class="btn btn-outline-secondary w-100">
+                        Autenticação de Dois Fatores
+                    </button>
+                </div>
+            </div>
+            <div class="card perfil-card mx-auto shadow-sm">
+                <div class="card-body">
+
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <div>
+                            <h5 class="fw-bold mb-0">Perfil do Usuário</h5>
+                            <p class="text-muted small">Gerencie suas informações pessoais</p>
+                        </div>
+
+                        <a href="./login.html" class="btn btn-logout">
+                            Sair
+                        </a>
+
+                    </div>
+                </div>
+
+    </main>
+</body>
+
+</html>

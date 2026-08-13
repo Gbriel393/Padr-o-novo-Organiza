@@ -11,7 +11,7 @@
 }
 
 html {
-    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Poppins', sans-serif;
     line-height: 1.5rem;
 }
 
@@ -287,4 +287,39 @@ td i {
         gap: 20px;
         flex-wrap: wrap;
     }
+}
+
+/* ==========================================
+   CORREÇÃO DE FONTE - ORGANIZA
+========================================== */
+
+:root {
+    --bs-body-font-family: 'Poppins', sans-serif !important;
+}
+
+html,
+body {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
+/* Sidebar inteira */
+
+.sidebar,
+.sidebar * {
+    font-family: 'Poppins', sans-serif !important;
+}
+
+
+/* Conteúdo inteiro */
+
+.container,
+.container *,
+.card,
+.card *,
+.chart-box,
+.chart-box *,
+.alerts,
+.alerts * {
+    font-family: 'Poppins', sans-serif !important;
 }

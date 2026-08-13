@@ -8,6 +8,11 @@
    CONTEÚDO DA PÁGINA NOVO
 ================================ */
 
+html {
+    font-family: Poppins, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5rem;
+}
+
 .content {
     flex: 1;
     display: flex;

@@ -29,7 +29,7 @@ include("../conn.php");
 
   <main>
 
-    <div class="container py-4">
+    <div class="container container_pg  py-4">
 
       <div class="fx_1 d-flex justify-content-between container p-0 m-0 mt-4 gap-3">
 
@@ -62,7 +62,7 @@ include("../conn.php");
       </div>
 
 
-      <div class="container container_pg p-0">
+      <div class="container container_pg_2 p-0">
         <div class="barra_pesquisa d-flex justify-content-between p-3 my-3">
           <div class="lupa d-flex">
             <i class="fa-solid fa-magnifying-glass" id="lupa_icone" style="color: rgb(77, 77, 77);"></i>

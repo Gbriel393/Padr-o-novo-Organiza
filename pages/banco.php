@@ -34,7 +34,7 @@ include("../conn.php");
     <?php include("../estrutura/sidebar_banco.php"); ?>
 
     <main>
-        <div class="container py-4">
+        <div class="container container_pg py-4">
 
             <div class="d-flex justify-content-between align-items-center mb-4 flex-wrap gap-3">
                 <div>

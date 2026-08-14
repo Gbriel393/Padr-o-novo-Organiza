@@ -152,4 +152,10 @@ textarea {
         padding-bottom: 85px;
     }
 
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
 }

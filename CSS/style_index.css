@@ -11,8 +11,8 @@
 }
 
 body {
-    display: grid;
-    grid-template-columns: auto 1fr;
+    /* display: grid;
+    grid-template-columns: auto 1fr; */
     background: #f8f9fa;
     color: #07152b;
 }

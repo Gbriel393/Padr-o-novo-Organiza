@@ -25,7 +25,7 @@ include("../conn.php");
   <!-- CONTEÚDO PRINCIPAL -->
   <main>
 
-    <div class="container py-0">
+    <div class="container container_pg  py-0">
 
       <!-- TÍTULO -->
       <section class="page-title">

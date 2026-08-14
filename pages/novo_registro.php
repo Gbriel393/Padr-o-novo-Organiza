@@ -29,7 +29,7 @@ include("../conn.php");
 
     <main class="content">
 
-        <div class="container py-4">
+        <div class="container container_pg  py-4">
 
             <div class="card">
 

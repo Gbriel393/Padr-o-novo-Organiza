@@ -137,6 +137,10 @@ main p {
 ================================ */
 
 @media (max-width: 800px) {
+    
+    .container_pg {
+        padding: 0;
+    }
 
     body {
         grid-template-columns: 1fr;

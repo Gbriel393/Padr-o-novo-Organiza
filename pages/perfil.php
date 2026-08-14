@@ -21,7 +21,7 @@ include("../conn.php");
     <?php include("../estrutura/sidebar_perfil.php") ?>
 
     <main>
-        <div class="container py-5">
+        <div class="container container_pg  py-5">
 
 
             <div class="card perfil-card mx-auto shadow-sm">

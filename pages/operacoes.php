@@ -25,7 +25,7 @@ include("../conn.php");
 
     <main>
 
-        <div class="container py-4">
+        <div class="container container_pg  py-4">
             
             <h1>Operações</h1>
             <p class="subtitle">Ações rápidas e alertas financeiros</p>

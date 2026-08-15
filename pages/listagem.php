@@ -33,30 +33,38 @@ include("../conn.php");
 
       <div class="fx_1 d-flex justify-content-between container p-0 m-0 mt-4 gap-3">
 
+
+
         <div class="botao_rendas d-flex flex-column justify-content-center p-3">
-          <div class="t d-flex">
-            <p class="mb-4"> Total de Rendas</p>
-            <i class="fa-solid fa-arrow-trend-up" style="color: #0ff;"></i>
+          <div class="d-flex">
+            <span>Lucro</span>
+            <div class="card-icon ps-2">$</div>
           </div>
-          <p class="valor mb-1">R$ 5.450,00</p>
+          <spam>R$ 15.420,50</spam>
           <p class="mb-0 porcentagem">+12% em relação ao mês anterior</p>
         </div>
+
+
+
 
         <div class="botao_despesas d-flex flex-column justify-content-center p-3">
-          <div class="t d-flex">
-            <p class="mb-4"> Total de Despesas</p>
-            <i class="fa-solid fa-arrow-trend-down" style="color: rgb(255, 0, 89);"></i>
+          <div class="d-flex">
+            <span>Despesas</span>
+            <div class="card-icon">↗</div>
           </div>
-          <p class="valor_d mb-1">R$ 5.450,00</p>
+          <spam>R$ 8.500,00</spam>
           <p class="mb-0 porcentagem">+12% em relação ao mês anterior</p>
         </div>
 
+
+
+
         <div class="botao_saldo d-flex flex-column justify-content-center p-3">
-          <div class="t d-flex">
-            <p class="mb-4"> Saldo Atual</p>
-            <i class="fa-solid fa-brazilian-real-sign" style="color: green;"></i>
+          <div class="d-flex">
+            <span>Saldo Total</span>
           </div>
-          <p class="valor_s mb-1">R$ 5.450,00</p>
+
+          <spam>R$ 6.920,30</spam>
           <p class="mb-0 porcentagem">+12% em relação ao mês anterior</p>
         </div>
       </div>

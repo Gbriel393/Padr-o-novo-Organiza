@@ -354,14 +354,6 @@ body {
     transition: filter 0.15s ease;
 }
 
-.bar-item span {
-    position: absolute;
-    bottom: -19px;
-
-    font-size: 12px;
-    color: #64748b;
-}
-
 
 /* =========================
    ALERTAS

@@ -54,7 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <body>
         <div class="container d-flex justify-content-center align-items-center min-vh-100">
             <div class="login-box text-center">
-                <img src="img/logo.png" alt="Logo.png" class="logo">
+                <img src="../img/logo.png" alt="Logo.png" class="logo">
 
                 <h3 class="title text-center">Organiza</h3>
                 <p class="subtitle text-center">Crie sua conta</p>

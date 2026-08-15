@@ -65,7 +65,12 @@ html {
   transition: 0.3s;
 }
 
+.btn {
+  border: none;
+}
+
 .btn-gradient:hover {
+  color: white;
   opacity: 0.9;
   transform: scale(1.02);
 }

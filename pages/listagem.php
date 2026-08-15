@@ -73,7 +73,6 @@ include("../conn.php");
       <div class="container container_pg_2 p-0">
         <div class="barra_pesquisa d-flex justify-content-between p-3 my-3">
           <div class="lupa d-flex">
-            <i class="fa-solid fa-magnifying-glass" id="lupa_icone" style="color: rgb(77, 77, 77);"></i>
             <input type="text" class="pesquisa" placeholder="Pesquisar por categoria ou status...">
           </div>
 

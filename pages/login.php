@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["usuario"] = $linha["usuario"];
         header("location:index.php");
     } else {
-        echo ('Nada Valido');
+        echo ('Usuario e senha não são validos');
     }
 }
 ?>
@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <body>
         <div class="container d-flex justify-content-center align-items-center min-vh-100">
             <div class="login-box text-center">
-                <img src="/img/logo.png" alt="Logo.png" class="logo">
+                <img src="../img/logo.png" alt="Logo.png" class="logo">
 
                 <h3 class="title text-center">Organiza</h3>
                 <p class="subtitle text-center">Entre na sua conta</p>
@@ -60,9 +60,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <span class="toggle-password" onclick="togglePassword()"><i class=" bi bi-eye"></i></span>
                     </div>
 
-                    <a href="./index.php" class="btn btn-gradient w-100">
+                    <div class="btn p-0">
+                        <button type="submit" name="btn" class="btn btn-gradient w-100">Entrar</button>
+                    </div>
+
+                    <!-- <a href="./index.php" class="btn btn-gradient w-100">
                         Entrar
-                    </a>
+                    </a> -->
 
                     <div class="text-center mt-3">
                         <a href="../pages/esqueciasenha_index.php" class="forgot">Esqueceu a senha?</a>

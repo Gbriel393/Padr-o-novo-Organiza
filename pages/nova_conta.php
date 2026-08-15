@@ -1,32 +1,42 @@
 <?php
 include("../conn.php");
 
+// if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+//     $email = trim($_POST["email"]);
+//     $senha = trim($_POST["senha"]);
+
+//     $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email=?");
+//     $stmt->bind_param("s", $email);
+//     $stmt->execute();
+
+//     $resultado = $stmt->get_result();
+
+//     if ($resultado->num_rows > 0) {
+//         echo "Este email já está cadastrado.";
+//     } else {
+//         $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
+
+//         $stmt = $conn->prepare("INSERT INTO usuarios (email, senha, dt_criacao) VALUES (?, ?, NOW())");
+//         $stmt->bind_param("ss", $email, $senha_hash);
+
+//         if ($stmt->execute()) {
+//             header("location:login.php");
+//             exit();
+//         } else {
+//             echo "Erro ao criar a conta.";
+//         }
+//     }
+// }
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = $_POST["email"] ?? null;
+    $senha = $_POST["senha"] ?? null;
+    $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $email = trim($_POST["email"]);
-    $senha = trim($_POST["senha"]);
-
-    $stmt = $conn->prepare("SELECT * FROM usuarios WHERE email=?");
-    $stmt->bind_param("s", $email);
-    $stmt->execute();
-
-    $resultado = $stmt->get_result();
-
-    if ($resultado->num_rows > 0) {
-        echo "Este email já está cadastrado.";
-    } else {
-        $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
-
-        $stmt = $conn->prepare("INSERT INTO usuarios (email, senha, dt_criacao) VALUES (?, ?, NOW())");
-        $stmt->bind_param("ss", $email, $senha_hash);
-
-        if ($stmt->execute()) {
-            header("location:login.php");
-            exit();
-        } else {
-            echo "Erro ao criar a conta.";
-        }
-    }
+    $stmt = $conn->prepare("INSERT INTO usuarios(email,senha) VALUE(?,?)");
+    $stmt->bind_param("ss", $email,$senha_hash);
+    if ()
 }
 
 
@@ -56,8 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="login-box text-center">
                 <img src="../img/logo.png" alt="Logo.png" class="logo">
 
-                <h3 class="title text-center">Organiza</h3>
-                <p class="subtitle text-center">Crie sua conta</p>
+                <h3 class="title text-center">Crie sua conta</h3>
 
                 <form id="loginForm" method="POST">
                     <div class="mb-3">

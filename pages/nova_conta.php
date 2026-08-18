@@ -36,7 +36,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt = $conn->prepare("INSERT INTO usuarios(email,senha) VALUE(?,?)");
     $stmt->bind_param("ss", $email,$senha_hash);
-    if ()
+    if ($stmt->execute()) {
+        header("location:login.php?cadastro=ok");
+    } else {
+        header("location:login.php?cadastro=erro");
+    }
 }
 
 

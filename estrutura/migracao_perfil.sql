@@ -1,0 +1,3 @@
+ALTER TABLE usuarios
+    ADD COLUMN notificacoes_push TINYINT(1) NOT NULL DEFAULT 1,
+    ADD COLUMN alertas_email TINYINT(1) NOT NULL DEFAULT 0;

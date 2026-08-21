@@ -271,6 +271,12 @@ td i {
     margin-left: 1rem
 }
 
+.filtro-select { width: auto; min-width: 190px; }
+.form-excluir { display: inline; }
+.acao-excluir { background: transparent; border: 0; color: rgb(77, 77, 77); padding: 6px; }
+.acao-excluir i { margin-left: 0; }
+.acao-excluir:hover { color: #dc3545; }
+
 @media (max-width: 768px) {
 
     .fx_1 {

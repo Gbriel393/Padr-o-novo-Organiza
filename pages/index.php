@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../conn.php");
 ?>
 
@@ -29,7 +30,7 @@ include("../conn.php");
 
       <!-- TÍTULO -->
       <section class="page-title">
-        <h1>Dashboard</h1>
+        <h1>Olá, <?= htmlspecialchars($_SESSION["nome"])?>, seja bem vindo!</h1>
         <p>Visão geral das suas finanças</p>
       </section>
 

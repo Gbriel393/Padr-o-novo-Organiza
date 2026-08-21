@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../conn.php");
 
 // if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -30,16 +31,33 @@ include("../conn.php");
 // }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $email = $_POST["email"] ?? null;
-    $senha = $_POST["senha"] ?? null;
+    $nome = trim($_POST["nome"] ?? null);
+    $email = trim($_POST["email"] ?? null);
+    $senha = trim($_POST["senha"] ?? null);
     $senha_hash = password_hash($senha, PASSWORD_DEFAULT);
 
-    $stmt = $conn->prepare("INSERT INTO usuarios(email,senha) VALUE(?,?)");
-    $stmt->bind_param("ss", $email,$senha_hash);
+    $verifica = $conn->prepare("SELECT id FROM usuarios WHERE email = ?");
+    $verifica->bind_param("s", $email);
+    $verifica->execute();
+
+    $resultado = $verifica->get_result();
+
+    if ($resultado->num_rows > 0) {
+        echo "<script>
+                alert('email já cadastrado!');
+                window.location.href = 'nova_conta.php';
+              </script>";
+              exit;
+    }
+
+    $stmt = $conn->prepare("INSERT INTO usuarios(nome,email,senha) VALUE(?,?,?)");
+    $stmt->bind_param("sss", $nome, $email, $senha_hash);
     if ($stmt->execute()) {
         header("location:login.php?cadastro=ok");
+        exit;
     } else {
         header("location:login.php?cadastro=erro");
+        exit;
     }
 }
 
@@ -73,6 +91,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h3 class="title text-center">Crie sua conta</h3>
 
                 <form id="loginForm" method="POST">
+
+                    <div class="mb-3">
+                        <label class="form-label">Nome</label>
+                        <input type="text" class="form-control custom-input" id="nome" name="nome"
+                            placeholder="Seu nome" required>
+                    </div>
+
                     <div class="mb-3">
                         <label class="form-label">Email</label>
                         <input type="email" class="form-control custom-input" id="email" name="email"

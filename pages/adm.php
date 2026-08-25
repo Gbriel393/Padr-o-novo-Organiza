@@ -1,5 +1,22 @@
 <?php
+session_start();
 include("../conn.php");
+
+if (!isset($_SESSION["usuario_id"])) {
+    header("location:login.php");
+    exit();
+}
+
+if ($_SESSION["tipo"] !== "admin") {
+    header("location:login.php");
+    exit();
+}
+
+$sql = "SELECT id, nome, email, tipo, data_cadastro
+        FROM usuarios
+        ORDER BY data_cadastro DESC";
+
+        $resultado = $conn->query($sql);
 ?>
 
 <!DOCTYPE html>
@@ -190,56 +207,16 @@ include("../conn.php");
                         </tr>
                     </thead>
                     <tbody>
+                        <?php while ($usuario = $resultado->fetch_assoc()): ?>
                         <tr>
-                            <th scope="row">Gabriel Rodrigues</th>
-                            <td>gabriel@gmail.com</td>
-                            <td><button type="button" class="btn btn-outline-success">Ativo</button></td>
-                            <td>30/11/2025</td>
+                            <th scope="row"><?= htmlspecialchars(($usuario["nome"])) ?></th>
+                            <td><?= htmlspecialchars($usuario["email"]) ?></td>
+                            <td><button type="button" class="btn btn-outline-success"><?= htmlspecialchars($usuario["tipo"]) ?></button></td>
+                            <td><?= htmlspecialchars($usuario["data_cadastro"]) ?></td>
                             <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
 
                         </tr>
-                        <tr>
-                            <th scope="row">Sarah Beatriz</th>
-                            <td>sarah@gmail.com</td>
-                            <td><button type="button" class="btn btn-outline-success">Ativo</button></td>
-                            <td>04/12/2025</td>
-                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">Rhaquel Santos</th>
-                            <td>rahquel@gmail.com</td>
-                            <td><button type="button" class="btn btn-outline-success">Ativo</button></td>
-                            <td>09/12/2025</td>
-                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">Andrei</th>
-                            <td>andrei@gmail.com</td>
-                            <td><button type="button" class="btn btn-outline-success">Ativo</button></td>
-                            <td>30/11/2025</td>
-                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
-
-                        </tr>
-                        <tr>
-                            <th scope="row">Wandinho</th>
-                            <td>wanderson@gmail.com</td>
-                            <td><button type="button" class="btn btn-outline-warning">Pendente</button></td>
-                            <td>04/12/2025</td>
-                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
-
-                        </tr>
-
-                        <tr>
-                            <th scope="row">Wanderson</th>
-                            <td>wandinhoprofessor@gmail.com</td>
-                            <td><button type="button" class="btn btn-outline-danger">Suspenso</button></td>
-                            <td>04/12/2025</td>
-                            <td><a style="text-decoration: none;" href="#">Gerenciar</a></td>
-
-                        </tr>
-
+                        <?php endwhile; ?>
                     </tbody>
                 </table>
 

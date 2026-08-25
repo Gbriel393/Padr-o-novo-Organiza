@@ -9,7 +9,7 @@ include("../conn.php");
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Início</title>
+  <title>Organiza</title>
   <link rel="stylesheet" href="../CSS/style.css">
   <link rel="stylesheet" href="../CSS/navbar/navbar_index.css">
   <link rel="stylesheet" href="../CSS/style_index.css">

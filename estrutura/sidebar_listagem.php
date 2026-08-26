@@ -45,10 +45,12 @@
       </li>
 
       <li>
-        <a href="./adm.php">
-          <i class="fa-solid fa-users-gear" style="color: rgb(0, 0, 0);"></i>
-          <span>Admin</span>
-        </a>
+        <?php if (isset($_SESSION["tipo"]) && $_SESSION["tipo"] == "admin"): ?>
+          <a href="./adm.php">
+            <i class="fa-solid fa-users-gear" style="color: rgb(0, 0, 0);"></i>
+            <span>Admin</span>
+          </a>
+        <?php endif; ?>
       </li>
     </ul>
   </nav>

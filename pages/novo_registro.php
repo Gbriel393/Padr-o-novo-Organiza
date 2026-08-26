@@ -1,10 +1,14 @@
 <?php
 
 declare(strict_types=1);
+
 session_start();
+
 require_once __DIR__ . '/../conn.php';
 $usuarioId = (int) $_SESSION['usuario_id'];
+
 $_SESSION['csrf_token'] ??= bin2hex(random_bytes(32));
+
 $erro = '';
 function e(string $valor): string
 {
@@ -17,16 +21,132 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         exit('Requisição inválida.');
     }
     $tipo = (string) ($_POST['tipo'] ?? 'entrada');
-    $natureza = $tipo === 'saida' ? (string) ($_POST['natureza'] ?? 'variavel') : null;
-    $categoria = trim((string) ($_POST['categoria'] ?? ''));
-    $valor = filter_var($_POST['valor'] ?? null, FILTER_VALIDATE_FLOAT);
-    $data = (string) ($_POST['data_transacao'] ?? '');
-    $status = (string) ($_POST['status'] ?? 'pendente');
-    $descricao = trim((string) ($_POST['descricao'] ?? ''));
-    $dataValida = DateTime::createFromFormat('Y-m-d', $data);
-    $statusPermitido = $tipo === 'entrada' ? ['recebido', 'pendente'] : ['pago', 'pendente'];
-    if (!in_array($tipo, ['entrada', 'saida'], true) || ($tipo === 'saida' && !in_array($natureza, ['fixo', 'variavel'], true)) || $categoria === '' || mb_strlen($categoria) > 80 || $valor === false || $valor <= 0 || !$dataValida || $dataValida->format('Y-m-d') !== $data || !in_array($status, $statusPermitido, true) || mb_strlen($descricao) > 500) {
+
+    // NATUREZA
+    $natureza = $tipo === 'saida'
+        ? (string) ($_POST['natureza'] ?? 'variavel')
+        : null;
+
+    // CATEGORIA
+    $categoria = trim(
+        (string) ($_POST['categoria'] ?? '')
+    );
+
+    // VALOR
+    $valorInformado = trim(
+        (string) ($_POST['valor'] ?? '')
+    );
+
+    // ACEITA VALORES COMO:
+    // 500
+    // 500,50
+    // 1.500,50
+    // 1500.50
+    if (str_contains($valorInformado, ',')) {
+
+        $valorInformado = str_replace(
+            '.',
+            '',
+            $valorInformado
+        );
+
+        $valorInformado = str_replace(
+            ',',
+            '.',
+            $valorInformado
+        );
+    }
+
+    $valor = filter_var(
+        $valorInformado,
+        FILTER_VALIDATE_FLOAT
+    );
+
+    // DATA
+    $data = (string) (
+        $_POST['data_transacao'] ?? ''
+    );
+
+    // STATUS
+    $status = (string) (
+        $_POST['status'] ?? 'pendente'
+    );
+
+    // DESCRIÇÃO
+    $descricao = trim(
+        (string) ($_POST['descricao'] ?? '')
+    );
+
+    // VALIDA DATA
+    $dataValida = DateTime::createFromFormat(
+        'Y-m-d',
+        $data
+    );
+
+    // STATUS PERMITIDOS
+    $statusPermitido = $tipo === 'entrada'
+        ? ['recebido', 'pendente']
+        : ['pago', 'pendente'];
+
+    // VALIDAÇÃO DOS CAMPOS
+    if (
+        !in_array(
+            $tipo,
+            ['entrada', 'saida'],
+            true
+        )
+
+        ||
+
+        (
+            $tipo === 'saida'
+            &&
+            !in_array(
+                $natureza,
+                ['fixo', 'variavel'],
+                true
+            )
+        )
+
+        ||
+
+        $categoria === ''
+
+        ||
+
+        mb_strlen($categoria) > 80
+
+        ||
+
+        $valor === false
+
+        ||
+
+        $valor <= 0
+
+        ||
+
+        !$dataValida
+
+        ||
+
+        $dataValida->format('Y-m-d') !== $data
+
+        ||
+
+        !in_array(
+            $status,
+            $statusPermitido,
+            true
+        )
+
+        ||
+
+        mb_strlen($descricao) > 500
+    ) {
+
         $erro = 'Confira os campos informados e tente novamente.';
+
     } else {
         $stmt = $conn->prepare('INSERT INTO transacoes (usuario_id, tipo, natureza, categoria, valor, data_transacao, status, descricao) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
         $stmt->bind_param('isssdsss', $usuarioId, $tipo, $natureza, $categoria, $valor, $data, $status, $descricao);
@@ -37,6 +157,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erro = 'Não foi possível salvar a transação.';
     }
 }
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

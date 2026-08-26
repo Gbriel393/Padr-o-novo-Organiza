@@ -48,6 +48,7 @@ $saldo = $receitas - $despesas;
 $busca = trim((string) ($_GET['busca'] ?? ''));
 $tipoFiltro = (string) ($_GET['tipo'] ?? 'todos');
 $categoriaFiltro = trim((string) ($_GET['categoria'] ?? ''));
+$registroCriado = filter_var($_GET['registro'] ?? null, FILTER_VALIDATE_INT) ?: 0;
 $permitidos = ['todos', 'entrada', 'saida', 'fixo', 'variavel', 'pendente', 'pago'];
 if (!in_array($tipoFiltro, $permitidos, true)) $tipoFiltro = 'todos';
 $sql = 'SELECT id, tipo, natureza, categoria, valor, data_transacao, status, descricao FROM transacoes WHERE usuario_id = ?';
@@ -161,7 +162,7 @@ $aviso = $mensagens[(string) ($_GET['status'] ?? '')] ?? null;
             <?php foreach ($transacoes as $t): $entrada = $t['tipo'] === 'entrada';
               $tipoTexto = $entrada ? 'Entrada' : 'Gasto (' . ($t['natureza'] === 'fixo' ? 'Fixo' : 'Variável') . ')';
               $concluido = in_array($t['status'], ['pago', 'recebido'], true); ?>
-              <tr title="<?= e((string) $t['descricao']) ?>">
+              <tr id="registro-<?= (int) $t['id'] ?>" class="<?= (int) $t['id'] === $registroCriado ? 'table-success' : '' ?>" title="<?= e((string) $t['descricao']) ?>">
                 <th><span class="btn <?= $entrada ? 'btn-outline-primary' : 'btn-outline-danger' ?>"><?= e($tipoTexto) ?></span></th>
                 <td><?= e($t['categoria']) ?></td>
                 <td class="<?= $entrada ? 'td_valor' : 'td_valor_gasto' ?>"><?= moeda((float) $t['valor']) ?></td>

@@ -43,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->bind_param('ssiii', $nome, $email, $push, $alertas, $usuarioId);
         if (!$stmt->execute()) redirecionar('erro');
         $stmt->close();
+        $_SESSION["nome"] = $nome;
         $_SESSION['email'] = $email;
         redirecionar('perfil_ok');
     }

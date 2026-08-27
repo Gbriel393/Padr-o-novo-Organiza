@@ -6,6 +6,24 @@ if (!isset($_SESSION['usuario_id'])) {
   header('Location: login.php');
   exit;
 }
+
+$usuario_id = $_SESSION["usuario_id"];
+
+$stmt = "SELECT COALESCE(SUM(CASE WHEN tipo = 'entrada' THEN valor ELSE 0 END), 0) AS receitas, COALESCE(SUM(CASE WHEN tipo = 'saida' THEN valor ELSE 0 END), 0) AS despesas FROM transacoes WHERE usuario_id = ?";
+
+$stmt = $conn->prepare($stmt);
+$stmt->bind_param("i", $_SESSION["usuario_id"]);
+$stmt->execute();
+
+$resultado = $stmt->get_result()->fetch_assoc();
+
+$receitas = $resultado["receitas"];
+$despesas = $resultado["despesas"];
+
+$saldo = $receitas - $despesas;
+$stmt->close();
+
+
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +64,7 @@ if (!isset($_SESSION['usuario_id'])) {
         <div class="card saldo">
           <div>
             <span>Saldo Total</span>
-            <strong>R$ 15.420,50</strong>
+            <strong>R$ <?= number_format($saldo, 2, ',', '.') ?></strong>
           </div>
 
           <div class="card-icon">$</div>
@@ -56,7 +74,7 @@ if (!isset($_SESSION['usuario_id'])) {
         <div class="card receitas">
           <div>
             <span>Receitas</span>
-            <strong>R$ 8.500,00</strong>
+            <strong>R$ <?= number_format($receitas, 2, ',', '.') ?></strong>
           </div>
 
           <div class="card-icon">↗</div>
@@ -66,7 +84,7 @@ if (!isset($_SESSION['usuario_id'])) {
         <div class="card despesas">
           <div>
             <span>Despesas</span>
-            <strong>R$ 6.920,30</strong>
+            <strong>R$ <?= number_format($despesas, 2, ',', '.') ?></strong>
           </div>
 
           <div class="card-icon">⌁</div>

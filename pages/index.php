@@ -9,20 +9,38 @@ if (!isset($_SESSION['usuario_id'])) {
 
 $usuario_id = $_SESSION["usuario_id"];
 
-$stmt = "SELECT COALESCE(SUM(CASE WHEN tipo = 'entrada' THEN valor ELSE 0 END), 0) AS receitas, COALESCE(SUM(CASE WHEN tipo = 'saida' THEN valor ELSE 0 END), 0) AS despesas FROM transacoes WHERE usuario_id = ?";
+$sql = "SELECT COALESCE(SUM(CASE WHEN tipo = 'entrada' THEN valor ELSE 0 END), 0) AS receitas,COALESCE(SUM(CASE WHEN tipo = 'saida' THEN valor ELSE 0 END), 0) AS despesas FROM transacoes WHERE usuario_id = ?";
 
-$stmt = $conn->prepare($stmt);
-$stmt->bind_param("i", $_SESSION["usuario_id"]);
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $usuario_id);
 $stmt->execute();
 
 $resultado = $stmt->get_result()->fetch_assoc();
 
-$receitas = $resultado["receitas"];
-$despesas = $resultado["despesas"];
+$receias = (float)$resultado["receitas"];
+$despesas = (float)$resultado["despesas"];
 
 $saldo = $receitas - $despesas;
+
 $stmt->close();
 
+$dados_grafico = [];
+
+$sql = "SELECT MONTH(data_transacao) AS mes,COALESCE(SUM(CASE WHEN tipo = 'entrada' THEN valor ELSE 0 END), 0) AS receitas,COALESCE(SUM(CASE WHEN tipo = 'saida' THEN valor ELSE 0 END), 0) AS despesas FROM transacoes WHERE usuario_id = ? GROUP BY MONTH(data_transacao) ORDER BY MONTH(data_transacao)";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $usuario_id);
+$stmt->execute();
+
+$resultado = $stmt->get_result();
+while ($linha = $resultado->fetch_assoc()) {
+  $dados_grafico[(int) $linha["mes"]] = [
+    "receitas" => (float)$linha["receitas"],
+    "despesas" => (float)$linha["despesas"]
+  ];
+}
+
+$stmt->close();
 
 ?>
 
@@ -39,6 +57,9 @@ $stmt->close();
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const dados_grafico = <?= json_encode($dados_grafico) ?>;
+  </script>
   <script type="text/javascript" src="../js/app.js" defer></script>
 </head>
 

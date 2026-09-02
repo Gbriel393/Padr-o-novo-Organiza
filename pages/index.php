@@ -6,6 +6,42 @@ if (!isset($_SESSION["usuario_id"])) {
   header("location:login.php");
   exit();
 }
+
+$usuario_id = $_SESSION["usuario_id"];
+
+$sql = "SELECT COALESCE(SUM(CASE WHEN tipo = 'entrada' THEN valor ELSE 0 END), 0) AS receitas,COALESCE(SUM(CASE WHEN tipo = 'saida' THEN valor ELSE 0 END), 0) AS despesas FROM transacoes WHERE usuario_id = ?";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $usuario_id);
+$stmt->execute();
+
+$resultado = $stmt->get_result()->fetch_assoc();
+
+$receias = (float)$resultado["receitas"];
+$despesas = (float)$resultado["despesas"];
+
+$saldo = $receitas - $despesas;
+
+$stmt->close();
+
+$dados_grafico = [];
+
+$sql = "SELECT MONTH(data_transacao) AS mes,COALESCE(SUM(CASE WHEN tipo = 'entrada' THEN valor ELSE 0 END), 0) AS receitas,COALESCE(SUM(CASE WHEN tipo = 'saida' THEN valor ELSE 0 END), 0) AS despesas FROM transacoes WHERE usuario_id = ? GROUP BY MONTH(data_transacao) ORDER BY MONTH(data_transacao)";
+
+$stmt = $conn->prepare($sql);
+$stmt->bind_param("i", $usuario_id);
+$stmt->execute();
+
+$resultado = $stmt->get_result();
+while ($linha = $resultado->fetch_assoc()) {
+  $dados_grafico[(int) $linha["mes"]] = [
+    "receitas" => (float)$linha["receitas"],
+    "despesas" => (float)$linha["despesas"]
+  ];
+}
+
+$stmt->close();
+
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +57,9 @@ if (!isset($_SESSION["usuario_id"])) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script>
+    const dados_grafico = <?= json_encode($dados_grafico) ?>;
+  </script>
   <script type="text/javascript" src="../js/app.js" defer></script>
 </head>
 
@@ -46,7 +85,7 @@ if (!isset($_SESSION["usuario_id"])) {
         <div class="card saldo">
           <div>
             <span>Saldo Total</span>
-            <strong>R$ 15.420,50</strong>
+            <strong>R$ <?= number_format($saldo, 2, ',', '.') ?></strong>
           </div>
 
           <div class="card-icon">$</div>
@@ -56,7 +95,7 @@ if (!isset($_SESSION["usuario_id"])) {
         <div class="card receitas">
           <div>
             <span>Receitas</span>
-            <strong>R$ 8.500,00</strong>
+            <strong>R$ <?= number_format($receitas, 2, ',', '.') ?></strong>
           </div>
 
           <div class="card-icon">↗</div>
@@ -66,7 +105,7 @@ if (!isset($_SESSION["usuario_id"])) {
         <div class="card despesas">
           <div>
             <span>Despesas</span>
-            <strong>R$ 6.920,30</strong>
+            <strong>R$ <?= number_format($despesas, 2, ',', '.') ?></strong>
           </div>
 
           <div class="card-icon">⌁</div>

@@ -17,7 +17,7 @@ $stmt->execute();
 
 $resultado = $stmt->get_result()->fetch_assoc();
 
-$receias = (float)$resultado["receitas"];
+$receitas = (float)$resultado["receitas"];
 $despesas = (float)$resultado["despesas"];
 
 $saldo = $receitas - $despesas;

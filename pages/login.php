@@ -2,6 +2,8 @@
 session_start();
 include("../conn.php");
 
+$erro = false;
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST["email"] ?? null;
     $senha = $_POST["senha"] ?? null;
@@ -23,9 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("location:index.php");
         exit();
     } else {
-
-        echo "<script> alert('Usuário e senha não são válidos!');</script>";
- 
+        $erro = true;
     }
 }
 ?>
@@ -46,6 +46,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 <body>
+
+    <?php if ($erro): ?>
+
+        <div class="alert alert-danger alert-dismissible fade show position-fixed top-0 start-50 translate-middle-x mt-3" role="alert">
+            <strong>Erro!</strong> Usuário ou senha inválidos.
+
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+        </div>
+
+    <?php endif; ?>
+
     <div class="container d-flex justify-content-center align-items-center min-vh-100">
         <div class="login-box text-center">
             <img src="../img/logo.png" alt="Logo.png" class="logo">
@@ -90,8 +101,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 
     <!-- JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="script.js"></script>
-
 
 
 

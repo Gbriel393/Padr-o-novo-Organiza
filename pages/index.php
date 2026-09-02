@@ -2,9 +2,9 @@
 session_start();
 include("../conn.php");
 
-if (!isset($_SESSION['usuario_id'])) {
-  header('Location: login.php');
-  exit;
+if (!isset($_SESSION["usuario_id"])) {
+  header("location:login.php");
+  exit();
 }
 
 $usuario_id = $_SESSION["usuario_id"];

@@ -26,7 +26,36 @@ $stmt->close();
 
 $dados_grafico = [];
 
-$sql = "SELECT MONTH(data_transacao) AS mes,COALESCE(SUM(CASE WHEN tipo = 'entrada' THEN valor ELSE 0 END), 0) AS receitas,COALESCE(SUM(CASE WHEN tipo = 'saida' THEN valor ELSE 0 END), 0) AS despesas FROM transacoes WHERE usuario_id = ? GROUP BY MONTH(data_transacao) ORDER BY MONTH(data_transacao)";
+$sql = "SELECT 
+          MONTH(data_transacao) AS mes,
+
+          COALESCE(
+            SUM(
+              CASE 
+                WHEN tipo = 'entrada' AND status = 'recebido'
+                THEN valor 
+                ELSE 0 
+              END
+            ), 0
+          ) AS receitas,
+
+          COALESCE(
+            SUM(
+              CASE 
+                WHEN tipo = 'saida' AND status = 'pago'
+                THEN valor 
+                ELSE 0 
+              END
+            ), 0
+          ) AS despesas
+
+        FROM transacoes
+
+        WHERE usuario_id = ?
+
+        GROUP BY MONTH(data_transacao)
+
+        ORDER BY MONTH(data_transacao)";
 
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("i", $usuario_id);
@@ -117,196 +146,140 @@ $stmt->close();
       <!-- GRÁFICOS -->
       <section class="charts">
 
-        <!-- GRÁFICO 1 -->
+        <!-- =====================================
+       GRÁFICO 1
+  ====================================== -->
+
         <div class="chart-box">
 
           <h2>Receitas vs Despesas</h2>
 
-          <div class="chart">
+          <div class="chart-carousel">
 
-            <div class="y-axis">
-              <span>6000</span>
-              <span>4500</span>
-              <span>3000</span>
-              <span>1500</span>
-              <span>0</span>
-            </div>
+            <!-- SETA ESQUERDA -->
+            <button
+              type="button"
+              class="chart-nav chart-prev"
+              aria-label="Meses anteriores">
+              ‹
+            </button>
 
-            <div class="graph">
 
-              <div class="horizontal-line line1"></div>
-              <div class="horizontal-line line2"></div>
-              <div class="horizontal-line line3"></div>
-              <div class="horizontal-line line4"></div>
-              <div class="horizontal-line line5"></div>
+            <div class="chart">
 
-              <svg
-                id="lineChart"
-                class="line-chart"
-                viewBox="0 0 600 220"
-                preserveAspectRatio="none">
-              </svg>
+              <div class="y-axis">
 
-              <div id="lineTooltip" class="tooltip"></div>
+                <span>6000</span>
+                <span>4500</span>
+                <span>3000</span>
+                <span>1500</span>
+                <span>0</span>
 
-              <div class="months">
-                <span>Jan</span>
-                <span>Fev</span>
-                <span>Mar</span>
-                <span>Abr</span>
-                <span>Mai</span>
-                <span>Jun</span>
+              </div>
+
+
+              <div class="graph">
+
+                <div class="horizontal-line line1"></div>
+                <div class="horizontal-line line2"></div>
+                <div class="horizontal-line line3"></div>
+                <div class="horizontal-line line4"></div>
+                <div class="horizontal-line line5"></div>
+
+
+                <svg
+                  id="lineChart"
+                  class="line-chart"
+                  viewBox="0 0 600 220"
+                  preserveAspectRatio="none">
+                </svg>
+
+
+                <div
+                  id="lineTooltip"
+                  class="tooltip">
+                </div>
+
+
+                <div class="months"></div>
+
               </div>
 
             </div>
+
+
+            <!-- SETA DIREITA -->
+            <button
+              type="button"
+              class="chart-nav chart-next"
+              aria-label="Próximos meses">
+              ›
+            </button>
 
           </div>
 
         </div>
 
 
-        <!-- GRÁFICO 2 -->
+        <!-- =====================================
+       GRÁFICO 2
+  ====================================== -->
+
         <div class="chart-box">
 
           <h2>Comparativo Mensal</h2>
 
-          <div class="chart">
+          <div class="chart-carousel">
 
-            <div class="y-axis">
-              <span>6000</span>
-              <span>4500</span>
-              <span>3000</span>
-              <span>1500</span>
-              <span>0</span>
-            </div>
-
-            <div class="graph bar-graph">
-
-              <div class="horizontal-line line1"></div>
-              <div class="horizontal-line line2"></div>
-              <div class="horizontal-line line3"></div>
-              <div class="horizontal-line line4"></div>
-              <div class="horizontal-line line5"></div>
+            <!-- SETA ESQUERDA -->
+            <button
+              type="button"
+              class="chart-nav chart-prev"
+              aria-label="Meses anteriores">
+              ‹
+            </button>
 
 
-              <div class="bars">
+            <div class="chart">
 
-                <div class="bar-item">
+              <div class="y-axis">
 
-                  <div class="bar-container">
+                <span>6000</span>
+                <span>4500</span>
+                <span>3000</span>
+                <span>1500</span>
+                <span>0</span>
 
-                    <div class="bar" style="height: 145px;"></div>
-
-                    <div class="bar-tooltip">
-                      <strong>Jan</strong>
-                      <span class="receita-text">receitas : 4200</span>
-                      <span class="despesa-text">despesas : 1800</span>
-                    </div>
-
-                  </div>
-
-                  <span>Jan</span>
-
-                </div>
+              </div>
 
 
-                <div class="bar-item">
+              <div class="graph bar-graph">
 
-                  <div class="bar-container">
-
-                    <div class="bar" style="height: 110px;"></div>
-
-                    <div class="bar-tooltip">
-                      <strong>Fev</strong>
-                      <span class="receita-text">receitas : 3000</span>
-                      <span class="despesa-text">despesas : 1398</span>
-                    </div>
-
-                  </div>
-
-                  <span>Fev</span>
-
-                </div>
+                <div class="horizontal-line line1"></div>
+                <div class="horizontal-line line2"></div>
+                <div class="horizontal-line line3"></div>
+                <div class="horizontal-line line4"></div>
+                <div class="horizontal-line line5"></div>
 
 
-                <div class="bar-item">
-
-                  <div class="bar-container">
-
-                    <div class="bar" style="height: 73px;"></div>
-
-                    <div class="bar-tooltip">
-                      <strong>Mar</strong>
-                      <span class="receita-text">receitas : 2000</span>
-                      <span class="despesa-text">despesas : 1500</span>
-                    </div>
-
-                  </div>
-
-                  <span>Mar</span>
-
-                </div>
-
-
-                <div class="bar-item">
-
-                  <div class="bar-container">
-
-                    <div class="bar" style="height: 101px;"></div>
-
-                    <div class="bar-tooltip">
-                      <strong>Abr</strong>
-                      <span class="receita-text">receitas : 2780</span>
-                      <span class="despesa-text">despesas : 2100</span>
-                    </div>
-
-                  </div>
-
-                  <span>Abr</span>
-
-                </div>
-
-
-                <div class="bar-item">
-
-                  <div class="bar-container">
-
-                    <div class="bar" style="height: 68px;"></div>
-
-                    <div class="bar-tooltip">
-                      <strong>Mai</strong>
-                      <span class="receita-text">receitas : 1900</span>
-                      <span class="despesa-text">despesas : 1400</span>
-                    </div>
-
-                  </div>
-
-                  <span>Mai</span>
-
-                </div>
-
-
-                <div class="bar-item">
-
-                  <div class="bar-container">
-
-                    <div class="bar" style="height: 85px;"></div>
-
-                    <div class="bar-tooltip">
-                      <strong>Jun</strong>
-                      <span class="receita-text">receitas : 2400</span>
-                      <span class="despesa-text">despesas : 1800</span>
-                    </div>
-
-                  </div>
-
-                  <span>Jun</span>
-
-                </div>
+                <!--
+              O JAVASCRIPT VAI CRIAR
+              AS BARRAS AQUI
+          -->
+                <div class="bars"></div>
 
               </div>
 
             </div>
+
+
+            <!-- SETA DIREITA -->
+            <button
+              type="button"
+              class="chart-nav chart-next"
+              aria-label="Próximos meses">
+              ›
+            </button>
 
           </div>
 

@@ -254,19 +254,39 @@ body {
 
 .line-chart path {
     fill: none;
-
-    stroke: #e63c88;
-
     stroke-width: 2;
 }
 
+.line-chart .linha-receitas {
+    stroke: #42c9a5;
+}
+
+.line-chart .linha-despesas {
+    stroke: #e86b9e;
+}
+
+.ponto-receita {
+    stroke: #42c9a5;
+}
+
+.ponto-despesa {
+    stroke: #e86b9e;
+}
 
 /* pontos */
+
+.ponto-receita {
+    stroke: #42c9a5;
+}
+
+.ponto-despesa {
+    stroke: #e86b9e;
+}
 
 .chart-circle {
     fill: white;
 
-    stroke: #e63c88;
+    stroke: #42c9a5;
 
     stroke-width: 2;
 
@@ -277,6 +297,10 @@ body {
         stroke-width 0.15s ease;
 }
 
+.chart-circle:hover {
+    r: 6;
+    stroke-width: 2;
+}
 
 /* ponto quando passa o mouse */
 
@@ -584,6 +608,253 @@ body {
 
 .bar-container:hover .bar {
     filter: brightness(1.08);
+}
+
+/* =========================
+   LINHAS DO GRÁFICO
+========================= */
+
+.linha-receitas {
+    fill: none;
+    stroke: #42c9a5;
+    stroke-width: 2;
+}
+
+.linha-despesas {
+    fill: none;
+    stroke: #e86b9e;
+    stroke-width: 2;
+}
+
+
+/* =========================
+   PONTOS
+========================= */
+
+.ponto-receitas {
+    stroke: #42c9a5;
+}
+
+.ponto-despesas {
+    stroke: #e86b9e;
+}
+
+/* =================================
+   CARROSSEL DOS GRÁFICOS
+================================= */
+
+.chart-carousel {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+
+/* ================================
+   ÁREA DO GRÁFICO
+================================ */
+
+.chart-carousel .chart {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* ================================
+   SETAS
+================================ */
+
+.chart-nav {
+    width: 28px;
+    height: 40px;
+
+    flex-shrink: 0;
+
+    border: 1px solid #dfe3e8;
+    background: white;
+
+    color: #64748b;
+
+    border-radius: 8px;
+
+    font-size: 25px;
+    line-height: 1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.15s ease,
+        color 0.15s ease,
+        border-color 0.15s ease;
+}
+
+
+/* ================================
+   HOVER
+================================ */
+
+.chart-nav:hover:not(:disabled) {
+
+    background: #f1f5f9;
+
+    color: #07152b;
+
+    border-color: #cbd5e1;
+
+}
+
+
+/* ================================
+   SETA DESABILITADA
+================================ */
+
+.chart-nav:disabled {
+
+    opacity: 0.25;
+
+    cursor: default;
+
+}
+
+
+/* ================================
+   LINHAS DO GRÁFICO
+================================ */
+
+.line-chart .linha-receitas {
+
+    fill: none;
+
+    stroke: #00bd4b;
+
+    stroke-width: 2;
+
+}
+
+
+.line-chart .linha-despesas {
+
+    fill: none;
+
+    stroke: #ed0877;
+
+    stroke-width: 2;
+
+}
+
+
+/* ================================
+   PONTOS
+================================ */
+
+.chart-circle {
+
+    fill: white;
+
+    stroke-width: 2;
+
+    cursor: pointer;
+
+    transition:
+        r 0.15s ease,
+        stroke-width 0.15s ease;
+
+}
+
+
+.circle-receitas {
+
+    stroke: #00bd4b;
+
+}
+
+
+.circle-despesas {
+
+    stroke: #ed0877;
+
+}
+
+
+.chart-circle:hover {
+
+    r: 6;
+
+    stroke-width: 2;
+
+}
+
+
+/* ================================
+   BARRAS
+================================ */
+
+.bar-graph .bars {
+
+    left: 5px;
+    right: 5px;
+
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 600px) {
+
+    .chart-carousel {
+
+        gap: 4px;
+
+    }
+
+
+    .chart-nav {
+
+        width: 24px;
+        height: 36px;
+
+        font-size: 22px;
+
+        border-radius: 6px;
+
+    }
+
+
+    .chart-carousel .chart {
+
+        min-width: 0;
+
+    }
+
+
+    .chart-box {
+
+        padding-left: 8px;
+        padding-right: 8px;
+
+    }
+
+
+    .chart-box h2 {
+
+        margin-left: 4px;
+
+    }
+
+
+    .y-axis {
+
+        width: 32px;
+
+    }
+
 }
 
 /* =========================

@@ -272,11 +272,14 @@ td i {
 }
 
 .filtro-select { width: auto; min-width: 190px; }
-.form-excluir { display: inline; }
-.acao-excluir { background: transparent; border: 0; color: rgb(77, 77, 77); padding: 6px; }
-.acao-excluir i { margin-left: 0; }
-.acao-excluir:hover { color: #dc3545; }
-
+.botao-x {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    font-size: 18px;
+    color: #212529;
+}
 @media (max-width: 768px) {
 
     .fx_1 {

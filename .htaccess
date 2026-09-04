@@ -1,0 +1,21 @@
+RewriteEngine On
+
+# Pasta do projeto
+RewriteBase /organiza/
+
+# Não reescrever arquivos e pastas que existem
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Rotas
+RewriteRule ^login/?$ pages/login.php [L]
+RewriteRule ^cadastro/?$ pages/nova_conta.php [L]
+RewriteRule ^dashboard/?$ pages/index.php [L]
+RewriteRule ^transacoes/?$ pages/listagem.php [L]
+RewriteRule ^novo-registro/?$ pages/novo_registro.php [L]
+RewriteRule ^operacoes/?$ pages/operacoes.php [L]
+RewriteRule ^perfil/?$ pages/perfil.php [L]
+RewriteRule ^admin/?$ pages/adm.php [L]
+RewriteRule ^banco/?$ pages/banco.php [L]
+RewriteRule ^esqueci-senha/?$ pages/esquecsenha_index.php [L]

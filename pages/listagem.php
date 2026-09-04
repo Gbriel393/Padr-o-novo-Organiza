@@ -169,7 +169,9 @@ $aviso = $mensagens[(string) ($_GET['status'] ?? '')] ?? null;
                 <td><?= date('d/m/Y', strtotime($t['data_transacao'])) ?></td>
                 <td><span class="btn <?= $concluido ? 'btn-outline-success' : 'btn-outline-secondary' ?>"><?= e(ucfirst($t['status'])) ?></span></td>
                 <td>
-                  <form method="post" class="form-excluir" onsubmit="return confirm('Excluir esta transação?');"><input type="hidden" name="csrf_token" value="<?= e($_SESSION['csrf_token']) ?>"><input type="hidden" name="acao" value="excluir"><input type="hidden" name="id" value="<?= (int) $t['id'] ?>"><button type="submit" class="acao-excluir" title="Excluir"><i class="fa-regular fa-trash-can"></i></button></form>
+                  <form method="post" class="form-excluir" onsubmit="return confirm('Excluir esta transação?');"><input type="hidden" name="csrf_token" value="<?= e($_SESSION['csrf_token']) ?>"><input type="hidden" name="acao" value="excluir"><input type="hidden" name="id" value="<?= (int) $t['id'] ?>"><button type="submit" class="acao-excluir" title="Excluir" aria-label="Excluir">
+                      ✖
+                    </button></form>
                 </td>
               </tr>
             <?php endforeach; ?>

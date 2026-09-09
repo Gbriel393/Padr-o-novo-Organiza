@@ -147,7 +147,7 @@ $aviso = $mensagens[(string) ($_GET['status'] ?? '')] ?? null;
         <table class="table table-hover mb-0">
           <thead>
             <tr>
-              <th>Tipo</th>
+              <th></th>
               <th>Categoria</th>
               <th>Valor</th>
               <th>Data</th>

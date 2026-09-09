@@ -72,61 +72,247 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    CARDS
-========================= */
+========================================================= */
 
 .cards {
+
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 20px;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-bottom: 12px;
 }
+
+
+/* =========================================================
+   CARD
+========================================================= */
 
 .card {
-    height: 97px;
-    border-radius: 13px;
 
-    padding: 21px;
+    position: relative;
+
+    min-height: 96px;
+
+    padding: 14px 15px;
 
     display: flex;
+
     justify-content: space-between;
+
     align-items: flex-start;
 
-    color: white;
+    overflow: hidden;
 
-    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.13);
+    border: none;
+
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    box-shadow:
+        0 5px 14px rgba(30, 41, 59, .10);
 }
 
-.card span {
-    display: block;
-    font-size: 13px;
-    margin-bottom: 10px;
+
+/* =========================================================
+   CONTEÚDO
+========================================================= */
+
+.card-content {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    position: relative;
+
+    z-index: 2;
 }
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.card-label {
+
+    margin-bottom: 4px;
+
+    font-size: 12px;
+
+    line-height: 1.2;
+
+    font-weight: 500;
+
+    color: rgba(255, 255, 255, .92);
+}
+
+
+/* =========================================================
+   VALOR
+========================================================= */
 
 .card strong {
+
     display: block;
-    font-size: 25px;
-    font-weight: 400;
+
+    margin: 0;
+
+    font-size: 24px;
+
+    line-height: 1.25;
+
+    font-weight: 600;
+
+    letter-spacing: .1px;
+
+    color: #ffffff;
 }
+
+
+/* =========================================================
+   VARIAÇÃO
+========================================================= */
+
+.card-change {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    line-height: 1.2;
+
+    font-weight: 400;
+
+    color: rgba(255, 255, 255, .90);
+}
+
+
+/* =========================================================
+   ÍCONE
+========================================================= */
 
 .card-icon {
-    font-size: 23px;
-    font-weight: 400;
+
+    width: 34px;
+    height: 34px;
+
+    flex-shrink: 0;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    margin-top: 1px;
+
+    border-radius: 9px;
+
+    background: rgba(0, 0, 0, .10);
+
+    color: rgba(255, 255, 255, .95);
+
+    font-size: 13px;
+
+    position: relative;
+
+    z-index: 2;
 }
+
+
+/* =========================================================
+   EFEITO DECORATIVO
+========================================================= */
+
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 105px;
+    height: 105px;
+
+    right: -45px;
+    top: -55px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, .08);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   SALDO
+========================================================= */
 
 .saldo {
-    background: #09a8c5;
+
+    background:
+        linear-gradient(135deg,
+            #17b5e9 0%,
+            #149ed8 100%);
 }
+
+
+/* =========================================================
+   RECEITAS
+========================================================= */
 
 .receitas {
-    background: #00bd4b;
+
+    background:
+        linear-gradient(135deg,
+            #18c99b 0%,
+            #10b887 100%);
 }
+
+
+/* =========================================================
+   DESPESAS
+========================================================= */
 
 .despesas {
-    background: #ed0877;
+
+    background:
+        linear-gradient(135deg,
+            #f5487c 0%,
+            #ec3569 100%);
 }
 
+
+/* =========================================================
+   HOVER
+========================================================= */
+
+.card {
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
+}
+
+
+.card:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 18px rgba(30, 41, 59, .13);
+}
 
 /* =========================
    GRÁFICOS
@@ -807,6 +993,25 @@ body {
 ================================= */
 
 @media (max-width: 600px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 9px;
+    }
+
+    .card {
+        min-height: 88px;
+        padding: 13px 14px;
+    }
+
+    .card strong {
+        font-size: 18px;
+    }
+
+    .card-icon {
+        width: 32px;
+        height: 32px;
+    }
 
     .chart-carousel {
 

@@ -111,33 +111,81 @@ $stmt->close();
       <!-- CARDS -->
       <section class="cards">
 
+        <!-- SALDO -->
         <div class="card saldo">
-          <div>
-            <span>Saldo Total</span>
-            <strong>R$ <?= number_format($saldo, 2, ',', '.') ?></strong>
+
+          <div class="card-content">
+
+            <span class="card-label">
+              Saldo Total
+            </span>
+
+            <strong>
+              R$ <?= number_format($saldo, 2, ',', '.') ?>
+            </strong>
+
+            <small class="card-change">
+              ↗ 12% desde o mês anterior
+            </small>
+
           </div>
 
-          <div class="card-icon">$</div>
+          <div class="card-icon">
+            <i class="fa-solid fa-dollar-sign"></i>
+          </div>
+
         </div>
 
 
+        <!-- RECEITAS -->
         <div class="card receitas">
-          <div>
-            <span>Receitas</span>
-            <strong>R$ <?= number_format($receitas, 2, ',', '.') ?></strong>
+
+          <div class="card-content">
+
+            <span class="card-label">
+              Receitas
+            </span>
+
+            <strong>
+              R$ <?= number_format($receitas, 2, ',', '.') ?>
+            </strong>
+
+            <small class="card-change">
+              ↗ 8% este mês
+            </small>
+
           </div>
 
-          <div class="card-icon">↗</div>
+          <div class="card-icon">
+            <i class="fa-solid fa-arrow-up-right"></i>
+          </div>
+
         </div>
 
 
+        <!-- DESPESAS -->
         <div class="card despesas">
-          <div>
-            <span>Despesas</span>
-            <strong>R$ <?= number_format($despesas, 2, ',', '.') ?></strong>
+
+          <div class="card-content">
+
+            <span class="card-label">
+              Despesas
+            </span>
+
+            <strong>
+              R$ <?= number_format($despesas, 2, ',', '.') ?>
+            </strong>
+
+            <small class="card-change">
+              ↘ 5% este mês
+            </small>
+
           </div>
 
-          <div class="card-icon">⌁</div>
+          <div class="card-icon">
+            <i class="fa-regular fa-credit-card"></i>
+          </div>
+
         </div>
 
       </section>
@@ -146,7 +194,7 @@ $stmt->close();
       <!-- GRÁFICOS -->
       <section class="charts">
 
-       <!-- GRÁFICO 1 -->
+        <!-- GRÁFICO 1 -->
 
         <div class="chart-box">
 
@@ -218,7 +266,7 @@ $stmt->close();
 
         </div>
 
-       <!-- GRÁFICO 2 -->
+        <!-- GRÁFICO 2 -->
 
         <div class="chart-box">
 

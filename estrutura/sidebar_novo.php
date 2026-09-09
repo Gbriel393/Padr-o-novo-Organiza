@@ -1,6 +1,14 @@
   <nav id="sidebar">
+
+    <div class="sidebar-logo">
+      <div class="logo-icon">
+        <i class="fa-solid fa-chart-simple"></i>
+      </div>
+
+      <span>Organiza</span>
+    </div>
+
     <ul>
-      <span class="logo">Organiza</span>
 
       <li>
         <a href="index.php">
@@ -55,6 +63,11 @@
 
     </ul>
 
+
+    <div class="sidebar-footer">
+      <span>Controle hoje</span>
+      <strong>Conquiste amanhã</strong>
+    </div>
 
 
   </nav>

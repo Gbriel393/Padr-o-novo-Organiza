@@ -99,32 +99,130 @@ $aviso = $mensagens[(string) ($_GET['status'] ?? '')] ?? null;
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Listagem</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
   <link rel="stylesheet" href="../CSS/style.css">
   <link rel="stylesheet" href="../CSS/listagem.css">
   <link rel="stylesheet" href="../CSS/navbar/navbar_index.css">
+  <link rel="stylesheet" href="../CSS/style_index.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body><?php include __DIR__ . '/../estrutura/sidebar_listagem.php'; ?><main>
+
     <div class="container container_pg py-4">
+
       <?php if ($aviso): ?><div class="alert alert-<?= e($aviso[1]) ?> mt-4"><?= e($aviso[0]) ?></div><?php endif; ?>
-      <div class="fx_1 d-flex justify-content-between container p-0 m-0 mt-4 gap-3">
+
+      <!-- <div class="fx_1 d-flex justify-content-between container p-0 m-0 mt-4 gap-3">
+
         <div class="botao_rendas d-flex flex-column justify-content-center p-3">
+
           <div class="d-flex"><span>Lucro (recebido)</span>
             <div class="card-icon ps-2">$</div>
           </div><strong><?= moeda($receitas) ?></strong>
           <p class="mb-0 porcentagem">Total de entradas recebidas</p>
+
         </div>
+
         <div class="botao_despesas d-flex flex-column justify-content-center p-3">
+
           <div class="d-flex"><span>Despesas</span>
             <div class="card-icon ps-2">↗</div>
           </div><strong><?= moeda($despesas) ?></strong>
           <p class="mb-0 porcentagem">Total de saídas pagas</p>
+
         </div>
+
         <div class="botao_saldo d-flex flex-column justify-content-center p-3"><span>Saldo Total</span><strong><?= moeda($saldo) ?></strong>
           <p class="mb-0 porcentagem">Entradas recebidas menos despesas pagas</p>
         </div>
-      </div>
+
+      </div> -->
+
+      <!-- CARDS -->
+      <section class="cards">
+
+        <!-- SALDO -->
+        <div class="card saldo">
+
+          <div class="card-content">
+
+            <span class="card-label">
+              Saldo Total
+            </span>
+
+            <strong>
+              R$ <?= number_format($saldo, 2, ',', '.') ?>
+            </strong>
+
+            <small class="card-change">
+              ↗ 12% desde o mês anterior
+            </small>
+
+          </div>
+
+          <div class="card-icon">
+            <i class="fa-solid fa-dollar-sign"></i>
+          </div>
+
+        </div>
+
+
+        <!-- RECEITAS -->
+        <div class="card receitas">
+
+          <div class="card-content">
+
+            <span class="card-label">
+              Receitas
+            </span>
+
+            <strong>
+              R$ <?= number_format($receitas, 2, ',', '.') ?>
+            </strong>
+
+            <small class="card-change">
+              ↗ 8% este mês
+            </small>
+
+          </div>
+
+          <div class="card-icon">
+            <div class="card-icon ps-0">↗</div>
+          </div>
+
+        </div>
+
+
+        <!-- DESPESAS -->
+        <div class="card despesas">
+
+          <div class="card-content">
+
+            <span class="card-label">
+              Despesas
+            </span>
+
+            <strong>
+              R$ <?= number_format($despesas, 2, ',', '.') ?>
+            </strong>
+
+            <small class="card-change">
+              ↘ 5% este mês
+            </small>
+
+          </div>
+
+          <div class="card-icon">
+            <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAaUlEQVR4nGNgGAWjAAoMGBgYXCjABgwEQA4DA0MEhZZEMjAwZOOzpJ6BOqABn+QsBgaGcirgWfgsmcfAwNBBBTyPbG+SAPCaM2oJOhi1ZIhZkg0teygpu6IIlV0goE+hJfpUCo1RMNQBANr5MB6OOfEnAAAAAElFTkSuQmCC" alt="bank-card-back-side">
+          </div>
+
+        </div>
+
+      </section>
+
       <div class="container container_pg_2 p-0">
         <form method="get" class="barra_pesquisa d-flex justify-content-between p-3 my-3">
           <div class="lupa d-flex"><input name="busca" type="search" class="pesquisa" value="<?= e($busca) ?>" placeholder="Pesquisar categoria, descrição ou status..."></div>

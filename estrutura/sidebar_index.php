@@ -62,7 +62,7 @@
             </li>
 
         <?php endif; ?>
-
+        
     </ul>
 
     <div class="sidebar-footer">

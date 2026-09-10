@@ -94,259 +94,263 @@ $stmt->close();
 
 <body>
 
-  <?php include("../estrutura/sidebar_index.php") ?>
+  <!-- BOTÃO DARK MODE -->
+  <button id="darkModeToggle" class="dark-mode-floating" title="Alterar tema">
+    <i class="fa-solid fa-moon"></i>
+  </button>
 
+  <?php include("../estrutura/sidebar_index.php") ?>
+  
   <!-- CONTEÚDO PRINCIPAL -->
   <main>
 
-    <div class="container container_pg  py-0">
-
-      <!-- TÍTULO -->
-      <section class="page-title">
-        <h1>Olá, <?= htmlspecialchars($_SESSION["nome"]) ?>, seja bem vindo!</h1>
-        <p>Visão geral das suas finanças</p>
-      </section>
+    <!-- TÍTULO -->
+    <section class="page-title">
+      <h1>Olá, <?= htmlspecialchars($_SESSION["nome"]) ?>, seja bem vindo!</h1>
+      <p>Visão geral das suas finanças</p>
+    </section>
 
 
-      <!-- CARDS -->
-      <section class="cards">
+    <!-- CARDS -->
+    <section class="cards">
 
-        <!-- SALDO -->
-        <div class="card saldo">
+      <!-- SALDO -->
+      <div class="card saldo">
 
-          <div class="card-content">
+        <div class="card-content">
 
-            <span class="card-label">
-              Saldo Total
-            </span>
+          <span class="card-label">
+            Saldo Total
+          </span>
 
-            <strong>
-              R$ <?= number_format($saldo, 2, ',', '.') ?>
-            </strong>
+          <strong>
+            R$ <?= number_format($saldo, 2, ',', '.') ?>
+          </strong>
 
-            <small class="card-change">
-              ↗ 12% desde o mês anterior
-            </small>
-
-          </div>
-
-          <div class="card-icon">
-            <i class="fa-solid fa-dollar-sign"></i>
-          </div>
+          <small class="card-change">
+            ↗ 12% desde o mês anterior
+          </small>
 
         </div>
 
+        <div class="card-icon">
+          <i class="fa-solid fa-dollar-sign"></i>
+        </div>
 
-        <!-- RECEITAS -->
-        <div class="card receitas">
+      </div>
 
-          <div class="card-content">
 
-            <span class="card-label">
-              Receitas
-            </span>
+      <!-- RECEITAS -->
+      <div class="card receitas">
 
-            <strong>
-              R$ <?= number_format($receitas, 2, ',', '.') ?>
-            </strong>
+        <div class="card-content">
 
-            <small class="card-change">
-              ↗ 8% este mês
-            </small>
+          <span class="card-label">
+            Receitas
+          </span>
 
-          </div>
+          <strong>
+            R$ <?= number_format($receitas, 2, ',', '.') ?>
+          </strong>
 
-          <div class="card-icon">
-            <i class="fa-solid fa-arrow-up-right"></i>
-          </div>
+          <small class="card-change">
+            ↗ 8% este mês
+          </small>
 
         </div>
 
+        <div class="card-icon">
+          <div class="card-icon ps-2">↗</div>
+          <i class="fa-solid fa-arrow-up-right"></i>
+        </div>
 
-        <!-- DESPESAS -->
-        <div class="card despesas">
+      </div>
 
-          <div class="card-content">
 
-            <span class="card-label">
-              Despesas
-            </span>
+      <!-- DESPESAS -->
+      <div class="card despesas">
 
-            <strong>
-              R$ <?= number_format($despesas, 2, ',', '.') ?>
-            </strong>
+        <div class="card-content">
 
-            <small class="card-change">
-              ↘ 5% este mês
-            </small>
+          <span class="card-label">
+            Despesas
+          </span>
 
-          </div>
+          <strong>
+            R$ <?= number_format($despesas, 2, ',', '.') ?>
+          </strong>
 
-          <div class="card-icon">
-            <i class="fa-regular fa-credit-card"></i>
-          </div>
+          <small class="card-change">
+            ↘ 5% este mês
+          </small>
 
         </div>
 
-      </section>
+        <div class="card-icon">
+          <i class="fa-regular fa-credit-card"></i>
+        </div>
+
+      </div>
+
+    </section>
 
 
-      <!-- GRÁFICOS -->
-      <section class="charts">
+    <!-- GRÁFICOS -->
+    <section class="charts">
 
-        <!-- GRÁFICO 1 -->
+      <!-- GRÁFICO 1 -->
 
-        <div class="chart-box">
+      <div class="chart-box">
 
-          <h2>Receitas vs Despesas</h2>
+        <h2>Receitas vs Despesas</h2>
 
-          <div class="chart-carousel">
+        <div class="chart-carousel">
 
-            <!-- SETA ESQUERDA -->
-            <button
-              type="button"
-              class="chart-nav chart-prev"
-              aria-label="Meses anteriores">
-              ‹
-            </button>
-
-
-            <div class="chart">
-
-              <div class="y-axis">
-
-                <span>6000</span>
-                <span>4500</span>
-                <span>3000</span>
-                <span>1500</span>
-                <span>0</span>
-
-              </div>
+          <!-- SETA ESQUERDA -->
+          <button
+            type="button"
+            class="chart-nav chart-prev"
+            aria-label="Meses anteriores">
+            ‹
+          </button>
 
 
-              <div class="graph">
+          <div class="chart">
 
-                <div class="horizontal-line line1"></div>
-                <div class="horizontal-line line2"></div>
-                <div class="horizontal-line line3"></div>
-                <div class="horizontal-line line4"></div>
-                <div class="horizontal-line line5"></div>
+            <div class="y-axis">
 
-
-                <svg
-                  id="lineChart"
-                  class="line-chart"
-                  viewBox="0 0 600 220"
-                  preserveAspectRatio="none">
-                </svg>
-
-
-                <div
-                  id="lineTooltip"
-                  class="tooltip">
-                </div>
-
-
-                <div class="months"></div>
-
-              </div>
+              <span>6000</span>
+              <span>4500</span>
+              <span>3000</span>
+              <span>1500</span>
+              <span>0</span>
 
             </div>
 
 
-            <!-- SETA DIREITA -->
-            <button
-              type="button"
-              class="chart-nav chart-next"
-              aria-label="Próximos meses">
-              ›
-            </button>
+            <div class="graph">
 
-          </div>
-
-        </div>
-
-        <!-- GRÁFICO 2 -->
-
-        <div class="chart-box">
-
-          <h2>Comparativo Mensal</h2>
-
-          <div class="chart-carousel">
-
-            <!-- SETA ESQUERDA -->
-            <button
-              type="button"
-              class="chart-nav chart-prev"
-              aria-label="Meses anteriores">
-              ‹
-            </button>
+              <div class="horizontal-line line1"></div>
+              <div class="horizontal-line line2"></div>
+              <div class="horizontal-line line3"></div>
+              <div class="horizontal-line line4"></div>
+              <div class="horizontal-line line5"></div>
 
 
-            <div class="chart">
+              <svg
+                id="lineChart"
+                class="line-chart"
+                viewBox="0 0 600 220"
+                preserveAspectRatio="none">
+              </svg>
 
-              <div class="y-axis">
 
-                <span>6000</span>
-                <span>4500</span>
-                <span>3000</span>
-                <span>1500</span>
-                <span>0</span>
-
+              <div
+                id="lineTooltip"
+                class="tooltip">
               </div>
 
 
-              <div class="graph bar-graph">
+              <div class="months"></div>
 
-                <div class="horizontal-line line1"></div>
-                <div class="horizontal-line line2"></div>
-                <div class="horizontal-line line3"></div>
-                <div class="horizontal-line line4"></div>
-                <div class="horizontal-line line5"></div>
+            </div>
+
+          </div>
 
 
-                <!--
+          <!-- SETA DIREITA -->
+          <button
+            type="button"
+            class="chart-nav chart-next"
+            aria-label="Próximos meses">
+            ›
+          </button>
+
+        </div>
+
+      </div>
+
+      <!-- GRÁFICO 2 -->
+
+      <div class="chart-box">
+
+        <h2>Comparativo Mensal</h2>
+
+        <div class="chart-carousel">
+
+          <!-- SETA ESQUERDA -->
+          <button
+            type="button"
+            class="chart-nav chart-prev"
+            aria-label="Meses anteriores">
+            ‹
+          </button>
+
+
+          <div class="chart">
+
+            <div class="y-axis">
+
+              <span>6000</span>
+              <span>4500</span>
+              <span>3000</span>
+              <span>1500</span>
+              <span>0</span>
+
+            </div>
+
+
+            <div class="graph bar-graph">
+
+              <div class="horizontal-line line1"></div>
+              <div class="horizontal-line line2"></div>
+              <div class="horizontal-line line3"></div>
+              <div class="horizontal-line line4"></div>
+              <div class="horizontal-line line5"></div>
+
+
+              <!--
               O JAVASCRIPT VAI CRIAR
               AS BARRAS AQUI
           -->
-                <div class="bars"></div>
-
-              </div>
+              <div class="bars"></div>
 
             </div>
 
-
-            <!-- SETA DIREITA -->
-            <button
-              type="button"
-              class="chart-nav chart-next"
-              aria-label="Próximos meses">
-              ›
-            </button>
-
           </div>
 
+
+          <!-- SETA DIREITA -->
+          <button
+            type="button"
+            class="chart-nav chart-next"
+            aria-label="Próximos meses">
+            ›
+          </button>
+
         </div>
 
-      </section>
+      </div>
+
+    </section>
 
 
-      <!-- ALERTAS -->
-      <section class="alerts">
+    <!-- ALERTAS -->
+    <section class="alerts">
 
-        <h2>Alertas Financeiros</h2>
+      <h2>Alertas Financeiros</h2>
 
-        <div class="alert alert-warning">
-          <span class="alert-icon">!</span>
-          <span>Limite de gastos atingido em Alimentação</span>
-        </div>
+      <div class="alert alert-warning">
+        <span class="alert-icon">!</span>
+        <span>Limite de gastos atingido em Alimentação</span>
+      </div>
 
-        <div class="alert alert-info">
-          <span class="alert-icon">!</span>
-          <span>Fatura do cartão vence em 3 dias</span>
-        </div>
+      <div class="alert alert-info">
+        <span class="alert-icon">!</span>
+        <span>Fatura do cartão vence em 3 dias</span>
+      </div>
 
-      </section>
+    </section>
 
     </div>
 

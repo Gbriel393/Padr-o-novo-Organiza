@@ -1,5 +1,6 @@
 /* =========================================================
    ORGANIZA — STYLE.CSS
+   ESTILO GLOBAL
 ========================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
@@ -11,35 +12,61 @@
 
 :root {
 
-    --bg-page: #f3f6fb;
-    --bg-content: #f7f9fc;
+    /* Fundo */
+    --bg-page: #EEF1F7;
+    --bg-content: #F7F8FC;
 
-    --sidebar: #12192b;
+    /* Sidebar */
+    --sidebar: #161B2D;
+    --sidebar-hover: #232A42;
+    --sidebar-text: #CBD1E1;
 
-    --card: #ffffff;
+    /* Cards */
+    --card: #FFFFFF;
+    --card-secondary: #F0F2F7;
 
-    --text-primary: #172033;
-    --text-secondary: #6b7890;
+    /* Textos */
+    --text-primary: #171A2B;
+    --text-secondary: #6B7280;
 
-    --primary-blue: #18aeea;
-    --primary-purple: #8438f5;
+    /* Cores */
+    --primary-blue: #18AEEA;
+    --primary-purple: #8438F5;
 
-    --success: #16b981;
-    --danger: #f43f72;
-    --warning: #f59e0b;
+    --success: #10B981;
+    --danger: #F43F72;
+    --warning: #F59E0B;
 
-    --border: #e3e8f0;
+    /* Bordas */
+    --border: #DDE1EB;
 
-    --gradient-organiza:
-        linear-gradient(
-            135deg,
-            #18aeea 0%,
-            #8438f5 100%
-        );
+    /* Sombras */
+    --shadow-card: 0 4px 12px rgba(30, 41, 59, 0.08);
+}
 
-    --shadow-card:
-        0 4px 15px rgba(30, 41, 59, .055),
-        0 1px 3px rgba(30, 41, 59, .04);
+
+/* =========================================================
+   DARK MODE
+========================================================= */
+
+body.dark-mode {
+
+    --bg-page: #0B1120;
+    --bg-content: #111827;
+
+    --sidebar: #080D1A;
+    --sidebar-hover: #1E293B;
+    --sidebar-text: #CBD5E1;
+
+    --card: #1E293B;
+    --card-secondary: #273449;
+
+    --text-primary: #F1F5F9;
+    --text-secondary: #94A3B8;
+
+    --border: #334155;
+
+    --shadow-card: 0 5px 15px rgba(0, 0, 0, 0.30);
 }
 
 
@@ -50,7 +77,6 @@
 * {
     margin: 0;
     padding: 0;
-
     box-sizing: border-box;
 }
 
@@ -87,6 +113,10 @@ body {
     grid-template-columns: 250px minmax(0, 1fr);
 
     overflow-x: hidden;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
 }
 
 
@@ -98,14 +128,15 @@ main {
 
     min-width: 0;
 
+    min-height: 100vh;
+
     padding: 18px 20px 25px;
 
-    background:
-        linear-gradient(
-            180deg,
-            #f3f6fb 0%,
-            #f7f9fc 100%
-        );
+    background: var(--bg-content);
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease;
 }
 
 
@@ -145,6 +176,10 @@ h6 {
 }
 
 
+/* =========================================================
+   PARÁGRAFOS
+========================================================= */
+
 main p {
 
     color: var(--text-secondary);
@@ -174,6 +209,47 @@ textarea {
 
 
 /* =========================================================
+   DARK MODE — CAMPOS
+========================================================= */
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+
+    background: #1E293B;
+
+    color: #F1F5F9;
+
+    border-color: #334155;
+}
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+
+    color: #64748B;
+}
+
+
+/* =========================================================
+   DARK MODE — TRANSIÇÃO
+========================================================= */
+
+body,
+main,
+.card,
+.chart-box,
+.alerts,
+.tooltip,
+.bar-tooltip {
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+
+/* =========================================================
    RESPONSIVIDADE
 ========================================================= */
 
@@ -189,10 +265,10 @@ textarea {
 
     main {
 
+        min-height: calc(100vh - 68px);
+
         padding:
-            18px
-            15px
-            85px;
+            18px 15px 85px;
     }
 }
 
@@ -202,8 +278,6 @@ textarea {
     main {
 
         padding:
-            15px
-            12px
-            80px;
+            15px 12px 80px;
     }
 }

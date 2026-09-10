@@ -654,8 +654,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 receitas :
                 R$ ${formatarMoeda(
-                    ponto.receitas
-                )}
+            ponto.receitas
+        )}
 
             </span>
 
@@ -663,8 +663,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 despesas :
                 R$ ${formatarMoeda(
-                    ponto.despesas
-                )}
+            ponto.despesas
+        )}
 
             </span>
 
@@ -887,8 +887,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     receitas :
                     R$ ${formatarMoeda(
-                        item.receitas
-                    )}
+                item.receitas
+            )}
 
                 </span>
 
@@ -896,8 +896,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     despesas :
                     R$ ${formatarMoeda(
-                        item.despesas
-                    )}
+                item.despesas
+            )}
 
                 </span>
 
@@ -1096,5 +1096,62 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
     );
+
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const darkModeToggle = document.getElementById("darkModeToggle");
+
+    // Verifica o tema salvo
+    if (localStorage.getItem("tema") === "dark") {
+        document.body.classList.add("dark-mode");
+    }
+
+
+    // Botão
+    if (darkModeToggle) {
+
+        darkModeToggle.addEventListener("click", function () {
+
+            document.body.classList.toggle("dark-mode");
+
+            if (document.body.classList.contains("dark-mode")) {
+
+                localStorage.setItem("tema", "dark");
+
+            } else {
+
+                localStorage.setItem("tema", "light");
+
+            }
+
+            atualizarIcone();
+
+        });
+
+    }
+
+
+    // Troca lua <-> sol
+    function atualizarIcone() {
+
+        if (!darkModeToggle) return;
+
+        const icon = darkModeToggle.querySelector("i");
+
+        if (document.body.classList.contains("dark-mode")) {
+
+            icon.className = "fa-solid fa-sun";
+
+        } else {
+
+            icon.className = "fa-solid fa-moon";
+
+        }
+
+    }
+
+    atualizarIcone();
 
 });

@@ -62,10 +62,5 @@
             </li>
 
         </ul>
-
-        <div class="sidebar-footer">
-            <span>Controle hoje</span>
-            <strong>Conquiste amanhã</strong>
-        </div>
-
+        
     </nav>

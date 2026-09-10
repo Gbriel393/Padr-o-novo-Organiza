@@ -1,74 +1,52 @@
-/* ================================
-   CONFIGURAÇÕES GERAIS
-================================ */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    /* display: grid;
-    grid-template-columns: auto 1fr; */
-    background: #f8f9fa;
-    color: #07152b;
-}
+/* =========================================================
+   ORGANIZA — STYLE_INDEX.CSS
+   DASHBOARD
+========================================================= */
 
 
-/* =========================
-   TOPO
-========================= */
-
-.topbar {
-    height: 41px;
-    background: white;
-    border-bottom: 1px solid #dfe3e8;
-
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-
-    padding: 0 24px;
-}
-
-.moon {
-    font-size: 23px;
-    color: #26354b;
-}
-
-
-/* =========================
-   CONTAINER
-========================= */
+/* =========================================================
+   CONTAINER DO DASHBOARD
+========================================================= */
 
 .dashboard-container {
+
     padding: 14px 24px 20px;
+
     max-width: 1920px;
+
     width: 100%;
+
     margin: 0;
 }
 
 
-/* =========================
+/* =========================================================
    TÍTULO
-========================= */
+========================================================= */
 
 .page-title {
+
     margin-bottom: 21px;
 }
 
+
 .page-title h1 {
+
     font-size: 20px;
+
     font-weight: 600;
+
     margin-bottom: 10px;
+
+    color: var(--text-primary);
 }
 
+
 .page-title p {
+
     font-size: 14px;
-    color: #17335a;
+
+    color: var(--text-secondary);
 }
 
 
@@ -113,10 +91,14 @@ body {
 
     border-radius: 10px;
 
-    color: #ffffff;
+    color: #FFFFFF;
 
     box-shadow:
         0 5px 14px rgba(30, 41, 59, .10);
+
+    transition:
+        transform .2s ease,
+        box-shadow .2s ease;
 }
 
 
@@ -139,7 +121,7 @@ body {
 
 
 /* =========================================================
-   TÍTULO
+   TÍTULO DO CARD
 ========================================================= */
 
 .card-label {
@@ -174,7 +156,7 @@ body {
 
     letter-spacing: .1px;
 
-    color: #ffffff;
+    color: #FFFFFF;
 }
 
 
@@ -199,12 +181,13 @@ body {
 
 
 /* =========================================================
-   ÍCONE
+   ÍCONE DOS CARDS
 ========================================================= */
 
 .card-icon {
 
     width: 34px;
+
     height: 34px;
 
     flex-shrink: 0;
@@ -242,9 +225,11 @@ body {
     position: absolute;
 
     width: 105px;
+
     height: 105px;
 
     right: -45px;
+
     top: -55px;
 
     border-radius: 50%;
@@ -262,9 +247,11 @@ body {
 .saldo {
 
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             #17b5e9 0%,
-            #149ed8 100%);
+            #149ed8 100%
+        );
 }
 
 
@@ -275,9 +262,11 @@ body {
 .receitas {
 
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             #18c99b 0%,
-            #10b887 100%);
+            #10b887 100%
+        );
 }
 
 
@@ -288,23 +277,17 @@ body {
 .despesas {
 
     background:
-        linear-gradient(135deg,
+        linear-gradient(
+            135deg,
             #f5487c 0%,
-            #ec3569 100%);
+            #ec3569 100%
+        );
 }
 
 
 /* =========================================================
-   HOVER
+   HOVER DOS CARDS
 ========================================================= */
-
-.card {
-
-    transition:
-        transform .2s ease,
-        box-shadow .2s ease;
-}
-
 
 .card:hover {
 
@@ -314,52 +297,84 @@ body {
         0 8px 18px rgba(30, 41, 59, .13);
 }
 
-/* =========================
+
+/* =========================================================
    GRÁFICOS
-========================= */
+========================================================= */
 
 .charts {
+
     display: grid;
-    grid-template-columns: 1fr 1fr;
+
+    grid-template-columns:
+        1fr 1fr;
+
     gap: 20px;
 }
 
-.chart-box {
-    background: white;
 
-    border: 1px solid #dfe3e8;
+/* =========================================================
+   CARD DO GRÁFICO
+========================================================= */
+
+.chart-box {
+
+    background: var(--card);
+
+    border:
+        1px solid var(--border);
+
     border-radius: 14px;
 
     height: 328px;
 
     padding: 22px 20px;
 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.10);
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.08);
 }
 
+
+/* =========================================================
+   TÍTULO DO GRÁFICO
+========================================================= */
+
 .chart-box h2 {
+
     font-size: 14px;
+
     font-weight: 500;
 
     margin-bottom: 18px;
+
+    color: var(--text-primary);
 }
 
 
-/* =========================
+/* =========================================================
    ÁREA DO GRÁFICO
-========================= */
+========================================================= */
 
 .chart {
+
     height: 240px;
 
     display: flex;
 }
 
+
+/* =========================================================
+   EIXO Y
+========================================================= */
+
 .y-axis {
+
     width: 35px;
 
     display: flex;
+
     flex-direction: column;
+
     justify-content: space-between;
 
     padding-bottom: 28px;
@@ -367,17 +382,21 @@ body {
     text-align: right;
 }
 
+
 .y-axis span {
+
     font-size: 12px;
-    color: #64748b;
+
+    color: var(--text-secondary);
 }
 
 
-/* =========================
-   GRID
-========================= */
+/* =========================================================
+   ÁREA DO GRÁFICO
+========================================================= */
 
 .graph {
+
     position: relative;
 
     flex: 1;
@@ -386,17 +405,30 @@ body {
 
     margin-left: 5px;
 
-    border-left: 1px solid #8995a5;
-    border-bottom: 1px solid #8995a5;
+    border-left:
+        1px solid #8995a5;
+
+    border-bottom:
+        1px solid #8995a5;
 }
+
+
+/* =========================================================
+   LINHAS HORIZONTAIS
+========================================================= */
 
 .horizontal-line {
+
     position: absolute;
+
     left: 0;
+
     right: 0;
 
-    border-top: 1px dashed #e3e7eb;
+    border-top:
+        1px dashed #e3e7eb;
 }
+
 
 .line1 {
     top: 0;
@@ -419,60 +451,67 @@ body {
 }
 
 
-/* =========================
+/* =========================================================
    GRÁFICO DE LINHA
-========================= */
+========================================================= */
 
 .line-chart {
+
     position: absolute;
 
     left: 0;
+
     top: 0;
 
     width: 100%;
+
     height: 100%;
 
     overflow: visible;
 }
 
 
-/* linha */
-
 .line-chart path {
+
     fill: none;
+
     stroke-width: 2;
 }
 
+
 .line-chart .linha-receitas {
+
     stroke: #42c9a5;
 }
+
 
 .line-chart .linha-despesas {
+
     stroke: #e86b9e;
 }
 
-.ponto-receita {
+
+/* =========================================================
+   PONTOS
+========================================================= */
+
+.ponto-receita,
+.circle-receitas {
+
     stroke: #42c9a5;
 }
 
-.ponto-despesa {
+
+.ponto-despesa,
+.circle-despesas {
+
     stroke: #e86b9e;
 }
 
-/* pontos */
-
-.ponto-receita {
-    stroke: #42c9a5;
-}
-
-.ponto-despesa {
-    stroke: #e86b9e;
-}
 
 .chart-circle {
-    fill: white;
 
-    stroke: #42c9a5;
+    fill: var(--card);
 
     stroke-width: 2;
 
@@ -483,123 +522,157 @@ body {
         stroke-width 0.15s ease;
 }
 
-.chart-circle:hover {
-    r: 6;
-    stroke-width: 2;
-}
-
-/* ponto quando passa o mouse */
 
 .chart-circle:hover {
+
     r: 6;
 
     stroke-width: 2;
 }
 
-/* =========================
+
+/* =========================================================
    MESES
-========================= */
+========================================================= */
 
 .months {
+
     position: absolute;
 
     left: 0;
+
     right: 0;
+
     bottom: -19px;
 
     display: flex;
+
     justify-content: space-between;
 }
 
+
 .months span {
+
     font-size: 12px;
-    color: #64748b;
+
+    color: var(--text-secondary);
 }
 
 
-/* =========================
+/* =========================================================
    GRÁFICO DE BARRAS
-========================= */
+========================================================= */
 
 .bars {
+
     position: absolute;
 
     left: 10px;
+
     right: 10px;
+
     bottom: 0;
 
     height: 190px;
 
     display: flex;
+
     justify-content: space-around;
+
     align-items: flex-end;
 }
 
+
 .bar-item {
+
     height: 100%;
+
     display: flex;
+
     flex-direction: column;
+
     justify-content: flex-end;
+
     align-items: center;
+
     width: 50px;
 
     position: relative;
 }
 
-.bar-item>span {
+
+.bar-item > span {
+
     position: absolute;
+
     bottom: -19px;
 
     font-size: 12px;
-    color: #64748b;
+
+    color: var(--text-secondary);
 }
 
+
 .bar {
+
     width: 38px;
 
     background: #7652e9;
 
-    border-radius: 7px 7px 0 0;
+    border-radius:
+        7px 7px 0 0;
 
-    transition: filter 0.15s ease;
+    transition:
+        filter 0.15s ease;
 }
 
 
-/* =========================
+/* =========================================================
    ALERTAS
-========================= */
+========================================================= */
 
 .alerts {
+
     margin-top: 20px;
 
-    background: white;
+    background: var(--card);
 
-    border: 1px solid #dfe3e8;
+    border:
+        1px solid var(--border);
+
     border-radius: 14px;
 
     padding: 23px 20px 20px;
 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.10);
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.08);
 }
 
+
 .alerts h2 {
+
     font-size: 15px;
+
     font-weight: 500;
 
     margin-bottom: 16px;
+
+    color: var(--text-primary);
 }
 
 
-/* =========================
+/* =========================================================
    ALERTA
-========================= */
+========================================================= */
 
 .alert {
+
     height: 48px;
 
     border-radius: 13px;
 
     display: flex;
+
     align-items: center;
 
     padding: 0 14px;
@@ -609,19 +682,28 @@ body {
     margin-bottom: 10px;
 }
 
+
 .alert:last-child {
+
     margin-bottom: 0;
 }
 
+
 .alert-icon {
+
     width: 16px;
+
     height: 16px;
 
-    border: 1px solid currentColor;
+    border:
+        1px solid currentColor;
+
     border-radius: 50%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     margin-right: 12px;
@@ -629,38 +711,59 @@ body {
     font-size: 11px;
 }
 
+
+/* =========================================================
+   ALERTA WARNING
+========================================================= */
+
 .alert-warning {
+
     background: #fffbe8;
-    border: 1px solid #ffdc57;
+
+    border:
+        1px solid #ffdc57;
 
     color: #d58a00;
 }
 
+
+/* =========================================================
+   ALERTA INFO
+========================================================= */
+
 .alert-info {
+
     background: #eef5ff;
-    border: 1px solid #a9caff;
+
+    border:
+        1px solid #a9caff;
 
     color: #316ee8;
 }
 
-/* =========================
-   TOOLTIP DO GRÁFICO
-========================= */
+
+/* =========================================================
+   TOOLTIP
+========================================================= */
 
 .tooltip {
+
     position: absolute;
 
     width: 118px;
 
-    background: white;
+    background: var(--card);
 
-    border: 1px solid #d9dfe5;
+    border:
+        1px solid var(--border);
 
     padding: 12px;
 
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.12);
 
     display: flex;
+
     flex-direction: column;
 
     gap: 7px;
@@ -682,6 +785,7 @@ body {
 
 
 .tooltip.active {
+
     opacity: 1;
 
     visibility: visible;
@@ -691,68 +795,82 @@ body {
 
 
 .tooltip strong {
+
     font-size: 13px;
 
-    color: #334155;
+    color: var(--text-primary);
 
     font-weight: 500;
 }
 
 
 .tooltip span {
+
     font-size: 13px;
 }
 
 
 .receita-text {
+
     color: #42c9a5;
 }
 
 
 .despesa-text {
+
     color: #e86b9e;
 }
 
-/* =================================
+
+/* =========================================================
    TOOLTIP DAS BARRAS
-================================= */
+========================================================= */
 
 .bar-container {
+
     position: relative;
 
     height: 190px;
 
     display: flex;
+
     align-items: flex-end;
 }
 
 
-/* tooltip */
-
 .bar-tooltip {
+
     position: absolute;
 
     left: 50%;
-    bottom: calc(100% + 10px);
 
-    transform: translateX(-50%) translateY(5px);
+    bottom:
+        calc(100% + 10px);
+
+    transform:
+        translateX(-50%)
+        translateY(5px);
 
     width: 110px;
 
-    background: white;
+    background: var(--card);
 
-    border: 1px solid #d9dfe5;
+    border:
+        1px solid var(--border);
 
     padding: 12px;
 
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.12);
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.12);
 
     display: flex;
+
     flex-direction: column;
 
     gap: 7px;
 
     opacity: 0;
+
     visibility: hidden;
 
     transition:
@@ -766,109 +884,92 @@ body {
 
 
 .bar-tooltip strong {
+
     font-size: 13px;
 
-    color: #334155;
+    color: var(--text-primary);
 
     font-weight: 500;
 }
 
 
 .bar-tooltip span {
+
     font-size: 13px;
 }
 
 
-/* hover */
-
 .bar-container:hover .bar-tooltip {
+
     opacity: 1;
 
     visibility: visible;
 
-    transform: translateX(-50%) translateY(0);
+    transform:
+        translateX(-50%)
+        translateY(0);
 }
 
 
-/* efeito na barra */
-
 .bar-container:hover .bar {
+
     filter: brightness(1.08);
 }
 
-/* =========================
-   LINHAS DO GRÁFICO
-========================= */
 
-.linha-receitas {
-    fill: none;
-    stroke: #42c9a5;
-    stroke-width: 2;
-}
-
-.linha-despesas {
-    fill: none;
-    stroke: #e86b9e;
-    stroke-width: 2;
-}
-
-
-/* =========================
-   PONTOS
-========================= */
-
-.ponto-receitas {
-    stroke: #42c9a5;
-}
-
-.ponto-despesas {
-    stroke: #e86b9e;
-}
-
-/* =================================
-   CARROSSEL DOS GRÁFICOS
-================================= */
+/* =========================================================
+   CARROSSEL
+========================================================= */
 
 .chart-carousel {
+
     display: flex;
+
     align-items: center;
+
     gap: 8px;
+
     width: 100%;
 }
 
 
-/* ================================
-   ÁREA DO GRÁFICO
-================================ */
-
 .chart-carousel .chart {
+
     flex: 1;
+
     min-width: 0;
 }
 
 
-/* ================================
+/* =========================================================
    SETAS
-================================ */
+========================================================= */
 
 .chart-nav {
+
     width: 28px;
+
     height: 40px;
 
     flex-shrink: 0;
 
-    border: 1px solid #dfe3e8;
-    background: white;
+    border:
+        1px solid var(--border);
 
-    color: #64748b;
+    background: var(--card);
+
+    color: var(--text-secondary);
 
     border-radius: 8px;
 
     font-size: 25px;
+
     line-height: 1;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     cursor: pointer;
@@ -880,204 +981,207 @@ body {
 }
 
 
-/* ================================
-   HOVER
-================================ */
-
 .chart-nav:hover:not(:disabled) {
 
-    background: #f1f5f9;
+    background: var(--card-secondary);
 
-    color: #07152b;
+    color: var(--text-primary);
 
-    border-color: #cbd5e1;
-
+    border-color: var(--border);
 }
 
-
-/* ================================
-   SETA DESABILITADA
-================================ */
 
 .chart-nav:disabled {
 
     opacity: 0.25;
 
     cursor: default;
-
 }
 
 
-/* ================================
-   LINHAS DO GRÁFICO
-================================ */
-
-.line-chart .linha-receitas {
-
-    fill: none;
-
-    stroke: #00bd4b;
-
-    stroke-width: 2;
-
-}
-
-
-.line-chart .linha-despesas {
-
-    fill: none;
-
-    stroke: #ed0877;
-
-    stroke-width: 2;
-
-}
-
-
-/* ================================
-   PONTOS
-================================ */
-
-.chart-circle {
-
-    fill: white;
-
-    stroke-width: 2;
-
-    cursor: pointer;
-
-    transition:
-        r 0.15s ease,
-        stroke-width 0.15s ease;
-
-}
-
-
-.circle-receitas {
-
-    stroke: #00bd4b;
-
-}
-
-
-.circle-despesas {
-
-    stroke: #ed0877;
-
-}
-
-
-.chart-circle:hover {
-
-    r: 6;
-
-    stroke-width: 2;
-
-}
-
-
-/* ================================
+/* =========================================================
    BARRAS
-================================ */
+========================================================= */
 
 .bar-graph .bars {
 
     left: 5px;
+
     right: 5px;
-
 }
 
 
-/* =================================
+/* =========================================================
+   BOTÃO FLUTUANTE — DARK MODE
+========================================================= */
+
+.dark-mode-floating {
+
+    position: fixed !important;
+
+    right: 25px !important;
+
+    bottom: 25px !important;
+
+    width: 48px !important;
+
+    height: 48px !important;
+
+    min-width: 48px !important;
+
+    min-height: 48px !important;
+
+    padding: 0 !important;
+
+    margin: 0 !important;
+
+    border: none !important;
+
+    border-radius: 50% !important;
+
+    display: flex !important;
+
+    align-items: center !important;
+
+    justify-content: center !important;
+
+    background:
+        linear-gradient(
+            135deg,
+            #18AEEA,
+            #8438F5
+        ) !important;
+
+    color: #FFFFFF !important;
+
+    font-size: 18px !important;
+
+    line-height: 1 !important;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.20);
+
+    z-index: 99999 !important;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.dark-mode-floating:hover {
+
+    transform: scale(1.08);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.28);
+}
+
+
+.dark-mode-floating:active {
+
+    transform: scale(0.95);
+}
+
+
+/* =========================================================
+   DARK MODE — GRÁFICOS
+========================================================= */
+
+body.dark-mode .graph {
+
+    border-left-color: #475569;
+
+    border-bottom-color: #475569;
+}
+
+
+body.dark-mode .horizontal-line {
+
+    border-top-color: #334155;
+}
+
+
+/* =========================================================
+   DARK MODE — ALERTAS
+========================================================= */
+
+body.dark-mode .alert-warning {
+
+    background: #2A2110;
+
+    border-color: #8A6415;
+
+    color: #FBBF24;
+}
+
+
+body.dark-mode .alert-info {
+
+    background: #172554;
+
+    border-color: #3159A5;
+
+    color: #93C5FD;
+}
+
+
+/* =========================================================
+   DARK MODE — TOOLTIP
+========================================================= */
+
+body.dark-mode .tooltip,
+body.dark-mode .bar-tooltip {
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
+
+/* =========================================================
    CELULAR
-================================= */
-
-@media (max-width: 600px) {
-
-    .cards {
-        grid-template-columns: 1fr;
-        gap: 9px;
-    }
-
-    .card {
-        min-height: 88px;
-        padding: 13px 14px;
-    }
-
-    .card strong {
-        font-size: 18px;
-    }
-
-    .card-icon {
-        width: 32px;
-        height: 32px;
-    }
-
-    .chart-carousel {
-
-        gap: 4px;
-
-    }
-
-
-    .chart-nav {
-
-        width: 24px;
-        height: 36px;
-
-        font-size: 22px;
-
-        border-radius: 6px;
-
-    }
-
-
-    .chart-carousel .chart {
-
-        min-width: 0;
-
-    }
-
-
-    .chart-box {
-
-        padding-left: 8px;
-        padding-right: 8px;
-
-    }
-
-
-    .chart-box h2 {
-
-        margin-left: 4px;
-
-    }
-
-
-    .y-axis {
-
-        width: 32px;
-
-    }
-
-}
-
-/* =========================
-   RESPONSIVIDADE
-========================= */
+========================================================= */
 
 @media (max-width: 900px) {
 
     .cards {
+
         grid-template-columns: 1fr;
     }
+
 
     .charts {
+
         grid-template-columns: 1fr;
     }
 
+
     .card {
+
         height: 100px;
+    }
+}
+
+
+@media (max-width: 800px) {
+
+    .dark-mode-floating {
+
+        right: 18px !important;
+
+        bottom: 75px !important;
+
+        width: 44px !important;
+
+        height: 44px !important;
+
+        min-width: 44px !important;
+
+        min-height: 44px !important;
+
+        font-size: 16px !important;
     }
 }
 
@@ -1085,31 +1189,65 @@ body {
 @media (max-width: 600px) {
 
     .container {
+
         padding: 15px;
     }
 
-    .topbar {
-        padding: 0 15px;
-    }
 
     .page-title h1 {
+
         font-size: 19px;
     }
 
+
     .card strong {
+
         font-size: 22px;
     }
 
+
     .chart-box {
-        padding: 18px 12px;
+
+        padding:
+            18px 12px;
+
         overflow: hidden;
     }
 
+
     .alerts {
-        padding: 20px 12px;
+
+        padding:
+            20px 12px;
     }
 
+
     .alert {
+
         font-size: 12px;
+    }
+
+
+    .chart-carousel {
+
+        gap: 4px;
+    }
+
+
+    .chart-nav {
+
+        width: 24px;
+
+        height: 36px;
+
+        font-size: 22px;
+
+        border-radius: 6px;
+    }
+
+
+    .y-axis {
+
+        width: 32px;
     }
 }

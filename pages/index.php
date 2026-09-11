@@ -27,7 +27,7 @@ $stmt->close();
 $dados_grafico = [];
 
 $sql = "SELECT 
-          MONTH(data_transacao) AS mes, b
+          MONTH(data_transacao) AS mes,
 
           COALESCE(
             SUM(
@@ -41,7 +41,9 @@ $sql = "SELECT
 
           COALESCE(
             SUM(
-              CASE 
+              CASE oks
+
+              
                 WHEN tipo = 'saida' AND status = 'pago'
                 THEN valor 
                 ELSE 0 

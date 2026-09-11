@@ -27,7 +27,7 @@ $stmt->close();
 $dados_grafico = [];
 
 $sql = "SELECT 
-          MONTH(data_transacao) AS mes, b
+          MONTH(data_transacao) AS mes, 
 
           COALESCE(
             SUM(

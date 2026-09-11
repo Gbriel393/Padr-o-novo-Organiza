@@ -27,7 +27,11 @@ $stmt->close();
 $dados_grafico = [];
 
 $sql = "SELECT 
+<<<<<<< HEAD
           MONTH(data_transacao) AS mes,
+=======
+          MONTH(data_transacao) AS mes, 
+>>>>>>> b2c13951ae55a3d50f2f67e5fb5699b32d0b0652
 
           COALESCE(
             SUM(

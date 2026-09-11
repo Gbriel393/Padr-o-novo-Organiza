@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION["email"] = $linha["email"];
         $_SESSION["tipo"] = $linha["tipo"];
 
-        header("location:index.php");
+        header("location:../admin.php");
         exit();
     } else {
         $erro = true;
@@ -88,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </a> -->
 
                 <div class="text-center mt-3">
-                    <a href="../pages/esqueciasenha_index.php" class="forgot">Esqueceu a senha?</a>
+                    <a href="../esqueci_senha.php" class="forgot">Esqueceu a senha?</a>
                 </div>
 
                 <div class="text-center mt-3">

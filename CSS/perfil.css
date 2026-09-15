@@ -103,3 +103,191 @@ body {
 .container * {
   font-family: 'Poppins', sans-serif !important;
 }
+
+/* ==========================================
+   DARK MODE — PERFIL
+========================================== */
+
+body.dark-mode {
+  background-color: #0B1120;
+  color: #F1F5F9;
+}
+
+
+/* ==========================================
+   CARD DO PERFIL
+========================================== */
+
+body.dark-mode .perfil-card {
+  background-color: #1E293B;
+  color: #F1F5F9;
+  border-color: #334155;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .30);
+}
+
+body.dark-mode .perfil-card h1,
+body.dark-mode .perfil-card h2,
+body.dark-mode .perfil-card h3,
+body.dark-mode .perfil-card h4,
+body.dark-mode .perfil-card h5,
+body.dark-mode .perfil-card h6 {
+  color: #F1F5F9;
+}
+
+
+/* ==========================================
+   CAMPOS DO FORMULÁRIO
+========================================== */
+
+body.dark-mode .form-control {
+  background-color: #111827;
+  color: #F1F5F9;
+  border-color: #475569;
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #64748B;
+}
+
+body.dark-mode .form-control:focus {
+  background-color: #111827;
+  color: #F1F5F9;
+  border-color: #18AEEA;
+  box-shadow: 0 0 0 .2rem rgba(24, 174, 234, .15);
+}
+
+
+/* ==========================================
+   TEXTOS
+========================================== */
+
+body.dark-mode .text-muted {
+  color: #94A3B8 !important;
+}
+
+body.dark-mode label {
+  color: #CBD5E1;
+}
+
+
+/* ==========================================
+   NOTIFICAÇÕES
+========================================== */
+
+body.dark-mode .notif-item {
+  background-color: #273449;
+  color: #F1F5F9;
+}
+
+body.dark-mode .notif-item span,
+body.dark-mode .notif-item p,
+body.dark-mode .notif-item small {
+  color: #CBD5E1;
+}
+
+
+/* ==========================================
+   BOTÕES
+========================================== */
+
+body.dark-mode .btn-outline-secondary {
+  color: #CBD5E1 !important;
+  border-color: #64748B !important;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+  background-color: #334155 !important;
+  color: #FFFFFF !important;
+}
+
+
+/* ==========================================
+   BOTÃO LOGOUT
+========================================== */
+
+body.dark-mode .btn-logout {
+  background: transparent;
+  color: #F87171;
+  border-color: #F87171;
+}
+
+body.dark-mode .btn-logout:hover {
+  background: #DC3545;
+  color: #FFFFFF;
+}
+
+
+/* ==========================================
+   BOTÃO FLUTUANTE
+========================================== */
+
+.dark-mode-floating {
+  position: fixed !important;
+  right: 25px !important;
+  bottom: 25px !important;
+
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: none !important;
+  border-radius: 50% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: linear-gradient(135deg,
+      #18AEEA,
+      #8438F5) !important;
+
+  color: #FFFFFF !important;
+
+  font-size: 18px !important;
+  line-height: 1 !important;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, .20);
+
+  z-index: 99999 !important;
+
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease;
+}
+
+.dark-mode-floating:hover {
+  transform: scale(1.08);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, .28);
+}
+
+.dark-mode-floating:active {
+  transform: scale(.95);
+}
+
+
+/* ==========================================
+   RESPONSIVO — BOTÃO
+========================================== */
+
+@media (max-width: 800px) {
+
+  .dark-mode-floating {
+    right: 18px !important;
+    bottom: 75px !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    min-width: 44px !important;
+    min-height: 44px !important;
+
+    font-size: 16px !important;
+  }
+
+}

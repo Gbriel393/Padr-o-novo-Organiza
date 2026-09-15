@@ -104,9 +104,14 @@ $aviso = $mensagens[(string) ($_GET['status'] ?? '')] ?? null;
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="../CSS/perfil.css">
     <link rel="stylesheet" href="../CSS/navbar/navbar_index.css">
+    <script type="text/javascript" src="../js/app.js" defer></script>
 </head>
 
 <body>
+    <!-- BOTÃO DARK MODE -->
+    <button id="darkModeToggle" class="dark-mode-floating" title="Alterar tema">
+        <i class="fa-solid fa-moon"></i>
+    </button>
     <?php include __DIR__ . '/../estrutura/sidebar_perfil.php'; ?>
     <main>
         <div class="container container_pg py-5">

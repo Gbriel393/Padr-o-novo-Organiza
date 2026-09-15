@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 alert('email já cadastrado!');
                 window.location.href = 'nova_conta.php';
               </script>";
-              exit;
+        exit;
     }
 
     $stmt = $conn->prepare("INSERT INTO usuarios(nome,email,senha) VALUE(?,?,?)");
@@ -78,7 +78,42 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- CSS -->
     <link rel="stylesheet" href="../css/login.css">
     <link rel="stylesheet" href="../CSS/esqueciasenha_style.css" />
+    <script type="text/javascript" src="../js/app.js" defer></script>
+
 </head>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+
+        const senha = document.getElementById("senha");
+        const botao = document.getElementById("toggleSenha");
+        const icone = botao.querySelector("i");
+
+        botao.addEventListener("click", function() {
+
+            if (senha.type === "password") {
+
+                senha.type = "text";
+
+                icone.classList.remove("bi-eye");
+                icone.classList.add("bi-eye-slash");
+
+                botao.setAttribute("aria-label", "Ocultar senha");
+
+            } else {
+
+                senha.type = "password";
+
+                icone.classList.remove("bi-eye-slash");
+                icone.classList.add("bi-eye");
+
+                botao.setAttribute("aria-label", "Mostrar senha");
+            }
+
+        });
+
+    });
+</script>
 
 <body>
     </head>
@@ -106,9 +141,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="mb-3 position-relative">
                         <label class="form-label">Senha</label>
-                        <input type="password" class="form-control custom-input" id="senha" name="senha" placeholder="......."
+
+                        <input
+                            type="password"
+                            class="form-control custom-input"
+                            id="senha"
+                            name="senha"
+                            placeholder="......."
                             required>
-                        <span class="toggle-password" onclick="togglePassword()"><i class=" bi bi-eye"></i></span>
+
+                        <button
+                            type="button"
+                            id="toggleSenha"
+                            class="toggle-password"
+                            aria-label="Mostrar senha">
+                            <i class="bi bi-eye"></i>
+                        </button>
                     </div>
 
                     <button type="submit" class="btn btn-gradient w-100">

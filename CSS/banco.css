@@ -98,3 +98,173 @@ body {
 .container * {
   font-family: 'Poppins', sans-serif !important;
 }
+
+/* ==========================================
+   DARK MODE — BANCO
+========================================== */
+
+body.dark-mode {
+    background: #0B1120;
+    color: #F1F5F9;
+}
+
+body.dark-mode main {
+    background: #111827;
+}
+
+
+/* ==========================================
+   TÍTULOS E TEXTOS
+========================================== */
+
+body.dark-mode h1,
+body.dark-mode h2,
+body.dark-mode h3,
+body.dark-mode h4,
+body.dark-mode h5,
+body.dark-mode h6 {
+    color: #F1F5F9;
+}
+
+body.dark-mode .text-muted {
+    color: #94A3B8 !important;
+}
+
+body.dark-mode .text-dark {
+    color: #CBD5E1 !important;
+}
+
+
+/* ==========================================
+   CARDS
+========================================== */
+
+body.dark-mode .bank-card,
+body.dark-mode .container > .card {
+    background: #1E293B;
+    border-color: #334155;
+    color: #F1F5F9;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .30);
+}
+
+body.dark-mode .disabled-card {
+    background: #273449;
+    border-color: #334155;
+}
+
+
+/* ==========================================
+   TRANSAÇÕES
+========================================== */
+
+body.dark-mode .transaction {
+    background: #273449;
+    color: #F1F5F9;
+}
+
+body.dark-mode .transaction > div > div {
+    color: #F1F5F9;
+}
+
+
+/* ==========================================
+   ÍCONES
+========================================== */
+
+body.dark-mode .icon.gray {
+    background: #475569;
+}
+
+
+/* ==========================================
+   BOTÕES
+========================================== */
+
+body.dark-mode .btn-outline-secondary {
+    color: #CBD5E1 !important;
+    border-color: #64748B !important;
+}
+
+body.dark-mode .btn-outline-secondary:hover {
+    color: #FFFFFF !important;
+    background: #334155 !important;
+    border-color: #64748B !important;
+}
+
+
+/* ==========================================
+   BOTÃO FLUTUANTE
+========================================== */
+
+.dark-mode-floating {
+    position: fixed !important;
+    right: 25px !important;
+    bottom: 25px !important;
+
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: linear-gradient(
+        135deg,
+        #18AEEA,
+        #8438F5
+    ) !important;
+
+    color: #FFFFFF !important;
+
+    font-size: 18px !important;
+    line-height: 1 !important;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .20);
+
+    z-index: 99999 !important;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.dark-mode-floating:hover {
+    transform: scale(1.08);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, .28);
+}
+
+.dark-mode-floating:active {
+    transform: scale(.95);
+}
+
+
+/* ==========================================
+   RESPONSIVO
+========================================== */
+
+@media (max-width: 800px) {
+
+    .dark-mode-floating {
+        right: 18px !important;
+        bottom: 75px !important;
+
+        width: 44px !important;
+        height: 44px !important;
+
+        min-width: 44px !important;
+        min-height: 44px !important;
+
+        font-size: 16px !important;
+    }
+
+}

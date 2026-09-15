@@ -18,16 +18,23 @@ include("../conn.php");
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="text/javascript" src="app.js" defer></script>
     <script src="https://unpkg.com/lucide@0.378.0/dist/umd/lucide.min.js"></script>
+    <script type="text/javascript" src="../js/app.js" defer></script>
+
 </head>
 
 <body>
+
+    <!-- BOTÃO DARK MODE -->
+    <button id="darkModeToggle" class="dark-mode-floating" title="Alterar tema">
+        <i class="fa-solid fa-moon"></i>
+    </button>
 
     <?php include("../estrutura/sidebar_operacoes.php") ?>
 
     <main>
 
         <div class="container container_pg  py-4">
-            
+
             <h1>Operações</h1>
             <p class="subtitle">Ações rápidas e alertas financeiros</p>
 

@@ -28,9 +28,17 @@ include("../conn.php");
     <link rel="stylesheet" href="../CSS/navbar/navbar_index.css">
 
     <link rel="stylesheet" href="../CSS/banco.css">
+
+    <script type="text/javascript" src="../js/app.js" defer></script>
+
 </head>
 
 <body>
+
+    <!-- BOTÃO DARK MODE -->
+    <button id="darkModeToggle" class="dark-mode-floating" title="Alterar tema">
+        <i class="fa-solid fa-moon"></i>
+    </button>
 
     <?php include("../estrutura/sidebar_banco.php"); ?>
 

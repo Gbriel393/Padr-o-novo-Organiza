@@ -3,7 +3,7 @@
 ================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-    
+
 /* ================================
    CONTEÚDO DA PÁGINA NOVO
 ================================ */
@@ -140,6 +140,172 @@ textarea {
     cursor: pointer;
 }
 
+/* =================================
+   DARK MODE — NOVO REGISTRO
+================================= */
+
+body.dark-mode .card {
+    background: #1E293B;
+    color: #F1F5F9;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.30);
+}
+
+
+body.dark-mode .card h1 {
+    color: #F1F5F9;
+}
+
+
+body.dark-mode .card p {
+    color: #94A3B8;
+}
+
+
+/* =================================
+   BOTÕES DE TIPO
+================================= */
+
+body.dark-mode .tipo-btn {
+    background: #273449;
+    border-color: #475569;
+    color: #CBD5E1;
+}
+
+
+body.dark-mode .tipo-btn.active {
+    background: #1E293B;
+    border-color: #e93cac;
+    color: #e93cac;
+}
+
+
+/* =================================
+   CAMPOS
+================================= */
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+    background: #111827;
+
+    color: #F1F5F9;
+
+    border-color: #475569;
+}
+
+
+body.dark-mode input::placeholder,
+body.dark-mode textarea::placeholder {
+    color: #64748B;
+}
+
+
+/* =================================
+   LABELS
+================================= */
+
+body.dark-mode form label {
+    color: #CBD5E1;
+}
+
+
+/* =================================
+   ALERTA DE ERRO
+================================= */
+
+body.dark-mode .alerta-erro {
+    background: #3A1D24;
+
+    border-color: #7F303D;
+
+    color: #FCA5A5;
+}
+
+
+/* =================================
+   BOTÃO FLUTUANTE — DARK MODE
+================================= */
+
+.dark-mode-floating {
+    position: fixed !important;
+
+    right: 25px !important;
+    bottom: 25px !important;
+
+    width: 48px !important;
+    height: 48px !important;
+
+    min-width: 48px !important;
+    min-height: 48px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: linear-gradient(135deg,
+            #18AEEA,
+            #8438F5) !important;
+
+    color: #FFFFFF !important;
+
+    font-size: 18px !important;
+    line-height: 1 !important;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0, 0, 0, 0.20);
+
+    z-index: 99999 !important;
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.dark-mode-floating:hover {
+    transform: scale(1.08);
+
+    box-shadow:
+        0 7px 20px rgba(0, 0, 0, 0.28);
+}
+
+
+.dark-mode-floating:active {
+    transform: scale(0.95);
+}
+
+
+/* =================================
+   CELULAR
+================================= */
+
+@media (max-width: 800px) {
+
+    .dark-mode-floating {
+        right: 18px !important;
+        bottom: 75px !important;
+
+        width: 44px !important;
+        height: 44px !important;
+
+        min-width: 44px !important;
+        min-height: 44px !important;
+
+        font-size: 16px !important;
+    }
+
+}
+
 
 /* ================================
    RESPONSIVO
@@ -160,5 +326,17 @@ textarea {
 
 }
 
-form label { font-size: 13px; font-weight: 600; margin-bottom: -6px; }
-.alerta-erro { background: #f8d7da; border: 1px solid #f1aeb5; border-radius: 8px; color: #842029; margin-bottom: 15px; padding: 10px; }
+form label {
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: -6px;
+}
+
+.alerta-erro {
+    background: #f8d7da;
+    border: 1px solid #f1aeb5;
+    border-radius: 8px;
+    color: #842029;
+    margin-bottom: 15px;
+    padding: 10px;
+}

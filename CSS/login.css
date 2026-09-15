@@ -67,6 +67,31 @@ html {
   transition: 0.3s;
 }
 
+.toggle-password {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+
+  border: none;
+  background: transparent;
+
+  color: #6c757d;
+  font-size: 18px;
+
+  cursor: pointer;
+
+  padding: 5px;
+}
+
+.toggle-password:hover {
+  color: #18AEEA;
+}
+
+.toggle-password:focus {
+  outline: none;
+  box-shadow: none;
+}
+
 .btn {
   border: none;
 }
@@ -113,4 +138,128 @@ html {
   margin-bottom: 15px;
   border-radius: 15px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ================================
+   BOTÃO DARK MODE
+================================ */
+
+.dark-mode-floating {
+  position: fixed !important;
+  right: 25px !important;
+  bottom: 25px !important;
+
+  width: 48px !important;
+  height: 48px !important;
+  min-width: 48px !important;
+  min-height: 48px !important;
+
+  padding: 0 !important;
+  margin: 0 !important;
+
+  border: none !important;
+  border-radius: 50% !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  background: linear-gradient(135deg, #18AEEA, #8438F5) !important;
+  color: #FFFFFF !important;
+
+  font-size: 18px !important;
+  line-height: 1;
+
+  cursor: pointer;
+
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.20);
+
+  z-index: 99999 !important;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.dark-mode-floating:hover {
+  transform: scale(1.08);
+  box-shadow: 0 7px 20px rgba(0, 0, 0, 0.28);
+}
+
+.dark-mode-floating:active {
+  transform: scale(0.95);
+}
+
+
+/* ================================
+   LOGIN — DARK MODE
+================================ */
+
+body.dark-mode {
+  background: #0B1120;
+  color: #F1F5F9;
+}
+
+body.dark-mode .login-box {
+  background: #1E293B;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.30);
+}
+
+body.dark-mode .subtitle {
+  color: #94A3B8;
+}
+
+body.dark-mode .form-label {
+  color: #CBD5E1;
+}
+
+body.dark-mode .custom-input {
+  background: #111827;
+  color: #F1F5F9;
+  border-color: #475569;
+}
+
+body.dark-mode .custom-input::placeholder {
+  color: #64748B;
+}
+
+body.dark-mode .custom-input:focus {
+  background: #111827;
+  color: #F1F5F9;
+  border-color: #e93cac;
+  box-shadow: 0 0 5px #e93cac;
+}
+
+body.dark-mode .toggle-password {
+  color: #94A3B8;
+}
+
+body.dark-mode .toggle-password:hover {
+  color: #18AEEA;
+}
+
+body.dark-mode .forgot {
+  color: #38BDF8;
+}
+
+
+/* ================================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 800px) {
+
+  .dark-mode-floating {
+    right: 18px !important;
+    bottom: 75px !important;
+
+    width: 44px !important;
+    height: 44px !important;
+
+    min-width: 44px !important;
+    min-height: 44px !important;
+
+    font-size: 16px !important;
+  }
+
 }

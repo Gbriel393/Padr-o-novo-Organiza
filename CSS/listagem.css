@@ -271,7 +271,11 @@ td i {
     margin-left: 1rem
 }
 
-.filtro-select { width: auto; min-width: 190px; }
+.filtro-select {
+    width: auto;
+    min-width: 190px;
+}
+
 .botao-x {
     border: none;
     background: transparent;
@@ -280,6 +284,7 @@ td i {
     font-size: 18px;
     color: #212529;
 }
+
 @media (max-width: 768px) {
 
     .fx_1 {
@@ -365,4 +370,147 @@ body {
 .alerts,
 .alerts * {
     font-family: 'Poppins', sans-serif !important;
+}
+
+/* ==========================================
+   DARK MODE — LISTAGEM
+========================================== */
+
+body.dark-mode .barra_pesquisa {
+    background-color: #1E293B;
+}
+
+body.dark-mode .pesquisa {
+    background-color: #111827;
+    border-color: #475569;
+    color: #F1F5F9;
+}
+
+body.dark-mode .pesquisa::placeholder {
+    color: #64748B;
+}
+
+body.dark-mode .estrato {
+    background-color: #1E293B;
+    border-color: #334155;
+}
+
+body.dark-mode .table {
+    background-color: #1E293B;
+}
+
+body.dark-mode th {
+    background-color: #273449 !important;
+    color: #F1F5F9 !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode td {
+    background-color: #1E293B !important;
+    color: #CBD5E1 !important;
+    border-color: #334155 !important;
+}
+
+body.dark-mode .botao-x {
+    color: #CBD5E1;
+}
+
+body.dark-mode .filtro-select {
+    background-color: #111827;
+    color: #F1F5F9;
+    border-color: #475569;
+}
+
+body.dark-mode .btn-secondary,
+body.dark-mode .btn-secondary:hover,
+body.dark-mode .btn-secondary:focus,
+body.dark-mode .btn-secondary:active,
+body.dark-mode .btn-secondary.active,
+body.dark-mode .show>.btn-secondary.dropdown-toggle {
+    color: #CBD5E1 !important;
+    border-color: #64748B !important;
+    background-color: transparent !important;
+}
+
+body.dark-mode .td_valor {
+    color: #24D3FF !important;
+}
+
+body.dark-mode .td_valor_gasto {
+    color: #F87171 !important;
+}
+
+
+/* ==========================================
+   BOTÃO FLUTUANTE — DARK MODE
+========================================== */
+
+.dark-mode-floating {
+    position: fixed !important;
+    right: 25px !important;
+    bottom: 25px !important;
+
+    width: 48px !important;
+    height: 48px !important;
+    min-width: 48px !important;
+    min-height: 48px !important;
+
+    padding: 0 !important;
+    margin: 0 !important;
+
+    border: none !important;
+    border-radius: 50% !important;
+
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+
+    background: linear-gradient(135deg,
+            #18AEEA,
+            #8438F5) !important;
+
+    color: #FFFFFF !important;
+
+    font-size: 18px !important;
+    line-height: 1 !important;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .20);
+
+    z-index: 99999 !important;
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+}
+
+.dark-mode-floating:hover {
+    transform: scale(1.08);
+    box-shadow: 0 7px 20px rgba(0, 0, 0, .28);
+}
+
+.dark-mode-floating:active {
+    transform: scale(.95);
+}
+
+
+/* ==========================================
+   RESPONSIVO — BOTÃO
+========================================== */
+
+@media (max-width: 800px) {
+
+    .dark-mode-floating {
+        right: 18px !important;
+        bottom: 75px !important;
+
+        width: 44px !important;
+        height: 44px !important;
+        min-width: 44px !important;
+        min-height: 44px !important;
+
+        font-size: 16px !important;
+    }
+
 }

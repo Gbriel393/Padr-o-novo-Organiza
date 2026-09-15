@@ -146,7 +146,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     ) {
 
         $erro = 'Confira os campos informados e tente novamente.';
-
     } else {
         $stmt = $conn->prepare('INSERT INTO transacoes (usuario_id, tipo, natureza, categoria, valor, data_transacao, status, descricao) VALUES (?, ?, ?, ?, ?, ?, ?, ?)');
         $stmt->bind_param('isssdsss', $usuarioId, $tipo, $natureza, $categoria, $valor, $data, $status, $descricao);
@@ -170,9 +169,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <link rel="stylesheet" href="../CSS/novo.css">
     <link rel="stylesheet" href="../CSS/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <script type="text/javascript" src="../js/app.js" defer></script>
+
 </head>
 
 <body><?php include __DIR__ . '/../estrutura/sidebar_novo.php'; ?><main class="content">
+        <!-- BOTÃO DARK MODE -->
+        <button id="darkModeToggle" class="dark-mode-floating" title="Alterar tema">
+            <i class="fa-solid fa-moon"></i>
+        </button>
         <div class="container container_pg py-4">
             <div class="card">
                 <h1>Novo Registro</h1>

@@ -107,9 +107,17 @@ $aviso = $mensagens[(string) ($_GET['status'] ?? '')] ?? null;
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
     integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="text/javascript" src="../js/app.js" defer></script>
+
 </head>
 
 <body><?php include __DIR__ . '/../estrutura/sidebar_listagem.php'; ?><main>
+
+
+    <!-- BOTÃO DARK MODE -->
+    <button id="darkModeToggle" class="dark-mode-floating" title="Alterar tema">
+      <i class="fa-solid fa-moon"></i>
+    </button>
 
     <div class="container container_pg py-4">
 

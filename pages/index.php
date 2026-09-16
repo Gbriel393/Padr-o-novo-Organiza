@@ -101,7 +101,7 @@ $stmt->close();
   </button>
 
   <?php include("../estrutura/sidebar_index.php") ?>
-  
+
   <!-- CONTEÚDO PRINCIPAL -->
   <main>
 

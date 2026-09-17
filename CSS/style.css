@@ -261,31 +261,120 @@ main,
    RESPONSIVIDADE
 ========================================================= */
 
+/* =========================================================
+   MOBILE — TELA COMPLETA
+========================================================= */
+
 @media (max-width: 800px) {
 
+    html,
     body {
-
-        display: block;
-
-        padding-bottom: 68px;
+        width: 100%;
+        min-width: 100%;
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden !important;
     }
 
+    body {
+        display: block !important;
+    }
 
     main {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
 
-        min-height: calc(100vh - 68px);
+        margin: 0 !important;
+        padding: 15px 12px 85px !important;
 
-        padding:
-            18px 15px 85px;
+        overflow-x: hidden !important;
+    }
+
+    .dashboard-container {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+
+    .container,
+    .container_pg {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+
+        margin: 0 !important;
+    }
+
+    /* Cards */
+
+    .cards {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .card {
+        max-width: 100% !important;
+    }
+
+    /* Gráficos */
+
+    .charts {
+        width: 100% !important;
+        min-width: 0 !important;
+    }
+
+    .chart-box {
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: 100% !important;
+
+        overflow: hidden !important;
+    }
+
+    /* Barra inferior */
+
+    #sidebar {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+    #sidebar ul {
+        width: 100% !important;
+        min-width: 0 !important;
+
+        overflow: hidden !important;
+    }
+
+    #sidebar li {
+        min-width: 0 !important;
     }
 }
 
 
+/* =========================================================
+   TELAS MUITO PEQUENAS
+========================================================= */
+
 @media (max-width: 500px) {
 
     main {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
 
-        padding:
-            15px 12px 80px;
+    .dashboard-container {
+        width: 100% !important;
+    }
+
+    .chart-box {
+        width: 100% !important;
     }
 }

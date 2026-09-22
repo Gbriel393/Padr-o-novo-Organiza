@@ -1185,6 +1185,32 @@ body.dark-mode .bar-tooltip {
     }
 }
 
+/* ================================
+   LOGO SIDEBAR - PADRÃO
+================================ */
+
+#sidebar .sidebar-logo {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+}
+
+#sidebar .sidebar-logo span {
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+}
+
+#sidebar .logo-icon {
+    width: 27px !important;
+    height: 27px !important;
+    font-size: 19px !important;
+    flex-shrink: 0 !important;
+}
+
+#sidebar .sidebar-logo {
+    gap: 9px !important;
+}
 
 @media (max-width: 600px) {
 

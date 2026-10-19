@@ -1,6 +1,27 @@
 <?php
 session_start();
 include("../conn.php");
+$usuario_id = $_SESSION['usuario_id'] ?? 0;
+
+$stmt = $conn->prepare("SELECT COUNT 
+(*) AS total_pendentes, COALESCE(SUM(valor), 0) AS valor_pendente,
+FROM transacoes
+WHERE usuario_id= ?
+AND tipo = 'saida'
+AND status = 'pendente'");
+
+$stmt->bind_param("i", $usuario_id);
+$stmt->execute();
+$resultado = $stmt->get_result();
+$pendencias =
+resultado->fetch_assoc();
+
+$total_pendentes =
+$pendencias['total_pendentes']
+$valor_pendente =
+$pendencias['valor_pendente']
+
+$stmt->close();
 ?>
 
 <!DOCTYPE html>

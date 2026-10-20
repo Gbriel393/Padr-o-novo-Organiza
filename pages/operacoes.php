@@ -4,7 +4,7 @@ include("../conn.php");
 $usuario_id = $_SESSION['usuario_id'] ?? 0;
 
 $stmt = $conn->prepare("SELECT COUNT 
-(*) AS total_pendentes, COALESCE(SUM(valor), 0) AS valor_pendente,
+(*) AS total_pendentes, COALESCE(SUM(valor), 0) AS valor_pendente
 FROM transacoes
 WHERE usuario_id= ?
 AND tipo = 'saida'

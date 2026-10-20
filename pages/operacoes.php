@@ -90,51 +90,53 @@ $stmt->close();
                 <div class="alerts">
                     <h2>Alertas Financeiros</h2>
 
-                    <div class="alert">
-                        <div class="alert-left red">
-                            <i data-lucide="alert-circle"></i>
-                        </div>
-                        <div class="alert-content">
-                            <div class="alert-title">Fatura do Cartão Vencendo</div>
-                            <p>R$ 2.130 vence em 3 dias</p>
-                            <span class="tag alta">Alta</span>
-                        </div>
-                    </div>
+                    <?php $sql = "SELECT categoria, valor, data_transacao
+                    FROM transacoes
+                    WHERE usuario_id = ?
+                    AND tipo = 'saida'
+                    AND status = 'pendente'
+                    ORDER BY data_transacao ASC";
+                    
+                    $stmt = $conn->prepare($sql);
+                    $stmt->bind_param("i", usuario_id);
+                    $stmt->execute();
+                    $alertas = $stmt->get_result();
+
+                    if($alertas->num_rows > 0);
+                    while($alerta = $alertas->fetch_assoc());
+                    $valor = number_format((float)$alerta['valor'], 2, ',', '.');
+                    $data = date('d/m/y', strtotime($alerta['data_transacao']));
+                    ?>
 
                     <div class="alert">
-                        <div class="alert-left dark-red">
-                            <i data-lucide="alert-triangle"></i>
-                        </div>
-                        <div class="alert-content">
-                            <div class="alert-title">Orçamento Excedido</div>
-                            <p>Você ultrapassou 90% do orçamento</p>
-                            <span class="tag urgente">Urgente</span>
-                        </div>
-                    </div>
-
-                    <div class="alert">
-                        <div class="alert-left yellow">
+                        <div class="alert-left-yellow">
                             <i data-lucide="clock"></i>
                         </div>
-                        <div class="alert-content">
-                            <div class="alert-title">Conta de Luz</div>
-                            <p>R$ 180 vence em 5 dias</p>
-                            <span class="tag media">Média</span>
-                        </div>
                     </div>
-
-                    <div class="alert">
-                        <div class="alert-left green">
-                            <i data-lucide="check-circle"></i>
-                        </div>
-                        <div class="alert-content">
-                            <div class="alert-title">Meta Atingida</div>
-                            <p>75% da meta alcançada</p>
-                            <span class="tag baixa">Baixa</span>
-                        </div>
-                    </div>
-
                 </div>
+            </div>
+
+            <?php
+            endwhile;
+        else:
+            ?>
+
+            <div class="alert">
+                <div class="alert-left green">
+                    <i data-lucide="check-circle"></i>
+                </div>
+
+                <div class="alert-content">
+                    <div class="alert-title">Tudo certo</div>
+                    <p>Você não tem despesas pendentes registradas</p>
+                    <span class="tag baixa">Tranquilo</span>
+                </div>
+            </div>
+            <?php
+            endif;
+            $stmt->close();
+
+            ?>
 
                 <div class="insights">
 

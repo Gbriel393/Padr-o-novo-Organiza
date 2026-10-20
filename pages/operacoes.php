@@ -17,9 +17,9 @@ $pendencias =
 resultado->fetch_assoc();
 
 $total_pendentes =
-$pendencias['total_pendentes']
+$pendencias['total_pendentes'];
 $valor_pendente =
-$pendencias['valor_pendente']
+$pendencias['valor_pendente'];
 
 $stmt->close();
 ?>
@@ -98,21 +98,32 @@ $stmt->close();
                     ORDER BY data_transacao ASC";
                     
                     $stmt = $conn->prepare($sql);
-                    $stmt->bind_param("i", usuario_id);
+                    $stmt->bind_param("i", $usuario_id);
                     $stmt->execute();
                     $alertas = $stmt->get_result();
 
-                    if($alertas->num_rows > 0);
-                    while($alerta = $alertas->fetch_assoc());
+                    if ($alertas->num_rows > 0):
+                   while ($alerta = $alertas->fetch_assoc()):
                     $valor = number_format((float)$alerta['valor'], 2, ',', '.');
                     $data = date('d/m/y', strtotime($alerta['data_transacao']));
                     ?>
 
-                    <div class="alert">
-                        <div class="alert-left-yellow">
-                            <i data-lucide="clock"></i>
-                        </div>
-                    </div>
+                    <div class="alert"><div class="alert-left yellow">
+        <i data-lucide="clock"></i>
+    </div>
+ 
+    <div class="alert-content">
+        <div class="alert-title">
+            <?= htmlspecialchars($alerta['categoria']) ?>
+        </div>
+ 
+        <p>
+            R$ <?= $valor ?> — Data: <?= $data ?>
+        </p>
+ 
+        <span class="tag media">Pendente</span>
+    </div>
+</div>
                 </div>
             </div>
 
@@ -172,3 +183,4 @@ $stmt->close();
 </body>
 
 </html>
+
